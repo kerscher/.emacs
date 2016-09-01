@@ -1,2 +1,4 @@
-# .emacs
+.emacs
+======
 
+![Yumm](oy-vey.png)
