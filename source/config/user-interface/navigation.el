@@ -10,8 +10,9 @@
 (customize-set-variable 'speedbar-use-images nil)
 
 (require 'sr-speedbar)
-(customize-set-variable 'sr-speedbar-auto-refresh nil)
-(customize-set-variable 'sr-speedbar-right-side t)
+(setq sr-speedbar-auto-refresh nil)
+(setq speedbar-show-unknown-files t) ; show all files
+(setq speedbar-use-images nil)       ; use text for buttons
 (global-set-key (kbd "C-k") 'sr-speedbar-toggle)
 
 ;; Find things anywhere — fuzzy matching.
