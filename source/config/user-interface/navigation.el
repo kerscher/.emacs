@@ -5,16 +5,6 @@
 (global-set-key (kbd "M-n") 'next-buffer)
 (global-set-key (kbd "M-h") 'previous-buffer)
 
-;; Sidebar
-(require 'speedbar)
-(customize-set-variable 'speedbar-use-images nil)
-
-(require 'sr-speedbar)
-(setq sr-speedbar-auto-refresh nil)
-(setq speedbar-show-unknown-files t) ; show all files
-(setq speedbar-use-images nil)       ; use text for buttons
-(global-set-key (kbd "C-k") 'sr-speedbar-toggle)
-
 ;; Find things anywhere — fuzzy matching.
 (require 'helm-config)
 (require 'helm-ls-git)
@@ -29,6 +19,16 @@
 (global-set-key (kbd "C-S-p")   'helm-M-x)
 (global-set-key (kbd "C-e")     'helm-buffers-list)
 (global-set-key (kbd "C-u")     'helm-M-x)
+
+;; Sidebar
+(require 'speedbar)
+(customize-set-variable 'speedbar-use-images nil)
+
+(require 'sr-speedbar)
+(setq sr-speedbar-auto-refresh nil)
+(setq speedbar-show-unknown-files t) ; show all files
+(setq speedbar-use-images nil)       ; use text for buttons
+(global-set-key (kbd "C-k") 'sr-speedbar-toggle)
 
 ;; Multiple cursors.
 (require 'multiple-cursors)

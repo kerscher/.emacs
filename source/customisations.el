@@ -20,8 +20,8 @@
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
  '(line-number-mode nil)
- '(main-line-color1 "#222232")
- '(main-line-color2 "#333343")
+ '(main-line-color1 "#222232" t)
+ '(main-line-color2 "#333343" t)
  '(message-kill-buffer-on-exit t)
  '(package-archives
    (quote
@@ -30,9 +30,9 @@
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
- '(powerline-color1 "#222232")
- '(powerline-color2 "#333343")
+    (flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
+ '(powerline-color1 "#222232" t)
+ '(powerline-color2 "#333343" t)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
  '(scroll-bar-mode nil)
  '(speedbar-show-unknown-files t)
@@ -40,7 +40,7 @@
  '(speedbar-use-images nil)
  '(sr-speedbar-auto-refresh nil)
  '(sr-speedbar-right-side t)
- '(sublimity-mode t))
+ '(sublimity-mode t t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

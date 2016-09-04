@@ -16,6 +16,7 @@
     "development/lisp"
     "development/rust"
     "communication/irc"
+    "accountancy"
     )
   "Configuration files for sets of common functionality")
 
