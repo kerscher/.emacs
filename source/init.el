@@ -12,6 +12,7 @@
   '("user-interface/navigation"
     "user-interface/theme"
     "development/common"
+    "development/latex"
     "development/haskell"
     "development/lisp"
     "development/rust"
