@@ -30,14 +30,16 @@
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
+    (auctex auctex-latexmk intero haskell-mode fold-this company-bibtex elm-mode racer yaml-mode flymake-yaml markdown-mode+ jq-mode flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
  '(powerline-color1 "#222232" t)
  '(powerline-color2 "#333343" t)
+ '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values (quote ((encoding . utf-8))))
  '(scroll-bar-mode nil)
  '(speedbar-show-unknown-files t)
  '(speedbar-update-flag nil)
  '(speedbar-use-images nil)
+ '(sql-product (quote postgres))
  '(sr-speedbar-auto-refresh nil)
  '(sr-speedbar-right-side t)
  '(sublimity-mode t t))
