@@ -35,4 +35,6 @@
 (global-set-key (kbd "<M-down>")  'mc/mark-next-like-this)
 (global-set-key (kbd "<M-up>")    'mc/mark-previous-like-this)
 
+;; Fold sections
+(require 'fold-this)
 
