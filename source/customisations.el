@@ -12,6 +12,7 @@
    (quote
     ("90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" "b825687675ea2644d1c017f246077cdd725d4326a1c11d84871308573d019f67" "cc0dbb53a10215b696d391a90de635ba1699072745bf653b53774706999208e3" "8577da1641ed4bdf255341ca92e3d0e49c9f4d574458f09ce78159690442cade" default)))
  '(debug-on-error t)
+ '(elm-indent-offset 2)
  '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
  '(erc-nick "yyyyy")
  '(global-linum-mode t)
