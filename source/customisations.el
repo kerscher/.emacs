@@ -24,14 +24,20 @@
  '(main-line-color1 "#222232" t)
  '(main-line-color2 "#333343" t)
  '(message-kill-buffer-on-exit t)
+ '(org-modules
+   (quote
+    (org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc org-velocity)))
+ '(org-velocity-always-use-bucket t)
+ '(org-velocity-bucket "/var/shortcuts/notes/notes.org.gpg")
  '(package-archives
    (quote
     (("gnu" . "http://elpa.gnu.org/packages/")
-     ("melpa" . "http://melpa.org/packages/"))))
+     ("melpa" . "http://melpa.org/packages/")
+     ("org" . "http://orgmode.org/elpa/"))))
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (less-css-mode auctex auctex-latexmk intero haskell-mode fold-this company-bibtex elm-mode racer yaml-mode flymake-yaml markdown-mode+ jq-mode flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
+    (org-plus-contrib less-css-mode auctex auctex-latexmk intero haskell-mode fold-this company-bibtex elm-mode racer yaml-mode flymake-yaml markdown-mode+ jq-mode flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
  '(powerline-color1 "#222232" t)
  '(powerline-color2 "#333343" t)
  '(reftex-plug-into-AUCTeX t)

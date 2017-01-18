@@ -20,7 +20,7 @@
 (global-set-key (kbd "C-e")     'helm-buffers-list)
 (global-set-key (kbd "C-u")     'helm-M-x)
 
-;; Sidebar
+;; SIDEBAR
 (require 'speedbar)
 (customize-set-variable 'speedbar-use-images nil)
 
@@ -29,6 +29,14 @@
 (setq speedbar-show-unknown-files t) ; show all files
 (setq speedbar-use-images nil)       ; use text for buttons
 (global-set-key (kbd "C-k") 'sr-speedbar-toggle)
+
+;; org-mode wants to hijack some keys. rectify it.
+(require 'org)
+(defun kerscher-retake-org-keybindings ()
+  (progn
+    (define-key org-mode-map (kbd "C-k") 'sr-speedbar-toggle)
+    (define-key org-mode-map (kbd "C-o") 'helm-find-files)))
+(eval-after-load "org-mode" (kerscher-retake-org-keybindings))
 
 ;; Multiple cursors.
 (require 'multiple-cursors)
