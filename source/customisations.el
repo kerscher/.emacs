@@ -27,6 +27,7 @@
  '(org-modules
    (quote
     (org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc org-velocity)))
+ '(org-support-shift-select t)
  '(org-velocity-always-use-bucket t)
  '(org-velocity-bucket "/var/shortcuts/notes/notes.org.gpg")
  '(package-archives
