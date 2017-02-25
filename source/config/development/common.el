@@ -12,4 +12,6 @@
 (setq company-tooltip-align-annotations t)
 
 ;; Syntax checking
-(require 'flycheck)
+(use-package flycheck
+             :ensure t
+             :init (global-flycheck-mode))

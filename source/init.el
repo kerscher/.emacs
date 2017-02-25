@@ -8,6 +8,10 @@
 (package-initialize)
 (customize-set-variable 'async-bytecomp-package-mode t)
 
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
 (defvar config
   '("user-interface/navigation"
     "user-interface/theme"
