@@ -4,12 +4,14 @@
 (setq-default indent-tabs-mode nil)
 
 ;; Version control
-(require 'magit)
+(use-package magit :ensure t)
 
 ;; Auto-completion
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-(setq company-tooltip-align-annotations t)
+(use-package company
+  :ensure t
+  :init
+  (add-hook 'after-init-hook 'global-company-mode)
+  (setq company-tooltip-align-annotations t))
 
 ;; Syntax checking
 (use-package flycheck

@@ -1,19 +1,19 @@
 ;; Haskell
 
-(require 'haskell-mode)
-
-(require 'intero)
-(add-hook 'haskell-mode-hook 'intero-mode)
-
-;; Speedbar support
-(speedbar-add-supported-extension ".hs")
-
-(eval-after-load "which-func"
-  '(add-to-list 'which-func-modes 'haskell-mode))
-
-;; Compile with "C-c C-c"
-(eval-after-load "haskell-mode"
-  '(define-key haskell-mode-map (kbd "C-c C-c") 'haskell-compile))
-(eval-after-load "haskell-cabal"
-  '(define-key haskell-cabal-mode-map (kbd "C-c C-c") 'haskell-compile))
-(setq haskell-compile-cabal-build-command "stack build")
+(use-package haskell-mode
+  :ensure t
+  :bind (:map haskell-mode
+         ("C-c C-c" . haskell-compile)
+         :map haskell-cabal-mode
+         ("C-c C-c" . haskell-compile))
+  :init
+  (setq haskell-compile-cabal-build-command "stack build")
+  (speedbar-add-supported-extension ".hs")
+  :config
+  (use-package intero
+    :ensure t
+    :init
+    (require 'intero)
+    (add-hook 'haskell-mode-hook 'intero-mode))
+  (eval-after-load "which-func"
+  '(add-to-list 'which-func-modes 'haskell-mode)))

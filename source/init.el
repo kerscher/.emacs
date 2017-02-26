@@ -24,7 +24,7 @@
     "communication/irc"
     "accountancy"
     )
-  "Configuration files for sets of common functionality")
+  "Configuration files for sets of common functionality.")
 
 (mapcar (lambda (c)
           (load (concat (file-name-directory load-file-name)

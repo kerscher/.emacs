@@ -46,8 +46,11 @@
 (set-face-attribute 'helm-visible-mark nil            :foreground "chartreuse")
 
 ;; Colour theme
-(require 'purple-haze-theme)
-(enable-theme 'purple-haze)
+(use-package purple-haze-theme
+  :ensure t
+  :init
+  (require 'purple-haze-theme)
+  (enable-theme 'purple-haze))
 
 (customize-set-variable 'main-line-color1 "#222232")
 (customize-set-variable 'main-line-color2 "#333343")
@@ -64,10 +67,8 @@
   "#ccaa8f"
   "#f6f3e8"])
 
-;; Org-mode that you can present without shame
-(require 'org-bullets)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-
 ;; Colour nested delimiters differently
-(require 'rainbow-delimiters)
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(use-package rainbow-delimiters
+  :ensure t
+  :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+
