@@ -20,6 +20,7 @@
     "development/haskell"
     "development/lisp"
     "development/rust"
+    "development/go"
     "communication/irc"
     "accountancy"
     )
