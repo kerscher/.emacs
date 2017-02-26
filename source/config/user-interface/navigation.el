@@ -44,6 +44,7 @@
               ("C-k" . sr-speedbar-toggle)
               ("C-o" . helm-find-files))
   :config
+  (use-package org-beautify-theme :ensure t)
   (use-package org-bullets
     :ensure t
     :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))))

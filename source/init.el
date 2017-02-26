@@ -16,6 +16,7 @@
   '("user-interface/navigation"
     "user-interface/theme"
     "development/common"
+    "development/configuration-formats"
     "development/latex"
     "development/haskell"
     "development/lisp"
