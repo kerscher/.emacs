@@ -22,7 +22,7 @@
     "development/rust"
     "development/go"
     "communication/irc"
-    "accountancy"
+    ;"accountancy"
     )
   "Configuration files for sets of common functionality.")
 
@@ -33,7 +33,6 @@
                         ".el")))
         config)
 
-
 ;; Built-in customisations path
 (let ((custom-file-location
       (concat (file-name-directory load-file-name)
@@ -41,7 +40,6 @@
   (progn
     (setq custom-file custom-file-location)
     (load custom-file-location)))
-
 
 ;; Start at scratch buffer
 (customize-set-variable 'initial-buffer-choice t)
