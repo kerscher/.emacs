@@ -1,0 +1,12 @@
+[Unit]
+Description=Emacs: daemon for the extensible, self-documenting text editor
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/emacs --chdir /var/shortcuts --daemon
+ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
+Restart=always
+TimeoutStartSec=0
+
+[Install]
+WantedBy=default.target
