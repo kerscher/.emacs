@@ -49,13 +49,6 @@
     :ensure t
     :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))))
 
-;; (require 'org)
-;; (defun kerscher-retake-org-keybindings ()
-;;   (progn
-;;     (define-key org-mode-map (kbd "C-k") 'sr-speedbar-toggle)
-;;     (define-key org-mode-map (kbd "C-o") 'helm-find-files)))
-;; (eval-after-load "org-mode" (kerscher-retake-org-keybindings))
-
 ;; Multiple cursors.
 (use-package multiple-cursors
   :ensure t
