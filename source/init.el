@@ -16,12 +16,11 @@
   '("user-interface/navigation"
     "user-interface/theme"
     "development/common"
-    "development/configuration-formats"
     "development/latex"
     "development/haskell"
     "development/lisp"
     "development/rust"
-    "development/go"
+    "development/python"
     "communication/irc"
     ;"accountancy"
     )
