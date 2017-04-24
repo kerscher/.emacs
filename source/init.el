@@ -20,6 +20,7 @@
     "development/site-reliability-engineering"
     "development/haskell"
     "development/python"
+    "development/go"
     "development/lisp"
     "development/rust"
     "communication/irc"
