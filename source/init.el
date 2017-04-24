@@ -17,10 +17,11 @@
     "user-interface/theme"
     "development/common"
     "development/latex"
+    "development/site-reliability-engineering"
     "development/haskell"
+    "development/python"
     "development/lisp"
     "development/rust"
-    "development/python"
     "communication/irc"
     ;"accountancy"
     )
