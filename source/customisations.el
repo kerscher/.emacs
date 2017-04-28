@@ -20,6 +20,7 @@
  '(haskell-hoogle-command "/home/yghor/.local/bin/hoogle")
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
+ '(js-indent-level 2)
  '(line-number-mode nil)
  '(main-line-color1 "#222232" t)
  '(main-line-color2 "#333343" t)
@@ -38,7 +39,7 @@
  '(package-enable-at-startup nil)
  '(package-selected-packages
    (quote
-    (go-errcheck company-go go-eldoc go-mode vcl-mode ess mustache mustache-mode restclient restclient-helm org-plus-contrib less-css-mode auctex auctex-latexmk intero haskell-mode fold-this company-bibtex elm-mode racer yaml-mode flymake-yaml markdown-mode+ jq-mode flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
+    (systemd ansible-doc ansible dockerfile-mode terraform-mode hcl-mode go-errcheck company-go go-eldoc go-mode vcl-mode ess mustache mustache-mode restclient restclient-helm org-plus-contrib less-css-mode auctex auctex-latexmk intero haskell-mode fold-this company-bibtex elm-mode racer yaml-mode flymake-yaml markdown-mode+ jq-mode flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
  '(powerline-color1 "#222232" t)
  '(powerline-color2 "#333343" t)
  '(reftex-plug-into-AUCTeX t)
@@ -48,7 +49,7 @@
  '(speedbar-update-flag nil)
  '(speedbar-use-images nil)
  '(sql-product (quote postgres))
- '(sr-speedbar-auto-refresh nil t)
+ '(sr-speedbar-auto-refresh nil)
  '(sr-speedbar-right-side t)
  '(sublimity-mode t t))
 
