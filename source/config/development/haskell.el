@@ -2,10 +2,10 @@
 
 (use-package haskell-mode
   :ensure t
-  ;; :bind (:map haskell-mode
-  ;;        ("C-c C-c" . haskell-compile)
-  ;;        :map haskell-cabal-mode
-  ;;        ("C-c C-c" . haskell-compile))
+  :bind (:map haskell-mode-map
+         ("C-c C-c" . haskell-compile)
+         :map haskell-cabal-mode-map
+         ("C-c C-c" . haskell-compile))
   :init
   (setq haskell-compile-cabal-build-command "stack build")
   (speedbar-add-supported-extension ".hs")
