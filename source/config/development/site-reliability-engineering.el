@@ -1,5 +1,7 @@
 ;; SRE
 
+(use-package systemd :ensure t)
+
 (use-package hcl-mode :ensure t)
 
 (use-package terraform-mode
