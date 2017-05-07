@@ -3,6 +3,10 @@
 ;; Soft tabs.
 (setq-default indent-tabs-mode nil)
 
+;; Match brackets
+(show-paren-mode 1)
+(electric-pair-mode 1)
+
 ;; Version control
 (use-package magit :ensure t)
 

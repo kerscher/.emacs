@@ -1,5 +1,7 @@
 ;; Navigation
 
+(use-package info+ :ensure t)
+
 ;; Window and buffer manipulation
 (global-set-key (kbd "M-t") 'kill-buffer-and-window)
 (global-set-key (kbd "M-n") 'next-buffer)
@@ -55,5 +57,29 @@
   :bind (("<M-down>" . mc/mark-next-like-this)
          ("<M-up>"   . mc/mark-previous-like-this)))
 
-;; Fold sections
+;; Fold sections.
 (use-package fold-this :ensure t)
+
+;; Move to parts of each buffer by clicking. Also looks great.
+(use-package nyan-mode
+  :ensure t
+  :init
+  (nyan-mode 1))
+
+;; Screensaver
+(use-package zone-nyan
+  :ensure t
+  :init
+  (require 'zone)
+  (setq zone-programs [zone-nyan])
+  (zone-when-idle 60))
+
+;; Better modeline
+(use-package spaceline
+  :ensure t
+  :init
+  (require 'spaceline-config)
+  (spaceline-emacs-theme)
+  (spaceline-helm-mode 1)
+  (spaceline-info-mode 1)
+  (setq-default powerline-height 24))
