@@ -61,17 +61,29 @@
 (use-package fold-this :ensure t)
 
 ;; Move to parts of each buffer by clicking. Also looks great.
-(use-package nyan-mode
-  :ensure t
-  :init
-  (nyan-mode 1))
+;; (use-package nyan-mode
+;;   :ensure t
+;;   :init
+;;   (nyan-mode 1))
 
-;; Better modeline
+;; Better modeline.
 (use-package spaceline
   :ensure t
   :init
+  (defface spaceline-highlight-face-sober
+    '((t (:background "#171717"
+          :foreground "#7A7BAE"
+          :inherit    'mode-line)))
+    "Toned down highlight face for Spaceline"
+    :group 'spaceline)
+  (defun spaceline-highlight-face-sober-func ()
+    'spaceline-highlight-face-sober)
   (require 'spaceline-config)
   (spaceline-emacs-theme)
   (spaceline-helm-mode 1)
   (spaceline-info-mode 1)
-  (setq-default powerline-height 24))
+  (setq-default powerline-height 24
+                spaceline-minor-modes-separator " "
+                spaceline-highlight-face-func 'spaceline-highlight-face-sober-func)
+  (set-face-attribute 'powerline-active2 nil :background "black")
+  (set-face-attribute 'powerline-inactive2 nil :background "black"))
