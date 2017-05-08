@@ -66,14 +66,6 @@
   :init
   (nyan-mode 1))
 
-;; Screensaver
-(use-package zone-nyan
-  :ensure t
-  :init
-  (require 'zone)
-  (setq zone-programs [zone-nyan])
-  (zone-when-idle 60))
-
 ;; Better modeline
 (use-package spaceline
   :ensure t
