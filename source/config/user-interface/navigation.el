@@ -1,11 +1,28 @@
 ;; Navigation
 
-(use-package info+ :ensure t)
+;; Better window movement
+(use-package switch-window
+  :ensure t
+  :bind (:map global-map
+              ("C-x o" . switch-window)
+              ("C-x C-1" . switch-window-then-maximize)
+              ("C-x C-2" . switch-window-then-split-below)
+              ("C-x C-3" . switch-window-then-split-right)
+              ("C-x C-0" . switch-window-then-delete)))
 
-;; Window and buffer manipulation
+;; Buffer manipulation
 (global-set-key (kbd "M-t") 'kill-buffer-and-window)
 (global-set-key (kbd "M-n") 'next-buffer)
 (global-set-key (kbd "M-h") 'previous-buffer)
+
+;; Jump to point
+(use-package ace-jump-mode
+  :ensure t
+  :bind (:map global-map
+              ("C-c SPC" . ace-jump-mode)
+              ("C-x SPC" . ace-jump-mode-pop-mark))
+  :config
+  (ace-jump-mode-enable-mark-sync))
 
 ;; Find things anywhere — fuzzy matching.
 (use-package helm
@@ -87,3 +104,5 @@
                 spaceline-highlight-face-func 'spaceline-highlight-face-sober-func)
   (set-face-attribute 'powerline-active2 nil :background "black")
   (set-face-attribute 'powerline-inactive2 nil :background "black"))
+
+(use-package info+ :ensure t)
