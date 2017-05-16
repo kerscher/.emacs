@@ -30,12 +30,12 @@
     )
   "Configuration files for sets of common functionality.")
 
-(mapcar (lambda (c)
-          (load (concat (file-name-directory load-file-name)
-                        "config/"
-                        c
-                        ".el")))
-        config)
+(mapc (lambda (c)
+        (load (concat (file-name-directory load-file-name)
+                      "config/"
+                      c
+                      ".el")))
+      config)
 
 ;; Built-in customisations path
 (let ((custom-file-location
