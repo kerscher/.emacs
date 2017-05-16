@@ -24,7 +24,8 @@
     "development/lisp"
     "development/rust"
     "communication/irc"
-    "communication/email"
+    "agenda"
+    ;"communication/email"
     ;"accountancy"
     )
   "Configuration files for sets of common functionality.")

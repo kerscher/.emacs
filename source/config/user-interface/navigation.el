@@ -56,18 +56,6 @@
   (setq speedbar-show-unknown-files t)
   (setq speedbar-use-images nil))
 
-;; org-mode wants to hijack some keys. rectify it.
-(use-package org
-  :ensure t
-  :bind (:map org-mode-map
-              ("C-k" . sr-speedbar-toggle)
-              ("C-o" . helm-find-files))
-  :config
-  (use-package org-beautify-theme :ensure t)
-  (use-package org-bullets
-    :ensure t
-    :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))))
-
 ;; Multiple cursors.
 (use-package multiple-cursors
   :ensure t
