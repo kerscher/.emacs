@@ -5,7 +5,9 @@
   :ensure t
   :bind (:map org-mode-map
               ("C-k" . sr-speedbar-toggle)
-              ("C-o" . helm-find-files)
+              ("C-e" . helm-buffers-list)
+              ("C-c SPC" . ace-jump-mode)
+              ("C-x SPC" . ace-jump-mode-pop-mark)
          :map global-map
               ("C-c c" . org-capture)
               ("C-c a" . org-agenda))
