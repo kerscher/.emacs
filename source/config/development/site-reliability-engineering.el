@@ -17,6 +17,13 @@
   (use-package ansible-doc
     :ensure t
     :init
-    (add-hook 'yaml-mode-hook #'ansible-doc-mode)))
+    (add-hook 'yaml-mode-hook #'ansible-doc-mode))
+  (use-package company-ansible
+    :ensure t
+    :init
+    (add-to-list 'company-backends 'company-ansible)))
 
 (use-package nginx-mode :ensure t)
+
+(use-package vagrant :ensure t)
+(use-package vagrant-tramp :ensure t)
