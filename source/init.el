@@ -25,7 +25,7 @@
     "development/rust"
     "communication/irc"
     "agenda"
-    ;"communication/email"
+    "communication/email"
     ;"accountancy"
     )
   "Configuration files for sets of common functionality.")
