@@ -21,6 +21,7 @@
           mu4e-drafts-folder     "/[Google Mail]/.Drafts"
           mu4e-trash-folder      "/[Google Mail]/.Bin"
           mu4e-refile-folder     "/[Google Mail]/.All Mail"
-          mu4e-html2text-command "w3m -T text/html")))
+          mu4e-html2text-command "w3m -T text/html"
+          mu4e-view-show-images  t)))
 
 
