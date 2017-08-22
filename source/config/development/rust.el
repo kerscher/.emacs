@@ -1,21 +1,30 @@
 ;; Rust
 
-;; IDE support binary
+;; TOML for configuration files
+(use-package toml-mode :ensure t)
+
+;; IDE support
 (use-package rust-mode
   :ensure t
   :init
+  (use-package cargo :ensure t)
   (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
+  (add-hook 'rust-mode-hook 'cargo-minor-mode)
+  (add-hook 'toml-mode-hook 'cargo-minor-mode)
   :config
+  (setq rust-format-on-save t)
   (use-package racer
     :ensure t
     :init
-    (setq racer-cmd "/home/yghor/.cargo/bin/racer")
-    (setq racer-rust-src-path "/home/yghor/development/remote/rust/src/")
     (add-hook 'rust-mode-hook  #'racer-mode)
     (add-hook 'racer-mode-hook #'eldoc-mode)
     (add-hook 'racer-mode-hook #'company-mode))
-  (add-hook 'rust-mode-hook
+  (use-package flycheck-rust
+    :ensure t
+    :init
+    (add-hook 'rust-mode-hook
             '(lambda ()
                (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
-               (local-set-key (kbd "TAB") #'company-indent-or-complete-common))))
+               (local-set-key (kbd "TAB") #'company-indent-or-complete-common)))))
+  
  
