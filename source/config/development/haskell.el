@@ -10,6 +10,7 @@
   (setq haskell-compile-cabal-build-command "stack build")
   (speedbar-add-supported-extension ".hs")
   :config
+  (use-package hasky-stack :ensure t)
   (use-package intero
     :ensure t
     :init
