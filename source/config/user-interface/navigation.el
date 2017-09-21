@@ -81,6 +81,15 @@
 ;;   :init
 ;;   (nyan-mode 1))
 
+;; Display next key combination
+(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode)
+  :config
+  (setq which-key-idle-delay 0.01))
+
+
 ;; Better modeline.
 (use-package spaceline
   :ensure t
