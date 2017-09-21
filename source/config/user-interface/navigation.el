@@ -43,6 +43,16 @@
   :config
   (use-package helm-ls-git :ensure t))
 
+;; Search with `ripgrep` and edit directly from results
+
+(use-package wgrep
+  :ensure t
+  :init
+  (use-package rg
+    :ensure t
+    :bind (:map global-map
+                ("M-S" . rg))))
+
 ;; SIDEBAR
 (use-package speedbar
   :ensure t
