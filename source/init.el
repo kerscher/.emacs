@@ -12,6 +12,11 @@
   (package-refresh-contents)
   (package-install 'use-package))
 
+(use-package exec-path-from-shell
+  :ensure t
+  :init
+  (exec-path-from-shell-initialize))
+
 (defvar config
   '("user-interface/navigation"
     "user-interface/theme"
@@ -26,6 +31,7 @@
     "communication/irc"
     "agenda"
     "communication/email"
+    "credentials"
     ;"accountancy"
     )
   "Configuration files for sets of common functionality.")
