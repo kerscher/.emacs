@@ -51,7 +51,7 @@
   (use-package rg
     :ensure t
     :bind (:map global-map
-                ("M-S" . rg))))
+                ("M-S" . rg-project))))
 
 ;; SIDEBAR
 (use-package speedbar
