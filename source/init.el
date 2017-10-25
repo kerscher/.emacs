@@ -29,8 +29,9 @@
     "development/lisp"
     "development/rust"
     "communication/irc"
-    "agenda"
     "communication/email"
+    "communication/presentations"
+    "agenda"
     "credentials"
     ;"accountancy"
     )
