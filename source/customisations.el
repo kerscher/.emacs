@@ -43,7 +43,13 @@
  '(powerline-color1 "#222232" t)
  '(powerline-color2 "#333343" t)
  '(reftex-plug-into-AUCTeX t)
- '(safe-local-variable-values (quote ((encoding . utf-8))))
+ '(safe-local-variable-values
+   (quote
+    ((haskell-process-use-ghci . t)
+     (haskell-process-type . cabal-repl)
+     (hindent-style . "johan-tibell")
+     (haskell-indent-spaces . 4)
+     (encoding . utf-8))))
  '(scroll-bar-mode nil)
  '(speedbar-show-unknown-files t)
  '(speedbar-update-flag nil)
