@@ -12,10 +12,6 @@
               ("C-c c" . org-capture)
               ("C-c a" . org-agenda))
   :config
-  (use-package org-beautify-theme :ensure t)
-  (use-package org-bullets
-    :ensure t
-    :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1))))
   (setq org-default-notes-file "/var/shortcuts/notes/journal.org.gpg")
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline "/var/shortcuts/notes/todos.org.gpg" "TODOs")
@@ -31,3 +27,10 @@
                            "/var/shortcuts/notes/phonecalls.org.gpg"
                            "/var/shortcuts/notes/todos.org.gpg"
                            "/var/shortcuts/notes/meetings.org.gpg")))
+
+(defun kerscher/org-pretty ()
+  "Make org-mode prettier. Needs to be separate as it breaks emacs-daemon startup."
+  (interactive)
+  (use-package org-bullets
+    :ensure t
+    :init (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))))
