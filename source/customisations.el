@@ -10,11 +10,13 @@
  '(custom-enabled-themes (quote (purple-haze)))
  '(custom-safe-themes
    (quote
-    ("90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" "b825687675ea2644d1c017f246077cdd725d4326a1c11d84871308573d019f67" "cc0dbb53a10215b696d391a90de635ba1699072745bf653b53774706999208e3" "8577da1641ed4bdf255341ca92e3d0e49c9f4d574458f09ce78159690442cade" default)))
+    ("2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" "b825687675ea2644d1c017f246077cdd725d4326a1c11d84871308573d019f67" "cc0dbb53a10215b696d391a90de635ba1699072745bf653b53774706999208e3" "8577da1641ed4bdf255341ca92e3d0e49c9f4d574458f09ce78159690442cade" default)))
  '(debug-on-error t)
  '(elm-indent-offset 2)
  '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
  '(erc-nick "yyyyy")
+ '(fci-rule-color "#6a737d")
+ '(fringe-mode 6 nil (fringe))
  '(global-linum-mode t)
  '(haskell-font-lock-symbols t)
  '(haskell-hoogle-command "/home/yghor/.local/bin/hoogle")
@@ -22,9 +24,13 @@
  '(initial-buffer-choice t)
  '(js-indent-level 2)
  '(line-number-mode nil)
+ '(linum-format " %7d ")
  '(main-line-color1 "#222232" t)
  '(main-line-color2 "#333343" t)
  '(message-kill-buffer-on-exit t)
+ '(nrepl-message-colors
+   (quote
+    ("#032f62" "#6a737d" "#d73a49" "#6a737d" "#005cc5" "#6f42c1" "#d73a49" "#6a737d")))
  '(org-modules
    (quote
     (org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc org-velocity)))
@@ -40,6 +46,7 @@
  '(package-selected-packages
    (quote
     (epresent keychain-environment exec-path-from-shell rg wgrep which-key hasky-stack nix-mode company-ansible vagrant-tramp vagrant jinja2-mode switch-window god-mode ace-jump-mode zone-nyan nyan-mode info+ spaceline helm-mu systemd ansible-doc ansible dockerfile-mode terraform-mode hcl-mode go-errcheck company-go go-eldoc go-mode vcl-mode ess mustache mustache-mode restclient restclient-helm org-plus-contrib less-css-mode auctex auctex-latexmk intero haskell-mode fold-this company-bibtex elm-mode racer yaml-mode flymake-yaml markdown-mode+ jq-mode flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
+ '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
  '(powerline-color1 "#222232" t)
  '(powerline-color2 "#333343" t)
  '(reftex-plug-into-AUCTeX t)
@@ -58,7 +65,29 @@
  '(sr-speedbar-auto-refresh nil)
  '(sr-speedbar-right-side t)
  '(sublimity-mode t t)
- '(tramp-syntax (quote default) nil (tramp)))
+ '(tramp-syntax (quote default) nil (tramp))
+ '(vc-annotate-background "#3390ff")
+ '(vc-annotate-color-map
+   (quote
+    ((20 . "#6a737d")
+     (40 . "#032f62")
+     (60 . "#6a737d")
+     (80 . "#6a737d")
+     (100 . "#6a737d")
+     (120 . "#d73a49")
+     (140 . "#6a737d")
+     (160 . "#6a737d")
+     (180 . "#6a737d")
+     (200 . "#6a737d")
+     (220 . "#22863a")
+     (240 . "#005cc5")
+     (260 . "#6f42c1")
+     (280 . "#6a737d")
+     (300 . "#005cc5")
+     (320 . "#6a737d")
+     (340 . "#d73a49")
+     (360 . "#6a737d"))))
+ '(vc-annotate-very-old-color "#6a737d"))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
