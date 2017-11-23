@@ -33,6 +33,7 @@
     "communication/presentations"
     "agenda"
     "credentials"
+    "backups"
     ;"accountancy"
     )
   "Configuration files for sets of common functionality.")
