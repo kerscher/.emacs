@@ -62,7 +62,7 @@
  '(speedbar-update-flag nil)
  '(speedbar-use-images nil)
  '(sql-product (quote postgres))
- '(sr-speedbar-auto-refresh nil)
+ '(sr-speedbar-auto-refresh nil t)
  '(sr-speedbar-right-side t)
  '(sublimity-mode t t)
  '(tramp-syntax (quote default) nil (tramp))
