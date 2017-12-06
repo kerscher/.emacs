@@ -23,8 +23,9 @@
 
 ;; Syntax checking
 (use-package flycheck
-             :ensure t
-             :init (global-flycheck-mode))
+  :ensure t
+  :init (global-flycheck-mode))
+
 ;; Snippets
 (use-package yasnippet
   :ensure t
