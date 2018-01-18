@@ -20,6 +20,8 @@
  '(global-linum-mode t)
  '(haskell-font-lock-symbols t)
  '(haskell-hoogle-command "/home/yghor/.local/bin/hoogle")
+ '(haskell-mode-stylish-haskell-path "hindent")
+ '(haskell-stylish-on-save t)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
  '(js-indent-level 2)

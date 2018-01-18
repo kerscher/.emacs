@@ -15,6 +15,12 @@
     :ensure t
     :init
     (require 'intero)
-    (add-hook 'haskell-mode-hook 'intero-mode))
+    (add-hook 'haskell-mode-hook 'intero-mode)
+    :config
+    (defun kerscher/hpack-intero-restart ()
+      (interactive)
+      (shell-command
+       (format (concat "hpack " (intero-project-root))))
+      (intero-restart)))
   (eval-after-load "which-func"
   '(add-to-list 'which-func-modes 'haskell-mode)))
