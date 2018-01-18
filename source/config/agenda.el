@@ -1,3 +1,4 @@
+
 ;; Agenda functionality
 
 ;; org-mode wants to hijack some keys. rectify it.
