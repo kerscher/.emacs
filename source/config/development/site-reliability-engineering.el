@@ -7,10 +7,6 @@
 (use-package terraform-mode
   :ensure t
   :init
-  (use-package company-terraform
-    :ensure t
-    :init
-    (company-terraform-init))
   (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 
 (use-package dockerfile-mode :ensure t)
