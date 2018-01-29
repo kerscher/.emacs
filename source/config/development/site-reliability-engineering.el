@@ -11,6 +11,14 @@
 
 (use-package dockerfile-mode :ensure t)
 
+(use-package flycheck-yamllint
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (eval-after-load 'flycheck
+      '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))))
+
 (use-package ansible
   :ensure t
   :config
