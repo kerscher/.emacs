@@ -7,13 +7,12 @@
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(async-bytecomp-package-mode t)
  '(company-ghc-show-info t)
- '(custom-enabled-themes (quote (purple-haze)))
+ '(custom-enabled-themes '(purple-haze))
  '(custom-safe-themes
-   (quote
-    ("2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" "b825687675ea2644d1c017f246077cdd725d4326a1c11d84871308573d019f67" "cc0dbb53a10215b696d391a90de635ba1699072745bf653b53774706999208e3" "8577da1641ed4bdf255341ca92e3d0e49c9f4d574458f09ce78159690442cade" default)))
+   '("2cfc1cab46c0f5bae8017d3603ea1197be4f4fff8b9750d026d19f0b9e606fae" "90e4b4a339776e635a78d398118cb782c87810cb384f1d1223da82b612338046" "b825687675ea2644d1c017f246077cdd725d4326a1c11d84871308573d019f67" "cc0dbb53a10215b696d391a90de635ba1699072745bf653b53774706999208e3" "8577da1641ed4bdf255341ca92e3d0e49c9f4d574458f09ce78159690442cade" default))
  '(debug-on-error t)
  '(elm-indent-offset 2)
- '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
+ '(erc-hide-list '("JOIN" "PART" "QUIT"))
  '(erc-nick "yyyyy")
  '(fci-rule-color "#6a737d")
  '(fringe-mode 6 nil (fringe))
@@ -31,47 +30,41 @@
  '(main-line-color2 "#333343" t)
  '(message-kill-buffer-on-exit t)
  '(nrepl-message-colors
-   (quote
-    ("#032f62" "#6a737d" "#d73a49" "#6a737d" "#005cc5" "#6f42c1" "#d73a49" "#6a737d")))
+   '("#032f62" "#6a737d" "#d73a49" "#6a737d" "#005cc5" "#6f42c1" "#d73a49" "#6a737d"))
  '(org-modules
-   (quote
-    (org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc org-velocity)))
+   '(org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc org-velocity))
  '(org-support-shift-select t)
  '(org-velocity-always-use-bucket t)
  '(org-velocity-bucket "/var/shortcuts/notes/notes.org.gpg")
  '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
+   '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")
-     ("org" . "http://orgmode.org/elpa/"))))
+     ("org" . "http://orgmode.org/elpa/")))
  '(package-enable-at-startup nil)
  '(package-selected-packages
-   (quote
-    (rebox2 0blayout yasnippet epresent keychain-environment exec-path-from-shell rg wgrep which-key hasky-stack nix-mode company-ansible vagrant-tramp vagrant jinja2-mode switch-window god-mode ace-jump-mode zone-nyan nyan-mode info+ spaceline helm-mu systemd ansible-doc ansible dockerfile-mode terraform-mode hcl-mode go-errcheck company-go go-eldoc go-mode vcl-mode ess mustache mustache-mode restclient restclient-helm org-plus-contrib less-css-mode auctex auctex-latexmk intero haskell-mode fold-this company-bibtex elm-mode racer yaml-mode flymake-yaml markdown-mode+ jq-mode flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters)))
- '(pdf-view-midnight-colors (quote ("#6a737d" . "#fffbdd")))
+   '(flycheck-yamllint rebox2 0blayout yasnippet epresent keychain-environment exec-path-from-shell rg wgrep which-key hasky-stack nix-mode company-ansible vagrant-tramp vagrant jinja2-mode switch-window god-mode ace-jump-mode zone-nyan nyan-mode info+ spaceline helm-mu systemd ansible-doc ansible dockerfile-mode terraform-mode hcl-mode go-errcheck company-go go-eldoc go-mode vcl-mode ess mustache mustache-mode restclient restclient-helm org-plus-contrib less-css-mode auctex auctex-latexmk intero haskell-mode fold-this company-bibtex elm-mode racer yaml-mode flymake-yaml markdown-mode+ jq-mode flycheck-ledger ledger-mode org-present purple-haze-theme minimal-theme markdown-mode notmuch bbdb bbdb-vcard company-cabal company-math org org-beautify-theme company company-ghc org-bullets nginx-mode sr-speedbar dracula-theme magit multiple-cursors helm-ls-git ac-helm helm helm-bibtex helm-hayoo helm-hoogle helm-unicode paredit rainbow-delimiters))
+ '(pdf-view-midnight-colors '("#6a737d" . "#fffbdd"))
  '(powerline-color1 "#222232" t)
  '(powerline-color2 "#333343" t)
  '(reftex-plug-into-AUCTeX t)
  '(safe-local-variable-values
-   (quote
-    ((haskell-process-use-ghci . t)
+   '((haskell-process-use-ghci . t)
      (haskell-process-type . cabal-repl)
      (hindent-style . "johan-tibell")
      (haskell-indent-spaces . 4)
-     (encoding . utf-8))))
+     (encoding . utf-8)))
  '(scroll-bar-mode nil)
  '(speedbar-show-unknown-files t)
  '(speedbar-update-flag nil)
  '(speedbar-use-images nil)
- '(sql-product (quote postgres))
+ '(sql-product 'postgres)
  '(sr-speedbar-auto-refresh nil)
  '(sr-speedbar-right-side t)
  '(sublimity-mode t t)
- '(tramp-syntax (quote default) nil (tramp))
+ '(tramp-syntax 'default nil (tramp))
  '(vc-annotate-background "#3390ff")
  '(vc-annotate-color-map
-   (quote
-    ((20 . "#6a737d")
+   '((20 . "#6a737d")
      (40 . "#032f62")
      (60 . "#6a737d")
      (80 . "#6a737d")
@@ -88,7 +81,7 @@
      (300 . "#005cc5")
      (320 . "#6a737d")
      (340 . "#d73a49")
-     (360 . "#6a737d"))))
+     (360 . "#6a737d")))
  '(vc-annotate-very-old-color "#6a737d"))
 
 (custom-set-faces
