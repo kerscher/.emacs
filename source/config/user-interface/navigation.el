@@ -87,7 +87,7 @@
   :init
   (which-key-mode)
   :config
-  (setq which-key-idle-delay 0.01))
+  (setq which-key-idle-delay 0.001))
 
 
 ;; Better modeline.
