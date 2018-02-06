@@ -4,7 +4,7 @@ Description=Emacs: daemon for the extensible, self-documenting text editor
 [Service]
 Type=forking
 EnvironmentFile=/run/emacs/environment
-ExecStart=/usr/bin/emacs --chdir /var/shortcuts --daemon
+ExecStart=/usr/bin/emacs --chdir /y --daemon
 ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
 Restart=always
 TimeoutStartSec=0
