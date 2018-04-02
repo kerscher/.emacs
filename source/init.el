@@ -48,7 +48,7 @@
 ;; Built-in customisations path
 (let ((custom-file-location
       (concat (file-name-directory load-file-name)
-              "customisations.el")))
+              "customizations.el")))
   (progn
     (setq custom-file custom-file-location)
     (load custom-file-location)))
