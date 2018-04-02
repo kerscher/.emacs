@@ -17,6 +17,8 @@
   (setq org-capture-templates
         '(("t" "Todo" entry (file+headline "/var/shortcuts/notes/todos.org.gpg" "TODOs")
            "* TODO %?\n  %i\n  %a" :kill-buffer t) 
+          ("i" "Idea" entry (file+datetree "/var/shortcuts/notes/ideas.org.gpg")
+           "* %?\n  %U\n  %i" :prepend t :kill-buffer t)
           ("j" "Journal" entry (file+datetree "/var/shortcuts/notes/journal.org.gpg")
            "* %U\n  %?%i\n  %a" :prepend t :kill-buffer t)
           ("p" "Phone call" entry (file+datetree "/var/shortcuts/notes/phonecalls.org.gpg")
@@ -24,6 +26,7 @@
           ("m" "Meeting" entry (file+datetree+prompt "/var/shortcuts/notes/meetings.org.gpg")
            "* %^{NAME} @ %^{COMPANY} %T\n  :PROPERTIES:\n  :NAME: %\\1\n  :COMPANY: %\\2\n  :LOCATION: %^{LOCATION|}\n  :SUBJECT: %^{SUBJECT|}\n  :END:\n  %?")))
   (setq org-agenda-files '("/var/shortcuts/notes/notes.org.gpg"
+                           "/var/shortcuts/notes/ideas.org.gpg"
                            "/var/shortcuts/notes/journal.org.gpg"
                            "/var/shortcuts/notes/phonecalls.org.gpg"
                            "/var/shortcuts/notes/todos.org.gpg"
