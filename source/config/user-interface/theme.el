@@ -31,21 +31,18 @@
                     :family "PragmataPro")
 
 ;; Colour theme
-(use-package eink-theme
-  :ensure t
-  :init
-  (load-theme 'eink t))
+(add-to-list 'load-path "~/.emacs.d/themes")
+(require 'eltbus-theme)
 
-;; Better modeline.
-(use-package spaceline
-  :ensure t
-  :init
-  (require 'spaceline-config)
-  (spaceline-emacs-theme)
-  (spaceline-helm-mode 1)
-  (spaceline-info-mode 1)
-  (setq-default powerline-height 24
-                spaceline-minor-modes-separator " "))
+(customize-set-variable 'ansi-color-names-vector
+ ["#242424"
+  "#e5786d"
+  "#95e454"
+  "#cae682"
+  "#8ac6f2"
+  "#333366"
+  "#ccaa8f"
+"#f6f3e8"])
 
 ;; Colour nested delimiters differently
 (use-package rainbow-delimiters
