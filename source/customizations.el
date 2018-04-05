@@ -88,6 +88,7 @@
  '(helm-separator ((t (:foreground "gray" :underline nil :weight normal))))
  '(helm-source-header ((t (:foreground "gainsboro" :height 1.3))))
  '(helm-visible-mark ((t (:foreground "white"))))
+ '(magit-section-heading ((t (:foreground "white smoke" :weight bold))))
  '(speedbar-button-face ((t (:foreground "dark gray" :underline nil :weight normal))))
  '(speedbar-directory-face ((t (:foreground "gray" :underline nil :weight normal))))
  '(speedbar-file-face ((t (:foreground "gainsboro" :underline nil :weight normal))))
