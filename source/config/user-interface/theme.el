@@ -30,6 +30,9 @@
                     :width 'normal
                     :family "PragmataPro")
 
+(set-face-background 'fringe "black")
+(set-face-foreground 'vertical-border "black")
+
 ;; Colour theme
 (add-to-list 'load-path "~/.emacs.d/themes")
 (require 'eltbus-theme)
