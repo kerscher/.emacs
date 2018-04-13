@@ -8,7 +8,9 @@
 (electric-pair-mode 1)
 
 ;; Version control
-(use-package magit :ensure t)
+(use-package magit
+  :ensure t
+  :bind (:map global-map ("C-i" . magit-status)))
 
 ;; Auto-completion
 (use-package company
