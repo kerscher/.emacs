@@ -34,7 +34,7 @@
     "agenda"
     "credentials"
     "backups"
-    ;"accountancy"
+    "accountancy"
     )
   "Configuration files for sets of common functionality.")
 
