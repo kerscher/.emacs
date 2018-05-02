@@ -9,6 +9,7 @@
    '("6a24250040a9777e8d2e1c2310c6e26cfa12fb11d1ecc8a8de5b9705ff0227b8" "b486c4c5f8597e0b8401bc960cc878151a335d20e052ba3c9da27f12881877a2" "39dd7106e6387e0c45dfce8ed44351078f6acd29a345d8b22e7b8e54ac25bac4" "e26e879d250140e0d4c4d5ab457c32bcb29742599bd28c1ce31301344c6f2a11" "cc0dbb53a10215b696d391a90de635ba1699072745bf653b53774706999208e3" default))
  '(erc-hide-list '("JOIN" "PART" "QUIT"))
  '(erc-nick "yyyyy")
+ '(haskell-stylish-on-save t)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
  '(message-kill-buffer-on-exit t)
