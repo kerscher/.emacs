@@ -15,7 +15,7 @@
   :config
   (setq org-default-notes-file "/y/org/agenda/journal.org.gpg")
   (setq org-capture-templates
-        '(("t" "Task" entry (file+headline "/y/org/agenda/todos.org.gpg" "Tasks")
+        '(("t" "Task" entry (file+headline "/y/org/agenda/tasks.org.gpg" "Tasks")
            "* TODO %?\n  %i\n  %a" :kill-buffer t :empty-lines 1) 
           ("i" "Idea" entry (file+headline "/y/org/agenda/ideas.org.gpg" "Ideas")
            "* %?\n  %U\n  %i" :prepend t :kill-buffer t :empty-lines 1)
