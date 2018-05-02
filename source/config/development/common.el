@@ -10,7 +10,7 @@
 ;; Version control
 (use-package magit
   :ensure t
-  :bind (:map global-map ("C-i" . magit-status)))
+  :bind (:map global-map ("C-." . magit-status)))
 
 ;; Auto-completion
 (use-package company
