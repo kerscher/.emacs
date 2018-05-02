@@ -1,6 +1,6 @@
 ;; Navigation
 
-;; Better window movement
+;; Better window movement.
 (use-package switch-window
   :ensure t
   :bind (:map global-map
@@ -15,7 +15,7 @@
 (global-set-key (kbd "M-n") 'next-buffer)
 (global-set-key (kbd "M-h") 'previous-buffer)
 
-;; Jump to point
+;; Jump to point.
 (use-package ace-jump-mode
   :ensure t
   :bind (:map global-map
@@ -43,8 +43,7 @@
   :config
   (use-package helm-ls-git :ensure t))
 
-;; Search with `ripgrep` and edit directly from results
-
+;; Search with `ripgrep` and edit directly from results.
 (use-package wgrep
   :ensure t
   :init
@@ -53,7 +52,7 @@
     :bind (:map global-map
                 ("M-S" . rg-project))))
 
-;; SIDEBAR
+;; Sidebar.
 (use-package speedbar
   :ensure t
   :init (customize-set-variable 'speedbar-use-images nil))
@@ -72,16 +71,7 @@
   :bind (("<M-down>" . mc/mark-next-like-this)
          ("<M-up>"   . mc/mark-previous-like-this)))
 
-;; Fold sections.
-(use-package fold-this :ensure t)
-
-;; Move to parts of each buffer by clicking. Also looks great.
-;; (use-package nyan-mode
-;;   :ensure t
-;;   :init
-;;   (nyan-mode 1))
-
-;; Display next key combination
+;; Display next key combination.
 (use-package which-key
   :ensure t
   :init
