@@ -19,10 +19,17 @@
              ""
              (shell-command-to-string "goenv prefix")))
     :config
+    (use-package flycheck-gometalinter
+      :ensure t
+      :config
+      (flycheck-gometalinter-setup)
+      (setq flycheck-gometalinter-concurrency 4)
+      (setq flycheck-gometalinter-fast t)
+      (setq flycheck-gometalinter-tests t)
+      (setq flycheck-gometalinter-vendor t))
     (use-package company-go :ensure t)
     (use-package go-errcheck :ensure t)
     (use-package go-eldoc
       :ensure t
       :init
       (add-hook 'go-mode-hook 'go-eldoc-setup))))
-
