@@ -78,5 +78,3 @@
   (which-key-mode)
   :config
   (setq which-key-idle-delay 0.001))
-
-(use-package info+ :ensure t)
