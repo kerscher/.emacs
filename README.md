@@ -3,7 +3,7 @@
 
 ![BSD 2-Clause license](https://img.shields.io/badge/licence-BSD%202--clause-blue.svg)
 
-![Yumm](oy-vey.png)
+![Fancy editor screenshot](editor-of-the-future.png)
 
 ## Licence
 
