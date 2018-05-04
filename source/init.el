@@ -1,5 +1,8 @@
 ;; Configuration
 
+;; Remove noise from titlebar
+(setq frame-title-format "emacs")
+
 ;; Package manager
 (load-library "url-handlers") ; Workaround for missing url-insert-buffer-contents.
 (require 'package)
