@@ -34,6 +34,7 @@
     "communication/irc"
     "communication/email"
     "communication/presentations"
+    "communication/writing"
     "agenda"
     "credentials"
     "backups"
