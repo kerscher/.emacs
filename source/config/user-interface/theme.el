@@ -17,8 +17,9 @@
 (scroll-bar-mode nil)
 
 ;; Line numbering
-(global-linum-mode t)  ; numbers on each line
-(line-number-mode nil) ; no line number on mode line
+(global-linum-mode t) ; numbers on each line
+(line-number-mode t)
+(column-number-mode t)
 
 ;; Fonts
 (set-face-attribute 'default nil
