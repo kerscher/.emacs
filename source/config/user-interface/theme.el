@@ -7,6 +7,9 @@
    (set-face-attribute face nil :weight 'normal :underline nil))
  (face-list))
 
+;; 8 characters for tabs is too much
+(setq-default tab-width 4)
+
 ;; Hide unneeded widgets
 (customize-set-variable 'inhibit-startup-screen t)
 (menu-bar-mode 0)
