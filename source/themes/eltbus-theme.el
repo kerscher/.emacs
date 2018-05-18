@@ -20,11 +20,11 @@
 	(success-like `(:background ,black :foreground ,greenish))
 	(err-like `(:background ,black :foreground ,reddish))
 	(fmt-none  `(:weight normal :slant normal :underline nil :inverse-video nil))
-	(fmt-bld `(:weight bold :slant normal :underline nil :inverse-video nil))
-	(fmt-bldi `(:weight bold :slant italic :underline nil :inverse-video nil))
+	(fmt-bld `(:weight normal :slant normal :underline nil :inverse-video nil))
+	(fmt-bldi `(:weight normal :slant italic :underline nil :inverse-video nil))
 	(fmt-und `(:weight normal : slant normal :underline t :inverse-video nil))
 	(fmt-rev `(:weight normal : slant normal :underline nil :inverse-video t))
-	(fmt-revb `(:weight bold : slant normal :underline nil :inverse-video t)))
+	(fmt-revb `(:weight normal : slant normal :underline nil :inverse-video t)))
   (custom-theme-set-faces
    'eltbus
    ;; Comments are things that are missing
