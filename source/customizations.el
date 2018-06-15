@@ -12,6 +12,7 @@
  '(haskell-stylish-on-save t)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
+ '(markdown-command "mmark")
  '(message-kill-buffer-on-exit t)
  '(nrepl-message-colors
    '("#032f62" "#6a737d" "#d73a49" "#6a737d" "#005cc5" "#6f42c1" "#d73a49" "#6a737d"))
@@ -25,7 +26,7 @@
      ("melpa" . "http://melpa.org/packages/")
      ("org" . "http://orgmode.org/elpa/")))
  '(package-selected-packages
-   '(flycheck-mmark markdown-preview-mode markdownfmt markdown-mode+ haskell-mode anaconda-mode terraform-mode hcl-mode rust-mode go-mode flycheck-gometalinter color-theme-modern late-night late-night-theme zone-nyan yasnippet which-key wgrep vagrant-tramp vagrant use-package toml-mode systemd switch-window sr-speedbar spaceline salt-mode rg restclient-helm rebox2 rainbow-delimiters racer pyenv-mode purple-haze-theme org-plus-contrib org-bullets org-beautify-theme nyan-mode nix-mode nginx-mode mustache-mode mustache multiple-cursors monokai-alt-theme markdown-mode magit less-css-mode ledger-mode keychain-environment jq-mode jinja2-mode intero info+ helm-unicode helm-pass helm-mu helm-ls-git helm-bibtex hasky-stack god-mode go-errcheck go-eldoc github-modern-theme fold-this flycheck-yamllint flycheck-rust flycheck-ledger exotica-theme exec-path-from-shell epresent elm-mode eink-theme dockerfile-mode diminish company-terraform company-quickhelp company-go company-bibtex company-ansible company-anaconda cargo basic-theme auctex-latexmk ansible-doc ansible ace-jump-mode 0blayout))
+   '(restclient flycheck-mmark markdown-preview-mode markdownfmt markdown-mode+ haskell-mode anaconda-mode terraform-mode hcl-mode rust-mode go-mode flycheck-gometalinter color-theme-modern late-night late-night-theme zone-nyan yasnippet which-key wgrep vagrant-tramp vagrant use-package toml-mode systemd switch-window sr-speedbar spaceline salt-mode rg restclient-helm rebox2 rainbow-delimiters racer pyenv-mode purple-haze-theme org-plus-contrib org-bullets org-beautify-theme nyan-mode nix-mode nginx-mode mustache-mode mustache multiple-cursors monokai-alt-theme markdown-mode magit less-css-mode ledger-mode keychain-environment jq-mode jinja2-mode intero info+ helm-unicode helm-pass helm-mu helm-ls-git helm-bibtex hasky-stack god-mode go-errcheck go-eldoc github-modern-theme fold-this flycheck-yamllint flycheck-rust flycheck-ledger exotica-theme exec-path-from-shell epresent elm-mode eink-theme dockerfile-mode diminish company-terraform company-quickhelp company-go company-bibtex company-ansible company-anaconda cargo basic-theme auctex-latexmk ansible-doc ansible ace-jump-mode 0blayout))
  '(scroll-bar-mode nil)
  '(speedbar-show-unknown-files t)
  '(speedbar-use-images nil)
