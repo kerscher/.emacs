@@ -35,8 +35,11 @@
                     :family "PragmataPro")
 
 ;; Colour theme
-(add-to-list 'load-path "~/.emacs.d/themes")
-(require 'eltbus-theme)
+(add-to-list 'custom-theme-load-path
+             (concat
+              (getenv "HOME")
+              "/.emacs.d/themes"))
+(load-theme 'eltbus t)
 (set-face-background 'fringe "black")
 (set-face-foreground 'vertical-border "black")
 
