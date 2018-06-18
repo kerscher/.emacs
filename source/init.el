@@ -53,7 +53,7 @@
 
 ;; Built-in customisations path
 (let ((custom-file-location
-      (concat (file-name-directory load-file-name)
+      (concat (file-name-directory user-init-file)
               "customizations.el")))
   (progn
     (setq custom-file custom-file-location)
@@ -61,3 +61,6 @@
 
 ;; Start at scratch buffer
 (customize-set-variable 'initial-buffer-choice t)
+
+;(global-font-lock-mode -1)
+;(font-lock-mode -1)
