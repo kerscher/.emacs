@@ -61,6 +61,3 @@
 
 ;; Start at scratch buffer
 (customize-set-variable 'initial-buffer-choice t)
-
-;(global-font-lock-mode -1)
-;(font-lock-mode -1)
