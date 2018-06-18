@@ -4,11 +4,13 @@
 (setq frame-title-format "emacs")
 
 ;; Package manager
+(setq package-enable-at-startup nil)
 (load-library "url-handlers") ; Workaround for missing url-insert-buffer-contents.
 (require 'package)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-;(package-initialize) ; not needed anymore it seems
+(unless package--initialized
+  (package-initialize))
 (customize-set-variable 'async-bytecomp-package-mode t)
 
 (unless (package-installed-p 'use-package)
