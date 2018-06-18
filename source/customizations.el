@@ -34,11 +34,5 @@
  '(speedbar-show-unknown-files t)
  '(speedbar-use-images nil)
  '(speedbar-verbosity-level 0)
- '(sr-speedbar-auto-refresh nil t)
+ '(sr-speedbar-auto-refresh nil)
  '(sublimity-mode t t))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
