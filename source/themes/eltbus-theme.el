@@ -211,6 +211,7 @@
    '(speedbar-file-face ((t (:foreground "gainsboro" :underline nil :weight normal))))
    '(speedbar-highlight-face ((t (:background "black" :foreground "white smoke" :underline nil :weight normal))))
    '(speedbar-selected-face ((t (:background "black" :foreground "white" :underline nil :weight normal))))
+   '(magit-section-heading ((t (:background "black" :foreground "white"))))
    )))
 
 (provide-theme 'eltbus)
