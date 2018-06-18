@@ -34,6 +34,7 @@
          ("C-S-p"   . helm-M-x)
          ("C-e"     . helm-buffers-list)
          ("C-u"     . helm-M-x)
+         ("C-i"     . universal-argument)
          )
   :init
   (require 'helm-config)
