@@ -116,7 +116,7 @@
    `(org-done ((t (,@success-like ,@fmt-bld))))
    `(org-done-keyword-face ((t (,@success-like ,@fmt-none))))
    `(table-cell ((t (,@default-color ,@fmt-none))))
-
+   `(package-name ((t (,@brighter ,@fmt-none))))
    ;; outline-1
    ;; outline-2
    ;; outline-3
