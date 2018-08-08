@@ -16,5 +16,8 @@
     (use-package pyenv-mode
       :ensure t
       :init
-      (pyenv-mode))))
-
+      (pyenv-mode))
+    (use-package flycheck-mypy
+      :ensure t
+      :init
+      (require 'flycheck-mypy))))
