@@ -17,6 +17,10 @@
       :ensure t
       :init
       (pyenv-mode))
+    (use-package blacken
+      :ensure t
+      :init
+      (add-hook 'python-mode-hook 'blacken-mode))
     (use-package flycheck-mypy
       :ensure t
       :init
