@@ -13,6 +13,7 @@
     ("372e869d8ac016429c1ce08c931e659cc244d9750fc04094652c04f2706551de" "76046455ba22785c1013604593ac2b1d223a9fd615d22f7e9abc686c8e6478e5" "a17e1daefaff04a6faafe532ba7217fe9c83bd6c9ed6af52e2e439813b1762bf" default)))
  '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
  '(erc-nick "yyyyy")
+ '(groovy-indent-offset 2)
  '(haskell-stylish-on-save t)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
