@@ -1,7 +1,7 @@
 ;; Python
 
 (defun kerscher/lang/python ()
-  "Load 'anacond-mode' and related packages."
+  "Load 'anaconda-mode' and related packages."
   (interactive)
   (use-package anaconda-mode
     :ensure t
