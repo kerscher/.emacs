@@ -12,6 +12,13 @@
   :ensure t
   :bind (:map global-map ("C-." . magit-status)))
 
+;; Projects support
+(use-package projectile
+  :ensure t
+  :pin melpa
+  :init
+  (projectile-mode +1))
+
 ;; Auto-completion
 (use-package company
   :ensure t
