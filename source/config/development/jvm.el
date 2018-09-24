@@ -8,4 +8,6 @@
     :pin melpa)
   (use-package sbt-mode :pin melpa)
   (use-package scala-mode :ensure )
-  (use-package groovy-mode :ensure t))
+  (use-package groovy-mode
+    :ensure t
+    :pin melpa))
