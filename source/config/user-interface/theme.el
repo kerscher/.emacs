@@ -67,3 +67,5 @@
 (set-face-foreground 'show-paren-match "#def")
 (set-face-attribute 'show-paren-match nil :weight 'extra-bold)
 
+;; Colour hex codes when called by rainbow-mode
+(use-package rainbow-mode :ensure t)
