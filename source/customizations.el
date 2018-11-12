@@ -17,6 +17,7 @@
  '(haskell-stylish-on-save t)
  '(inhibit-startup-screen t)
  '(initial-buffer-choice t)
+ '(js-indent-level 2)
  '(markdown-command "mmark")
  '(message-kill-buffer-on-exit t)
  '(nrepl-message-colors
