@@ -19,6 +19,7 @@
              ""
              (shell-command-to-string "goenv prefix")))
     :config
+    (add-hook 'before-save-hook #'gofmt-before-save)
     (use-package flycheck-gometalinter
       :ensure t
       :config
