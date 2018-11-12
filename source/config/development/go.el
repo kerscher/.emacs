@@ -26,8 +26,8 @@
       (flycheck-gometalinter-setup)
       (setq flycheck-gometalinter-concurrency 4)
       (setq flycheck-gometalinter-fast t)
-      (setq flycheck-gometalinter-tests t)
-      (setq flycheck-gometalinter-vendor t))
+      (setq flycheck-gometalinter-vendor t)
+      (setq flycheck-gometalinter-disable-linters '("gotype")))
     (use-package company-go :ensure t)
     (use-package go-errcheck :ensure t)
     (use-package go-eldoc
