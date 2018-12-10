@@ -30,9 +30,9 @@
                     :underline nil
                     :slant 'normal
                     :weight 'normal
-                    :height 110
+                    :height 120
                     :width 'normal
-                    :family "PragmataPro")
+                    :family "PragmataPro Mono Liga")
 
 ;; Colour theme
 (add-to-list 'custom-theme-load-path
