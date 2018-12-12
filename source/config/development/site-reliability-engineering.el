@@ -27,6 +27,12 @@
       (eval-after-load 'flycheck
         '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))))
   
+  (add-hook 'js-mode-hook
+            #'(lambda ()
+              (add-hook
+               'before-save-hook
+               #'json-pretty-print-buffer-ordered))))
+  
   (use-package ansible
     :ensure t
     :config
@@ -42,4 +48,4 @@
   (use-package nginx-mode :ensure t)
 
   (use-package vagrant :ensure t)
-  (use-package vagrant-tramp :ensure t))
+  (use-package vagrant-tramp :ensure t)
