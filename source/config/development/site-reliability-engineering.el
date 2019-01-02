@@ -34,7 +34,7 @@
                #'(lambda ()
                    (save-mark-and-excursion
                      (json-pretty-print-buffer-ordered))))))
-  
+
   (use-package ansible
     :ensure t
     :config
