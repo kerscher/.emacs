@@ -31,7 +31,9 @@
             #'(lambda ()
               (add-hook
                'before-save-hook
-               #'json-pretty-print-buffer-ordered))))
+               #'(lambda ()
+                   (save-mark-and-excursion
+                     (json-pretty-print-buffer-ordered))))))
   
   (use-package ansible
     :ensure t
@@ -48,4 +50,4 @@
   (use-package nginx-mode :ensure t)
 
   (use-package vagrant :ensure t)
-  (use-package vagrant-tramp :ensure t)
+  (use-package vagrant-tramp :ensure t))
