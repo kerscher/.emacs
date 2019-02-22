@@ -1,12 +1,5 @@
 ;; User interface theme
 
-;; Disable bold everywhere!
-(set-face-bold-p 'bold nil)
-(mapc
- (lambda (face)
-   (set-face-attribute face nil :weight 'normal :underline nil))
- (face-list))
-
 ;; 8 characters for tabs is too much
 (setq-default tab-width 4)
 
@@ -32,7 +25,18 @@
                     :weight 'normal
                     :height 120
                     :width 'normal
+<<<<<<< Updated upstream
                     :family "PragmataPro Mono Liga")
+=======
+                    :family "PragmataPro Mono")
+
+;; Disable bold everywhere!
+(set-face-bold-p 'bold nil)
+(mapc
+ (lambda (face)
+   (set-face-attribute face nil :weight 'normal :underline nil))
+ (face-list))
+>>>>>>> Stashed changes
 
 ;; Colour theme
 (add-to-list 'custom-theme-load-path
