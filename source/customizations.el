@@ -32,7 +32,11 @@
      ("melpa" . "http://melpa.org/packages/")
      ("org" . "http://orgmode.org/elpa/")))
  '(package-selected-packages
+<<<<<<< Updated upstream
    '(ansible-vault json-reformat rainbow rainbow-mode jinja2 php-mode helm-gtags company-lsp lsp-imenu projectile lsp-ui lsp-groovy lsp-python lsp-sh lsp-mode eglot blacken flycheck-mypy groovy-mode ensime restclient flycheck-mmark markdown-preview-mode markdownfmt markdown-mode+ haskell-mode anaconda-mode terraform-mode hcl-mode rust-mode go-mode flycheck-gometalinter color-theme-modern late-night late-night-theme zone-nyan yasnippet which-key wgrep vagrant-tramp vagrant use-package toml-mode systemd switch-window sr-speedbar spaceline salt-mode rg restclient-helm rebox2 rainbow-delimiters racer pyenv-mode purple-haze-theme org-plus-contrib org-bullets org-beautify-theme nyan-mode nix-mode nginx-mode mustache-mode mustache multiple-cursors monokai-alt-theme markdown-mode magit less-css-mode ledger-mode keychain-environment jq-mode jinja2-mode intero info+ helm-unicode helm-pass helm-mu helm-ls-git helm-bibtex hasky-stack god-mode go-errcheck go-eldoc github-modern-theme fold-this flycheck-yamllint flycheck-rust flycheck-ledger exotica-theme exec-path-from-shell epresent elm-mode eink-theme dockerfile-mode diminish company-terraform company-quickhelp company-go company-bibtex company-ansible company-anaconda cargo basic-theme auctex-latexmk ansible-doc ansible ace-jump-mode 0blayout))
+=======
+   '(flycheck-ensime rainbow rainbow-mode jinja2 php-mode helm-gtags company-lsp lsp-imenu projectile lsp-ui lsp-groovy lsp-python lsp-sh lsp-mode eglot blacken flycheck-mypy groovy-mode ensime restclient flycheck-mmark markdown-preview-mode markdownfmt markdown-mode+ haskell-mode anaconda-mode terraform-mode hcl-mode rust-mode go-mode flycheck-gometalinter color-theme-modern late-night late-night-theme zone-nyan yasnippet which-key wgrep vagrant-tramp vagrant use-package toml-mode systemd switch-window sr-speedbar spaceline salt-mode rg restclient-helm rebox2 rainbow-delimiters racer pyenv-mode purple-haze-theme org-plus-contrib org-bullets org-beautify-theme nyan-mode nix-mode nginx-mode mustache-mode mustache multiple-cursors monokai-alt-theme markdown-mode magit less-css-mode ledger-mode keychain-environment jq-mode jinja2-mode intero info+ helm-unicode helm-pass helm-mu helm-ls-git helm-bibtex hasky-stack god-mode go-errcheck go-eldoc github-modern-theme fold-this flycheck-yamllint flycheck-rust flycheck-ledger exotica-theme exec-path-from-shell epresent elm-mode eink-theme dockerfile-mode diminish company-terraform company-quickhelp company-go company-bibtex company-ansible company-anaconda cargo basic-theme auctex-latexmk ansible-doc ansible ace-jump-mode 0blayout))
+>>>>>>> Stashed changes
  '(scroll-bar-mode nil)
  '(speedbar-show-unknown-files t)
  '(speedbar-use-images nil)
@@ -44,4 +48,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(rg-error-face ((t (:inherit compilation-error))))
+ '(rg-info-face ((t (:foreground "white"))))
+ '(rg-match-face ((t (:background "white smoke" :foreground "black")))))
