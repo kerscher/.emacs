@@ -6,6 +6,7 @@
   (use-package go-mode
     :ensure t
     :init
+    (setenv "GO111MODULE" "on")
     (setenv "GOPATH"     (concat (getenv "HOME") "/go"))
     (setenv "GOENV_ROOT" (concat (getenv "HOME") "/.goenv"))
     (setenv "GOENV_PATH" (concat (getenv "GOENV_ROOT") "/bin"))
@@ -20,14 +21,9 @@
              (shell-command-to-string "goenv prefix")))
     :config
     (add-hook 'before-save-hook #'gofmt-before-save)
-    (use-package flycheck-gometalinter
+    (use-package flycheck-golangci-lint
       :ensure t
-      :config
-      (flycheck-gometalinter-setup)
-      (setq flycheck-gometalinter-concurrency 4)
-      (setq flycheck-gometalinter-fast t)
-      (setq flycheck-gometalinter-vendor t)
-      (setq flycheck-gometalinter-disable-linters '("gotype")))
+      :hook (go-mode . flycheck-golangci-lint-setup))
     (use-package company-go :ensure t)
     (use-package go-errcheck :ensure t)
     (use-package go-eldoc
