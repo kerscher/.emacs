@@ -40,6 +40,13 @@
   (helm-mode 1)
   (helm-autoresize-mode 1)
   (customize-set-variable 'sublimity-mode t)
+  (define-key helm-map (kbd "<left>") 'helm-previous-source)
+  (define-key helm-map (kbd "<right>") 'helm-next-source)
+  (customize-set-variable 'helm-ff-lynx-style-map t)
+  (customize-set-variable 'helm-imenu-lynx-style-map t)
+  (customize-set-variable 'helm-semantic-lynx-style-map t)
+  (customize-set-variable 'helm-occur-use-ioccur-style-keys t)
+  (customize-set-variable 'helm-grep-use-ioccur-style-keys t)
   :config
   (use-package helm-ls-git :ensure t))
 
