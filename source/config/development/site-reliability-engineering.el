@@ -5,8 +5,11 @@
   (interactive)
 
   (use-package systemd :ensure t)
-
+  (use-package dockerfile-mode :ensure t)
+  (use-package yaml-mode :ensure t)
   (use-package hcl-mode :ensure t)
+  (use-package nginx-mode :ensure t)
+  (use-package jq-mode :ensure t)
 
   (use-package terraform-mode
     :ensure t
@@ -16,8 +19,7 @@
       :ensure t
       :init
       (company-terraform-init)))
-  
-  (use-package dockerfile-mode :ensure t)
+
 
   (use-package flycheck-yamllint
     :ensure t
@@ -26,7 +28,7 @@
     (progn
       (eval-after-load 'flycheck
         '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))))
-  
+
   (add-hook 'js-mode-hook
             #'(lambda ()
               (add-hook
@@ -49,9 +51,4 @@
     (use-package ansible-vault
       :ensure t
       :init
-      (add-hook 'yaml-mode-hook 'ansible-vault-mode-maybe)))
-
-  (use-package nginx-mode :ensure t)
-
-  (use-package vagrant :ensure t)
-  (use-package vagrant-tramp :ensure t))
+      (add-hook 'yaml-mode-hook 'ansible-vault-mode-maybe))))
