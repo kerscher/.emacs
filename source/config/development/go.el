@@ -6,6 +6,7 @@
   (use-package go-mode
     :ensure t
     :config
+    (setq gofmt-command "goimports")
     (add-hook 'before-save-hook #'gofmt-before-save)
     (use-package flycheck-golangci-lint
       :ensure t
