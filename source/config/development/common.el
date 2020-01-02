@@ -15,7 +15,6 @@
 ;; Projects support
 (use-package projectile
   :ensure t
-  :pin melpa
   :init
   (projectile-mode +1))
 
