@@ -5,6 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["black" "light gray" "dark gray" "light slate gray"])
  '(async-bytecomp-package-mode t)
+ '(blacken-line-length 78)
  '(company-quickhelp-color-background "gray18")
  '(company-quickhelp-color-foreground "white")
  '(company-quickhelp-delay 0.1)
