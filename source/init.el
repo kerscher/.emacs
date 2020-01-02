@@ -3,19 +3,21 @@
 ;; Remove noise from titlebar
 (setq frame-title-format "emacs")
 
-;; Package manager
-(setq package-enable-at-startup nil)
-(load-library "url-handlers") ; Workaround for missing url-insert-buffer-contents.
-(require 'package)
-(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
-(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/") t)
-(unless package--initialized
-  (package-initialize))
-(customize-set-variable 'async-bytecomp-package-mode t)
-
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+;; Enable package manager
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
+      (bootstrap-version 5))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
+(straight-use-package 'use-package)
+(setq straight-use-package-by-default t)
 
 (use-package exec-path-from-shell
   :ensure t
