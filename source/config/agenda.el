@@ -13,19 +13,18 @@
               ("C-c c" . org-capture)
               ("C-c a" . org-agenda))
   :config
-  (setq org-default-notes-file "/y/org/agenda/journal.org.gpg")
+  (setq org-default-notes-file "/opt/src/localhost/org/journal.org.gpg")
   (setq org-capture-templates
-        '(("t" "Task" entry (file+headline "/y/org/agenda/tasks.org.gpg" "Tasks")
+        '(("t" "Task" entry (file+headline "/opt/src/localhost/org/tasks.org.gpg" "Tasks")
            "* TODO %?\n  %i\n  %a" :kill-buffer t :empty-lines 1) 
-          ("i" "Idea" entry (file+headline "/y/org/agenda/ideas.org.gpg" "Ideas")
+          ("i" "Idea" entry (file+headline "/opt/src/localhost/org/ideas.org.gpg" "Ideas")
            "* %?\n  %U\n  %i" :prepend t :kill-buffer t :empty-lines 1)
-          ("j" "Journal" entry (file+datetree "/y/org/agenda/journal.org.gpg")
+          ("j" "Journal" entry (file+datetree "/opt/src/localhost/org/journal.org.gpg")
            "* %U\n  %?%i\n  %a" :prepend t :kill-buffer t :empty-lines 1)
-          ("m" "Meeting" entry (file+datetree+prompt "/y/org/agenda/meetings.org.gpg")
+          ("m" "Meeting" entry (file+datetree+prompt "/opt/src/localhost/org/meetings.org.gpg")
            "* %^{WHO} @ %^{COMPANY} %T\n  :PROPERTIES:\n  :WHO: %\\1\n  :COMPANY: %\\2\n  :SUBJECT: %^{SUBJECT|}\n  :END:\n\n** Agenda\n-%?\n\n** Participants\n-\n\n** Notes\n-\n" :kill-buffer t :empty-lines 1)))
-  (setq org-agenda-files '("/y/org/agenda/tasks.org.gpg"
-                           "/y/org/agenda/meetings.org.gpg"
-                           "/y/org/docs/research.org.gpg"
+  (setq org-agenda-files '("/opt/src/localhost/org/tasks.org.gpg"
+                           "/opt/src/localhost/org/meetings.org.gpg"
                            )))
 
 (defun kerscher/org-pretty ()
