@@ -20,7 +20,6 @@
       :init
       (company-terraform-init)))
 
-
   (use-package flycheck-yamllint
     :ensure t
     :defer t
