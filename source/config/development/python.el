@@ -13,10 +13,6 @@
       :ensure t
       :init
       (add-to-list 'company-backends '(company-anaconda)))
-    (use-package pyenv-mode
-      :ensure t
-      :init
-      (pyenv-mode))
     (use-package blacken
       :ensure t
       :init
