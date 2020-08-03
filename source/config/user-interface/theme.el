@@ -15,17 +15,40 @@
 (column-number-mode t)
 
 ;; Fonts
-(set-face-attribute 'default nil
-                    :inherit nil
-                    :box nil
-                    :strike-through nil
-                    :overline nil
-                    :underline nil
-                    :slant 'normal
-                    :weight 'normal
-                    :height 120
-                    :width 'normal
-                    :family "PragmataPro Mono Liga")
+(defun kerscher/theme/set-default-font-face-height (&optional height)
+  (put 'kerscher/theme/set-default-font-face-height
+       'initial-height
+       160)
+  (let ((height (or
+                 height
+                 (get 'kerscher/theme/set-default-font-face-height
+                      'initial-height))))
+    (set-face-attribute 'default nil
+                        :inherit nil
+                        :box nil
+                        :strike-through nil
+                        :overline nil
+                        :underline nil
+                        :slant 'normal
+                        :weight 'normal
+                        :height height
+                        :width 'normal
+                        :family "Iosevka")))
+
+(defun kerscher/theme/toggle-pair-programming ()
+  (interactive)
+  (if (get 'kerscher/theme/toggle-pair-programming 'enabled)
+      (progn
+        (kerscher/theme/set-default-font-face-height)
+        (put 'kerscher/theme/toggle-pair-programming 'enabled nil))
+    (progn
+      (kerscher/theme/set-default-font-face-height
+       (* 2 (get
+             'kerscher/theme/set-default-font-face-height
+             'initial-height)))
+      (put 'kerscher/theme/toggle-pair-programming 'enabled t))))
+
+(kerscher/theme/set-default-font-face-height)
 
 ;; Disable bold everywhere!
 (set-face-bold-p 'bold nil)
