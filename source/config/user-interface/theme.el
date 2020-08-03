@@ -74,7 +74,7 @@
   "#8ac6f2"
   "#333366"
   "#ccaa8f"
-"#f6f3e8"])
+  "#f6f3e8"])
 
 ;; Colour nested delimiters differently
 (use-package rainbow-delimiters
