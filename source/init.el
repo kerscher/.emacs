@@ -67,3 +67,5 @@
 
 ;; Start at scratch buffer
 (customize-set-variable 'initial-buffer-choice t)
+
+(put 'upcase-region 'disabled nil)
