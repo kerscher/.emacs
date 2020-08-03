@@ -42,3 +42,31 @@
   :ensure t
   :init
   (yas-global-mode 1))
+
+;; Language server protocol
+(use-package lsp-mode
+  :ensure t
+  :commands (lsp lsp-deferred)
+  :hook
+  ;; TODO: make this into a macro and mapc it
+  (dockerfile-mode . lsp-deferred)
+  (javascript-mode . lsp-deferred)
+  (yaml-mode . lsp-deferred))
+
+;; Debug adapter protocol
+(use-package dap-mode
+  :ensure t
+  :after lsp-mode
+  :config
+  (dap-mode t)
+  (dap-ui-mode t))
+
+(use-package lsp-ui :commands lsp-ui-mode)
+(use-package company-lsp :commands company-lsp)
+(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+
+(setq lsp-ui-doc-enable t
+      lsp-ui-peek-enable t
+      lsp-ui-sideline-enable t
+      lsp-ui-flycheck-enable t
+      lsp-ui-imenu-enable t)
