@@ -10,10 +10,30 @@
               ("C-x C-3" . switch-window-then-split-right)
               ("C-x C-0" . switch-window-then-delete)))
 
+(defun next-code-buffer ()
+  (interactive)
+  (let ((bread-crumb (buffer-name)))
+    (next-buffer)
+    (while
+        (and
+         (string-match-p "^\*" (buffer-name))
+         (not (equal bread-crumb (buffer-name))))
+      (next-buffer))))
+
+(defun previous-code-buffer ()
+  (interactive)
+  (let ((bread-crumb (buffer-name)))
+    (previous-buffer)
+    (while
+        (and
+         (string-match-p "^\*" (buffer-name))
+         (not (equal bread-crumb (buffer-name))))
+      (previous-buffer))))
+
 ;; Buffer manipulation
 (global-set-key (kbd "M-t") 'kill-buffer-and-window)
-(global-set-key (kbd "M-n") 'next-buffer)
-(global-set-key (kbd "M-h") 'previous-buffer)
+(global-set-key (kbd "M-n") 'next-code-buffer)
+(global-set-key (kbd "M-h") 'previous-code-buffer)
 
 ;; Jump to point.
 (use-package ace-jump-mode
