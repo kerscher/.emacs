@@ -1,5 +1,10 @@
 ;; Golang
 
+;; (defun kerscher/lsp-go-install-save-hooks ()
+;;   (add-hook 'before-save-hook #'lsp-format-buffer t t)
+;;   (add-hook 'before-save-hook #'lsp-organize-imports t t))
+;; (add-hook 'go-mode-hook #'kerscher/lsp-go-install-save-hooks)
+
 (defun kerscher/lang/go ()
   "Load 'go-mode' and related packages."
   (interactive)
