@@ -26,12 +26,6 @@
   :commands lsp-ui-mode
   :hook ((lsp-mode-hook . lsp-ui-mode)))
 
-(use-package company-lsp
-  :ensure t
-  :after company
-  :commands company-lsp
-  :init (push 'company-lsp company-backends))
-
 (use-package helm-lsp :commands helm-lsp-workspace-symbol)
 
 (setq lsp-ui-doc-enable t
