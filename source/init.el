@@ -44,6 +44,7 @@
     "agenda"
     "backups"
     "credentials"
+    "development/language-server-protocol"
     )
   "Configuration files for sets of common functionality.")
 
