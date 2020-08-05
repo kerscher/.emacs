@@ -36,6 +36,7 @@
     "development/python"
     "development/rust"
     "development/site-reliability-engineering"
+    "development/dhall"
     "communication/email"
     "communication/irc"
     "communication/presentations"
