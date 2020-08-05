@@ -44,14 +44,17 @@
   (yas-global-mode 1))
 
 ;; Language server protocol
+(defmacro kerscher/lsp-defer-mode (mode-name)
+  (list mode-name 'lsp-deferred))
+
 (use-package lsp-mode
   :ensure t
   :commands (lsp lsp-deferred)
   :hook
-  ;; TODO: make this into a macro and mapc it
-  (dockerfile-mode . lsp-deferred)
-  (javascript-mode . lsp-deferred)
-  (yaml-mode . lsp-deferred))
+  (mapc kerscher/lsp-defer-mode
+        (dockerfile-mode
+         javascript-mode
+         yaml-mode)))
 
 ;; Debug adapter protocol
 (use-package dap-mode
