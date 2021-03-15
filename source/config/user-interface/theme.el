@@ -33,7 +33,7 @@
                         :weight 'normal
                         :height height
                         :width 'normal
-                        :family "Iosevka")))
+                        :family "PragmataPro Mono Liga")))
 
 (defun kerscher/theme/toggle-pair-programming ()
   (interactive)
