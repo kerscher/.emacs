@@ -70,7 +70,12 @@
   :config
   (use-package helm-ls-git :ensure t))
 
-;; Search with `ripgrep` and edit directly from results.
+;; Search in-buffer and show results with Helm
+(use-package swiper-helm
+  :ensure t
+  :bind ("C-s" . swiper-helm))
+
+;; Search project with `ripgrep` and edit directly from results.
 (use-package wgrep
   :ensure t
   :init
