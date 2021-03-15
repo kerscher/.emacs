@@ -71,3 +71,4 @@
 (customize-set-variable 'initial-buffer-choice t)
 
 (put 'upcase-region 'disabled nil)
+(put 'downcase-region 'disabled nil)
