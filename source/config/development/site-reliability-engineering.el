@@ -6,10 +6,14 @@
 
   (use-package systemd :ensure t)
   (use-package dockerfile-mode :ensure t)
-  (use-package yaml-mode :ensure t)
   (use-package hcl-mode :ensure t)
   (use-package nginx-mode :ensure t)
   (use-package jq-mode :ensure t)
+
+  (use-package yaml-mode
+    :ensure t
+    :bind (:map yaml-mode-map
+                ("<backspace>" . backward-delete-char-untabify)))
 
   (use-package terraform-mode
     :ensure t
