@@ -10,9 +10,8 @@
  '(company-quickhelp-color-foreground "white")
  '(company-quickhelp-delay 0.1)
  '(custom-safe-themes
-   (quote
-    ("372e869d8ac016429c1ce08c931e659cc244d9750fc04094652c04f2706551de" "76046455ba22785c1013604593ac2b1d223a9fd615d22f7e9abc686c8e6478e5" "a17e1daefaff04a6faafe532ba7217fe9c83bd6c9ed6af52e2e439813b1762bf" default)))
- '(erc-hide-list (quote ("JOIN" "PART" "QUIT")))
+   '("372e869d8ac016429c1ce08c931e659cc244d9750fc04094652c04f2706551de" "76046455ba22785c1013604593ac2b1d223a9fd615d22f7e9abc686c8e6478e5" "a17e1daefaff04a6faafe532ba7217fe9c83bd6c9ed6af52e2e439813b1762bf" default))
+ '(erc-hide-list '("JOIN" "PART" "QUIT"))
  '(erc-nick "yyyyy")
  '(flycheck-json-jsonlint-executable "/home/yghor/.nvm/versions/node/v10.14.2/bin/jsonlint")
  '(groovy-indent-offset 2)
@@ -28,22 +27,18 @@
  '(markdown-command "mmark")
  '(message-kill-buffer-on-exit t)
  '(nrepl-message-colors
-   (quote
-    ("#032f62" "#6a737d" "#d73a49" "#6a737d" "#005cc5" "#6f42c1" "#d73a49" "#6a737d")))
+   '("#032f62" "#6a737d" "#d73a49" "#6a737d" "#005cc5" "#6f42c1" "#d73a49" "#6a737d"))
  '(org-modules
-   (quote
-    (org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc org-velocity)))
+   '(org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc org-velocity))
  '(org-support-shift-select t)
  '(org-velocity-always-use-bucket t)
  '(org-velocity-bucket "/var/shortcuts/notes/notes.org.gpg")
  '(package-archives
-   (quote
-    (("gnu" . "http://elpa.gnu.org/packages/")
+   '(("gnu" . "http://elpa.gnu.org/packages/")
      ("melpa" . "http://melpa.org/packages/")
-     ("org" . "http://orgmode.org/elpa/"))))
+     ("org" . "http://orgmode.org/elpa/")))
  '(package-selected-packages
-   (quote
-    (bats-mode yaml-mode scala-mode sbt-mode flycheck-golangci-lint ansible-vault caddyfile-mode flycheck-ensime rainbow rainbow-mode jinja2 php-mode helm-gtags company-lsp lsp-imenu projectile lsp-ui lsp-groovy lsp-python lsp-sh lsp-mode eglot blacken flycheck-mypy groovy-mode ensime restclient flycheck-mmark markdown-preview-mode markdownfmt markdown-mode+ haskell-mode anaconda-mode terraform-mode hcl-mode rust-mode go-mode flycheck-gometalinter color-theme-modern late-night late-night-theme zone-nyan yasnippet which-key wgrep vagrant-tramp vagrant use-package toml-mode systemd switch-window sr-speedbar spaceline salt-mode rg restclient-helm rebox2 rainbow-delimiters racer pyenv-mode purple-haze-theme org-plus-contrib org-bullets org-beautify-theme nyan-mode nix-mode nginx-mode mustache-mode mustache multiple-cursors monokai-alt-theme markdown-mode magit less-css-mode ledger-mode keychain-environment jq-mode jinja2-mode intero info+ helm-unicode helm-pass helm-mu helm-ls-git helm-bibtex hasky-stack god-mode go-errcheck go-eldoc github-modern-theme fold-this flycheck-yamllint flycheck-rust flycheck-ledger exotica-theme exec-path-from-shell epresent elm-mode eink-theme dockerfile-mode diminish company-terraform company-quickhelp company-go company-bibtex company-ansible company-anaconda cargo basic-theme auctex-latexmk ansible-doc ansible ace-jump-mode 0blayout)))
+   '(bats-mode yaml-mode scala-mode sbt-mode flycheck-golangci-lint ansible-vault caddyfile-mode flycheck-ensime rainbow rainbow-mode jinja2 php-mode helm-gtags company-lsp lsp-imenu projectile lsp-ui lsp-groovy lsp-python lsp-sh lsp-mode eglot blacken flycheck-mypy groovy-mode ensime restclient flycheck-mmark markdown-preview-mode markdownfmt markdown-mode+ haskell-mode anaconda-mode terraform-mode hcl-mode rust-mode go-mode flycheck-gometalinter color-theme-modern late-night late-night-theme zone-nyan yasnippet which-key wgrep vagrant-tramp vagrant use-package toml-mode systemd switch-window sr-speedbar spaceline salt-mode rg restclient-helm rebox2 rainbow-delimiters racer pyenv-mode purple-haze-theme org-plus-contrib org-bullets org-beautify-theme nyan-mode nix-mode nginx-mode mustache-mode mustache multiple-cursors monokai-alt-theme markdown-mode magit less-css-mode ledger-mode keychain-environment jq-mode jinja2-mode intero info+ helm-unicode helm-pass helm-mu helm-ls-git helm-bibtex hasky-stack god-mode go-errcheck go-eldoc github-modern-theme fold-this flycheck-yamllint flycheck-rust flycheck-ledger exotica-theme exec-path-from-shell epresent elm-mode eink-theme dockerfile-mode diminish company-terraform company-quickhelp company-go company-bibtex company-ansible company-anaconda cargo basic-theme auctex-latexmk ansible-doc ansible ace-jump-mode 0blayout))
  '(scroll-bar-mode nil)
  '(speedbar-show-unknown-files t)
  '(speedbar-use-images nil)
@@ -57,6 +52,11 @@
  ;; If there is more than one, they won't work right.
  '(ansible-section-face ((t nil)))
  '(ansible-task-label-face ((t nil)))
+ '(isearch ((t (:background "gray100" :foreground "#000000"))))
+ '(isearch-fail ((t (:background "gray55" :foreground "#000000"))))
+ '(markdown-code-face ((t (:inherit default :foreground "dark gray"))))
  '(rg-error-face ((t (:inherit compilation-error))))
  '(rg-info-face ((t (:foreground "white"))))
- '(rg-match-face ((t (:background "white smoke" :foreground "black")))))
+ '(rg-match-face ((t (:background "white smoke" :foreground "black"))))
+ '(terraform--resource-name-face ((t (:foreground "gray87"))))
+ '(terraform--resource-type-face ((t (:foreground "gray87")))))
