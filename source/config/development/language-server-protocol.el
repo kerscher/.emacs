@@ -8,10 +8,20 @@
   :ensure t
   :commands (lsp lsp-deferred)
   :init (setq lsp-keymap-prefix "C-c l")
-  :hook
-  (mapc kerscher/lsp-defer-mode
-        (dockerfile-mode
-         dhall-mode)))
+  (if (fboundp 'kerscher/lang/devops)
+      (progn
+        (require 'lsp-mode)
+        (lsp-register-client (make-lsp-client :new-connection
+                                            (lsp-stdio-connection
+                                             `(,(executable-find "terraform-ls")
+                                               "serve"))
+                                            :major-modes
+                                            '(terraform-mode)
+                                            :server-id
+                                            'terraform-ls))))
+  :hook (mapc kerscher/lsp-defer-mode (dockerfile-mode
+                                       dhall-mode
+                                       terraform-mode)))
 
 ;; Debug adapter protocol
 (use-package dap-mode
