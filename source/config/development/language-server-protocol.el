@@ -1,45 +1,38 @@
 ;; Language server protocol (LSP)
 
-;; Language server protocol
-(defmacro kerscher/lsp-defer-mode (mode-name)
-  (list mode-name 'lsp-deferred))
+(defun kerscher/eglot-ensure ()
+  (interactive)
+  (progn
+    (eglot-ensure)
+    (flymake-mode 1)))
 
-(use-package lsp-mode
-  :ensure t
-  :commands (lsp lsp-deferred)
-  :init (setq lsp-keymap-prefix "C-c l")
-  (if (fboundp 'kerscher/lang/devops)
-      (progn
-        (require 'lsp-mode)
-        (lsp-register-client (make-lsp-client :new-connection
-                                            (lsp-stdio-connection
-                                             `(,(executable-find "terraform-ls")
-                                               "serve"))
-                                            :major-modes
-                                            '(terraform-mode)
-                                            :server-id
-                                            'terraform-ls))))
-  :hook (mapc kerscher/lsp-defer-mode (dockerfile-mode
-                                       dhall-mode
-                                       terraform-mode)))
+;; TODO: possibly needs to be a macro with defmacro?
+(defun kerscher/eglotise (mode-name)
+  `(,mode-name . 'kerscher/eglot-ensure))
 
-;; Debug adapter protocol
-(use-package dap-mode
+(use-package eglot
   :ensure t
-  :after lsp-mode
   :config
-  (dap-mode t)
-  (dap-ui-mode t))
-
-(use-package lsp-ui
-  :ensure t
-  :commands lsp-ui-mode
-  :hook ((lsp-mode-hook . lsp-ui-mode)))
-
-(use-package helm-lsp :commands helm-lsp-workspace-symbol)
-
-(setq lsp-ui-doc-enable t
-      lsp-ui-peek-enable t
-      lsp-ui-sideline-enable t
-      lsp-ui-flycheck-enable t
-      lsp-ui-imenu-enable t)
+  (add-to-list 'eglot-server-programs '(terraform-mode . ("terraform-ls" "serve")))
+  :bind (:map eglot-mode-map
+              ("C-c r" . eglot-rename)
+              ("C-c o" . eglot-code-action-organize-imports)
+              ("C-c h" . eldoc)
+              ("<f6>" . xref-find-definitions))
+  :hook
+  ;; TODO: Fix kerscher/eglotise and use it here with mapc instead
+  ((dockerfile-mode . kerscher/eglot-ensure)
+   (go-mode . kerscher/eglot-ensure)
+   (nix-mode . kerscher/eglot-ensure)
+   (python-mode . kerscher/eglot-ensure)
+   (rust-mode . kerscher/eglot-ensure)
+   (shell-script-mode . kerscher/eglot-ensure)
+   (terraform-mode . kerscher/eglot-ensure))
+  ;; (mapc kerscher/eglotise (dockerfile-mode
+  ;;                                go-mode
+  ;;                                nix-mode
+  ;;                                python-mode
+  ;;                                rust-mode
+  ;;                                shell-script-mode
+  ;;                                terraform-mode))
+  )

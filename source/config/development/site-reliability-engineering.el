@@ -6,39 +6,42 @@
 
   (use-package systemd :ensure t)
   (use-package dockerfile-mode :ensure t)
-  (use-package hcl-mode :ensure t)
-  (use-package nginx-mode :ensure t)
   (use-package jq-mode :ensure t)
+
+  (use-package shfmt :ensure t
+    :init
+    (add-hook 'sh-mode-hook 'shfmt-on-save-mode))
 
   (use-package yaml-mode
     :ensure t
     :bind (:map yaml-mode-map
                 ("<backspace>" . backward-delete-char-untabify)))
 
+  (use-package hcl-mode
+    :ensure t
+    :init
+    (add-hook 'hcl-mode-hook #'(lambda ()
+                                 (save-mark-and-excursion
+                                   (terraform-format-buffer)))))
+
   (use-package terraform-mode
     :ensure t
     :init
-    (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode)
-    (use-package company-terraform
-      :ensure t
-      :init
-      (company-terraform-init)))
+    (use-package terraform-doc)
+    (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
 
-  (use-package flycheck-yamllint
-    :ensure t
-    :defer t
+  (use-package flymake-shellcheck
+    :commands flymake-shellcheck-load
     :init
-    (progn
-      (eval-after-load 'flycheck
-        '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))))
+    (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
-  (add-hook 'js-mode-hook
-            #'(lambda ()
-              (add-hook
-               'before-save-hook
-               #'(lambda ()
-                   (save-mark-and-excursion
-                     (json-pretty-print-buffer-ordered))))))
+  ;; (use-package flycheck-yamllint
+  ;;   :ensure t
+  ;;   :defer t
+  ;;   :init
+  ;;   (progn
+  ;;     (eval-after-load 'flycheck
+  ;;       '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))))
 
   (use-package ansible
     :ensure t

@@ -9,36 +9,31 @@
 
 ;; Version control
 (use-package magit
-  :ensure t
   :bind (:map global-map ("C-." . magit-status)))
 
-;; Projects support
-(use-package projectile
-  :ensure t
-  :init
-  (projectile-mode +1))
+;; direnv support
+(use-package direnv
+ :config
+ (direnv-mode))
 
 ;; Auto-completion
 (use-package company
-  :ensure t
   :init
-  (add-hook 'after-init-hook 'global-company-mode)
   (setq company-tooltip-align-annotations t)
   (setq company-idle-delay 0.1)
   (setq company-minimum-prefix-length 1)
   (setq company-tooltip-limit 30)
+  (use-package pos-tip :ensure t)
   (use-package company-quickhelp
     :ensure t
     :init
-    (company-quickhelp-mode 1)))
+    (company-quickhelp-mode 1))
+  (add-hook 'after-init-hook 'global-company-mode))
 
-;; Syntax checking
-(use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode))
+(use-package company-box
+  :hook (company-mode . company-box-mode))
 
 ;; Snippets
 (use-package yasnippet
-  :ensure t
   :init
   (yas-global-mode 1))

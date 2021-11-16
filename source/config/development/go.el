@@ -13,12 +13,13 @@
     :config
     (setq gofmt-command "goimports")
     (add-hook 'before-save-hook #'gofmt-before-save)
-    (use-package flycheck-golangci-lint
-      :ensure t
-      :hook (go-mode . flycheck-golangci-lint-setup))
-    (use-package company-go :ensure t)
-    (use-package go-errcheck :ensure t)
-    (use-package go-eldoc
-      :ensure t
-      :init
-      (add-hook 'go-mode-hook 'go-eldoc-setup))))
+    ;; (use-package flycheck-golangci-lint
+    ;;   :ensure t
+    ;;   :hook (go-mode . flycheck-golangci-lint-setup))
+    ;; (use-package go-errcheck :ensure t)
+    ;; (use-package go-eldoc
+    ;;   :ensure t
+    ;;   :init
+    ;;   (add-hook 'go-mode-hook 'go-eldoc-setup))
+    )
+  )

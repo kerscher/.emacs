@@ -13,16 +13,17 @@
     (add-hook 'toml-mode-hook 'cargo-minor-mode)
     :config
     (setq rust-format-on-save t)
-    (use-package racer
-      :ensure t
-      :init
-      (add-hook 'rust-mode-hook  #'racer-mode)
-      (add-hook 'racer-mode-hook #'eldoc-mode)
-      (add-hook 'racer-mode-hook #'company-mode))
-    (use-package flycheck-rust
-      :ensure t
-      :init
-      (add-hook 'rust-mode-hook
-                '(lambda ()
-                   (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
-                   (local-set-key (kbd "TAB") #'company-indent-or-complete-common))))))
+    ;; (use-package racer
+    ;;   :ensure t
+    ;;   :init
+    ;;   (add-hook 'rust-mode-hook  #'racer-mode)
+    ;;   (add-hook 'racer-mode-hook #'eldoc-mode)
+    ;;   (add-hook 'racer-mode-hook #'company-mode))
+    ;; (use-package flycheck-rust
+    ;;   :ensure t
+    ;;   :init
+    ;;   (add-hook 'rust-mode-hook
+    ;;             '(lambda ()
+    ;;                (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+    ;;                (local-set-key (kbd "TAB") #'company-indent-or-complete-common))))
+    ))

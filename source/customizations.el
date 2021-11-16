@@ -5,10 +5,12 @@
  ;; If there is more than one, they won't work right.
  '(ansi-color-names-vector ["black" "light gray" "dark gray" "light slate gray"])
  '(async-bytecomp-package-mode t)
+ '(auth-source-save-behavior nil)
  '(blacken-line-length 78)
  '(company-quickhelp-color-background "gray18")
  '(company-quickhelp-color-foreground "white")
- '(company-quickhelp-delay 0.1)
+ '(company-quickhelp-delay 0.01)
+ '(company-quickhelp-use-propertized-text t)
  '(custom-safe-themes
    '("372e869d8ac016429c1ce08c931e659cc244d9750fc04094652c04f2706551de" "76046455ba22785c1013604593ac2b1d223a9fd615d22f7e9abc686c8e6478e5" "a17e1daefaff04a6faafe532ba7217fe9c83bd6c9ed6af52e2e439813b1762bf" default))
  '(erc-hide-list '("JOIN" "PART" "QUIT"))
@@ -52,6 +54,9 @@
  ;; If there is more than one, they won't work right.
  '(ansible-section-face ((t nil)))
  '(ansible-task-label-face ((t nil)))
+ '(gnus-header-content ((t (:foreground "gray95"))))
+ '(gnus-header-newsgroups ((t (:foreground "yellow"))))
+ '(gnus-signature ((t nil)))
  '(isearch ((t (:background "gray100" :foreground "#000000"))))
  '(isearch-fail ((t (:background "gray55" :foreground "#000000"))))
  '(markdown-code-face ((t (:inherit default :foreground "dark gray"))))

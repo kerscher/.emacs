@@ -10,11 +10,6 @@
     (use-package markdownfmt
       :ensure t
       :init
-      ;(add-hook 'markdown-mode-hook #'markdownfmt-enable-on-save))
+      (add-hook 'markdown-mode-hook #'markdownfmt-enable-on-save)
       )
-    (use-package markdown-preview-mode :ensure t)
-    (use-package flycheck-mmark
-      :ensure t
-      :init
-      (add-hook 'flycheck-mode-hook #'flycheck-mmark-setup)
-      (add-hook 'markdown-mode-hook #'flycheck-mode))))
+    (use-package markdown-preview-mode :ensure t)))

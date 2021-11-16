@@ -10,30 +10,30 @@
               ("C-x C-3" . switch-window-then-split-right)
               ("C-x C-0" . switch-window-then-delete)))
 
-(defun next-code-buffer ()
-  (interactive)
-  (let ((bread-crumb (buffer-name)))
-    (next-buffer)
-    (while
-        (and
-         (string-match-p "^\*" (buffer-name))
-         (not (equal bread-crumb (buffer-name))))
-      (next-buffer))))
+;; (defun next-code-buffer ()
+;;   (interactive)
+;;   (let ((bread-crumb (buffer-name)))
+;;     (next-buffer)
+;;     (while
+;;         (and
+;;          (string-match-p "^\*" (buffer-name))
+;;          (not (equal bread-crumb (buffer-name))))
+;;       (next-buffer))))
 
-(defun previous-code-buffer ()
-  (interactive)
-  (let ((bread-crumb (buffer-name)))
-    (previous-buffer)
-    (while
-        (and
-         (string-match-p "^\*" (buffer-name))
-         (not (equal bread-crumb (buffer-name))))
-      (previous-buffer))))
+;; (defun previous-code-buffer ()
+;;   (interactive)
+;;   (let ((bread-crumb (buffer-name)))
+;;     (previous-buffer)
+;;     (while
+;;         (and
+;;          (string-match-p "^\*" (buffer-name))
+;;          (not (equal bread-crumb (buffer-name))))
+;;       (previous-buffer))))
 
 ;; Buffer manipulation
-(global-set-key (kbd "M-t") 'kill-buffer-and-window)
-(global-set-key (kbd "M-n") 'next-code-buffer)
-(global-set-key (kbd "M-h") 'previous-code-buffer)
+;; (global-set-key (kbd "M-t") 'kill-buffer-and-window)
+;; (global-set-key (kbd "M-n") 'next-code-buffer)
+;; (global-set-key (kbd "M-h") 'previous-code-buffer)
 
 ;; Jump to point.
 (use-package ace-jump-mode
@@ -46,15 +46,13 @@
 
 ;; Find things anywhere — fuzzy matching.
 (use-package helm
-  :ensure t
-  :bind (("M-x"     . helm-M-x)
-         ("C-x C-f" . helm-find-files)
+  :straight t
+  :bind (("C-x C-f" . helm-find-files)
          ("C-o"     . helm-find-files)
          ("C-p"     . helm-browse-project)
          ("C-S-p"   . helm-M-x)
          ("C-e"     . helm-buffers-list)
-         ("C-u"     . helm-M-x)
-         )
+         ("C-t"     . helm-M-x))
   :init
   (require 'helm-config)
   (helm-mode 1)
