@@ -1,18 +1,18 @@
 ;; User interface theme
 
-;; 8 characters for tabs is too much
-(setq-default tab-width 4)
+(defun kerscher/theme/set-ui-defaults ()
+  (setq-default tab-width 4)
 
-;; Hide unneeded widgets
-(customize-set-variable 'inhibit-startup-screen t)
-(menu-bar-mode 0)
-(tool-bar-mode 0)
-(scroll-bar-mode nil)
+  ;; Hide unneeded widgets
+  (customize-set-variable 'inhibit-startup-screen t)
+  (menu-bar-mode 0)
+  (tool-bar-mode 0)
+  (scroll-bar-mode 0)
 
-;; Line numbering
-(global-linum-mode t) ; numbers on each line
-(line-number-mode t)
-(column-number-mode t)
+  ;; Line numbering
+  (global-linum-mode t) ; numbers on each line
+  (line-number-mode t)
+  (column-number-mode t))
 
 ;; Fonts
 (defun kerscher/theme/set-default-font-face-height (&optional height)
@@ -48,47 +48,51 @@
              'initial-height)))
       (put 'kerscher/theme/toggle-pair-programming 'enabled t))))
 
-(kerscher/theme/set-default-font-face-height)
+(defun kerscher/theme/disable-bold-and-italic ()
+  (interactive)
+  (set-face-bold-p 'bold nil)
+  (set-face-italic 'italic nil)
+  (mapc
+   (lambda (face)
+     (set-face-attribute
+      face nil
+      :weight 'normal
+      :underline nil
+      :italic nil))
+   (face-list)))
 
-;; Disable bold everywhere!
-(set-face-bold-p 'bold nil)
-(mapc
- (lambda (face)
-   (set-face-attribute face nil :weight 'normal :underline nil))
- (face-list))
+(defun kerscher/theme/colour-delimiters ()
+  (interactive)
 
-;; Colour theme
-(add-to-list 'custom-theme-load-path
-             (concat
-              (getenv "HOME")
-              "/.emacs.d/themes"))
-(load-theme 'eltbus t)
-(set-face-background 'fringe "black")
-(set-face-foreground 'vertical-border "black")
+  ;; Colour nested delimiters differently
+  (use-package rainbow-delimiters
+    :ensure t
+    :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-(customize-set-variable 'ansi-color-names-vector
- ["#242424"
-  "#e5786d"
-  "#95e454"
-  "#cae682"
-  "#8ac6f2"
-  "#333366"
-  "#ccaa8f"
-  "#f6f3e8"])
+  ;; Colour matching delimiters
+  (setq show-paren-delay 0)
+  (show-paren-mode 1)
 
-;; Colour nested delimiters differently
-(use-package rainbow-delimiters
+  (require 'paren)
+  (set-face-background 'show-paren-match (face-background 'default))
+  (set-face-foreground 'show-paren-match "#def")
+  (set-face-attribute 'show-paren-match nil :weight 'extra-bold))
+
+(use-package almost-mono-themes
+  :straight (el-patch :type git :host github :repo "cryon/almost-mono-themes"
+                      :fork (:host github
+                             :repo "kerscher-comcarde/almost-mono-themes"))
   :ensure t
-  :init (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+  :config
+  (load-theme 'almost-mono-white t))
 
-;; Colour matching delimiters
-(setq show-paren-delay 0)
-(show-paren-mode 1)
+(defun kerscher/theme/reset ()
+  (interactive)
+  
+  (kerscher/theme/set-ui-defaults)
+  (kerscher/theme/set-default-font-face-height)
+  (global-font-lock-mode 0)
+  (kerscher/theme/disable-bold-and-italic)
+  (kerscher/theme/colour-delimiters))
 
-(require 'paren)
-(set-face-background 'show-paren-match (face-background 'default))
-(set-face-foreground 'show-paren-match "#def")
-(set-face-attribute 'show-paren-match nil :weight 'extra-bold)
-
-;; Colour hex codes when called by rainbow-mode
-(use-package rainbow-mode :ensure t)
+(kerscher/theme/reset)
