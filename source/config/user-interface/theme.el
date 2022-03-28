@@ -7,7 +7,7 @@
   (customize-set-variable 'inhibit-startup-screen t)
   (menu-bar-mode 0)
   (tool-bar-mode 0)
-  (scroll-bar-mode nil)
+  (scroll-bar-mode 0)
 
   ;; Line numbering
   (global-linum-mode t) ; numbers on each line
@@ -48,14 +48,6 @@
              'initial-height)))
       (put 'kerscher/theme/toggle-pair-programming 'enabled t))))
 
-(use-package almost-mono-themes
-  :straight (el-patch :type git :host github :repo "cryon/almost-mono-themes"
-                      :fork (:host github
-                             :repo "kerscher-comcarde/almost-mono-themes"))
-  :ensure t
-  :config
-  (load-theme 'almost-mono-white t))
-
 (defun kerscher/theme/disable-bold-and-italic ()
   (interactive)
   (set-face-bold-p 'bold nil)
@@ -86,6 +78,20 @@
   (set-face-foreground 'show-paren-match "#def")
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold))
 
-(kerscher/theme/set-ui-defaults)
-(kerscher/theme/set-default-font-face-height)
-(global-font-lock-mode 0)
+(use-package almost-mono-themes
+  :straight (el-patch :type git :host github :repo "cryon/almost-mono-themes"
+                      :fork (:host github
+                             :repo "kerscher-comcarde/almost-mono-themes"))
+  :ensure t
+  :config
+  (load-theme 'almost-mono-white t))
+
+(defun kerscher/theme/reset ()
+  (interactive)
+  
+  (kerscher/theme/set-ui-defaults)
+  (kerscher/theme/set-default-font-face-height)
+  (global-font-lock-mode 0)
+  (kerscher/theme/disable-bold-and-italic)
+  (kerscher/theme/colour-delimiters))
+
