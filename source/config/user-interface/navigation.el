@@ -1,5 +1,14 @@
 ;; Navigation
 
+(use-package undo-tree
+  :ensure t
+  :bind (:map global-map
+              ("C-/" . undo-tree-undo)
+              ("C-?" . undo-tree-redo)
+              ("C-x u" . undo-tree-visualize))
+  :config
+  (global-undo-tree-mode))
+
 ;; Better window movement.
 (use-package switch-window
   :ensure t
