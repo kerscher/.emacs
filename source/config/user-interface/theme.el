@@ -95,3 +95,4 @@
   (kerscher/theme/disable-bold-and-italic)
   (kerscher/theme/colour-delimiters))
 
+(kerscher/theme/reset)
