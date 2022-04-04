@@ -35,14 +35,6 @@
     :init
     (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
-  ;; (use-package flycheck-yamllint
-  ;;   :ensure t
-  ;;   :defer t
-  ;;   :init
-  ;;   (progn
-  ;;     (eval-after-load 'flycheck
-  ;;       '(add-hook 'flycheck-mode-hook 'flycheck-yamllint-setup))))
-
   (use-package ansible
     :ensure t
     :config
