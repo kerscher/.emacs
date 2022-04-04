@@ -9,6 +9,17 @@
   :config
   (global-undo-tree-mode))
 
+(use-package buffer-move
+  :bind (:map global-map
+              ("S-s-<down>" . buf-move-down)
+              ("S-s-<up>" . buf-move-up)
+              ("S-s-<left>" . buf-move-left)
+              ("S-s-<right>" . buf-move-right)
+              ("s-<down>" . windmove-down)
+              ("s-<up>" . windmove-up)
+              ("s-<left>" . windmove-left)
+              ("s-<right>" . windmove-right)))
+
 ;; Better window movement.
 (use-package switch-window
   :ensure t
