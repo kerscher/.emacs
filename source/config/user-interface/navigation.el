@@ -20,6 +20,8 @@
               ("s-<left>" . windmove-left)
               ("s-<right>" . windmove-right)))
 
+(use-package zoom)
+
 ;; Better window movement.
 (use-package switch-window
   :ensure t
