@@ -78,14 +78,6 @@
   (set-face-foreground 'show-paren-match "#def")
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold))
 
-(use-package almost-mono-themes
-  :straight (el-patch :type git :host github :repo "cryon/almost-mono-themes"
-                      :fork (:host github
-                             :repo "kerscher-comcarde/almost-mono-themes"))
-  :ensure t
-  :config
-  (load-theme 'almost-mono-white t))
-
 (defun kerscher/theme/reset ()
   (interactive)
   
@@ -95,4 +87,21 @@
   (kerscher/theme/disable-bold-and-italic)
   (kerscher/theme/colour-delimiters))
 
+(defun kerscher/theme/load ()
+  ;; Load this first so parts that acme-theme doesn't handle are themed
+  (use-package almost-mono-themes
+    :straight (el-patch :type git :host github :repo "cryon/almost-mono-themes"
+                        :fork (:host github
+                                     :repo "kerscher-comcarde/almost-mono-themes"))
+    :ensure t
+    :config
+    (load-theme 'almost-mono-cream t))
+
+  ;; Testing this out temporarily
+  (use-package acme-theme
+    :ensure t
+    :config
+    (load-theme 'acme t)))
+
+(kerscher/theme/load)
 (kerscher/theme/reset)

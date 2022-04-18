@@ -1,4 +1,4 @@
-;; Common IDE features
+;;;; Common IDE features
 
 ;; Soft tabs.
 (setq-default indent-tabs-mode nil)
@@ -9,7 +9,14 @@
 
 ;; Version control
 (use-package magit
-  :bind (:map global-map ("C-." . magit-status)))
+  :bind (:map global-map ("C-." . magit-status))
+  :config
+  (use-package magit-lfs)
+  :hook (magit-mode . turn-on-font-lock))
+
+(use-package git-timemachine)
+
+(use-package git-link)
 
 ;; direnv support
 (use-package direnv

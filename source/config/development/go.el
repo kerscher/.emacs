@@ -12,6 +12,9 @@
     :ensure t
     :config
     (setq gofmt-command "goimports")
+    (use-package flymake-golangci
+      :config
+      (add-hook 'go-mode-hook 'flymake-golangci-load))
     (add-hook 'before-save-hook #'gofmt-before-save)
     ;; (use-package flycheck-golangci-lint
     ;;   :ensure t
