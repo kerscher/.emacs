@@ -1,18 +1,20 @@
 ;; User interface theme
 
 (defun kerscher/theme/set-ui-defaults ()
-  (setq-default tab-width 4)
-
-  ;; Hide unneeded widgets
+  (column-number-mode t)
   (customize-set-variable 'inhibit-startup-screen t)
-  (menu-bar-mode 0)
-  (tool-bar-mode 0)
-  (scroll-bar-mode 0)
-
-  ;; Line numbering
+  (customize-set-variable 'initial-buffer-choice t)
+  (electric-pair-mode 1)
   (global-linum-mode t) ; numbers on each line
   (line-number-mode t)
-  (column-number-mode t))
+  (menu-bar-mode 0)
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+  (scroll-bar-mode 0)
+  (setq-default tab-width 4)
+  (setq frame-title-format "emacs")
+  (show-paren-mode 1)
+  (tool-bar-mode 0))
 
 ;; Fonts
 (defun kerscher/theme/set-default-font-face-height (&optional height)
@@ -78,14 +80,6 @@
   (set-face-foreground 'show-paren-match "#def")
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold))
 
-(use-package almost-mono-themes
-  :straight (el-patch :type git :host github :repo "cryon/almost-mono-themes"
-                      :fork (:host github
-                             :repo "kerscher-comcarde/almost-mono-themes"))
-  :ensure t
-  :config
-  (load-theme 'almost-mono-white t))
-
 (defun kerscher/theme/reset ()
   (interactive)
   
@@ -95,4 +89,21 @@
   (kerscher/theme/disable-bold-and-italic)
   (kerscher/theme/colour-delimiters))
 
+(defun kerscher/theme/load ()
+  ;; Load this first so parts that acme-theme doesn't handle are themed
+  (use-package almost-mono-themes
+    :straight (el-patch :type git :host github :repo "cryon/almost-mono-themes"
+                        :fork (:host github
+                                     :repo "kerscher-comcarde/almost-mono-themes"))
+    :ensure t
+    :config
+    (load-theme 'almost-mono-cream t))
+
+  ;; Testing this out temporarily
+  (use-package acme-theme
+    :ensure t
+    :config
+    (load-theme 'acme t)))
+
+(kerscher/theme/load)
 (kerscher/theme/reset)

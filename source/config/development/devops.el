@@ -8,10 +8,6 @@
   (use-package dockerfile-mode :ensure t)
   (use-package jq-mode :ensure t)
 
-  (use-package shfmt :ensure t
-    :init
-    (add-hook 'sh-mode-hook 'shfmt-on-save-mode))
-
   (use-package yaml-mode
     :ensure t
     :bind (:map yaml-mode-map
@@ -29,11 +25,6 @@
     :init
     (use-package terraform-doc)
     (add-hook 'terraform-mode-hook #'terraform-format-on-save-mode))
-
-  (use-package flymake-shellcheck
-    :commands flymake-shellcheck-load
-    :init
-    (add-hook 'sh-mode-hook 'flymake-shellcheck-load))
 
   (use-package ansible
     :ensure t
