@@ -1,8 +1,5 @@
 ;; Configuration
 
-;; Remove noise from titlebar
-(setq frame-title-format "emacs")
-
 ;; Enable package manager
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -19,15 +16,12 @@
 (straight-use-package 'use-package)
 (setq straight-use-package-by-default t)
 
-(use-package exec-path-from-shell
-  :ensure t
-  :init
-  (exec-path-from-shell-initialize))
-
 (defvar config
   '("user-interface/navigation"
     "user-interface/theme"
     "development/common"
+    "development/git"
+    "development/autocompletion"
     "development/nix"
     "development/shell"
     "development/go"
@@ -62,14 +56,8 @@
 
 ;; Built-in customisations path
 (let ((custom-file-location
-      (concat (file-name-directory user-init-file)
-              "customizations.el")))
+       (concat (file-name-directory user-init-file)
+               "customizations.el")))
   (progn
     (setq custom-file custom-file-location)
     (load custom-file-location)))
-
-;; Start at scratch buffer
-(customize-set-variable 'initial-buffer-choice t)
-
-(put 'upcase-region 'disabled nil)
-(put 'downcase-region 'disabled nil)

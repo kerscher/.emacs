@@ -1,18 +1,20 @@
 ;; User interface theme
 
 (defun kerscher/theme/set-ui-defaults ()
-  (setq-default tab-width 4)
-
-  ;; Hide unneeded widgets
+  (column-number-mode t)
   (customize-set-variable 'inhibit-startup-screen t)
-  (menu-bar-mode 0)
-  (tool-bar-mode 0)
-  (scroll-bar-mode 0)
-
-  ;; Line numbering
+  (customize-set-variable 'initial-buffer-choice t)
+  (electric-pair-mode 1)
   (global-linum-mode t) ; numbers on each line
   (line-number-mode t)
-  (column-number-mode t))
+  (menu-bar-mode 0)
+  (put 'upcase-region 'disabled nil)
+  (put 'downcase-region 'disabled nil)
+  (scroll-bar-mode 0)
+  (setq-default tab-width 4)
+  (setq frame-title-format "emacs")
+  (show-paren-mode 1)
+  (tool-bar-mode 0))
 
 ;; Fonts
 (defun kerscher/theme/set-default-font-face-height (&optional height)
