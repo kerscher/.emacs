@@ -17,7 +17,10 @@
   "Enable vterm and sending commands to shell"
   (interactive)
 
-  (use-package vterm))
+  (use-package vterm
+	:config
+	(customize-set-variable 'vterm-shell "${HOME}/.nix-profile/bin/bash --login")
+	(use-package multi-vterm)))
 
 (defun send-region-to-shell (start end)
   "Execute region using shell-command"
