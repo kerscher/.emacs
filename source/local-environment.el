@@ -6,8 +6,8 @@
   (kerscher/lang/devops)
   (kerscher/lang/go)
   (kerscher/lang/shell)
+  (kerscher/ui/shell/enable)
   (kerscher/writing))
-
 
 (defun sort-words (reverse beg end)
   "Sort words in region alphabetically, in REVERSE if negative.
