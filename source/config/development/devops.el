@@ -33,10 +33,6 @@
       :ensure t
       :init
       (add-hook 'yaml-mode-hook #'ansible-doc-mode))
-    (use-package company-ansible
-      :ensure t
-      :init
-      (add-to-list 'company-backends 'company-ansible))
     (use-package ansible-vault
       :ensure t
       :init

@@ -1,107 +1,104 @@
 ;; Navigation
 
-(use-package undo-tree
-  :ensure t
-  :bind (:map global-map
-              ("C-/" . undo-tree-undo)
-              ("C-?" . undo-tree-redo)
-              ("C-x u" . undo-tree-visualize))
-  :config
-  (global-undo-tree-mode))
+(defun kerscher/navigation ()
+  (interactive)
+  (use-package undo-tree
+	:ensure t
+	:bind (:map global-map
+				("C-/" . undo-tree-undo)
+				("C-?" . undo-tree-redo)
+				("C-x u" . undo-tree-visualize))
+	:config
+	(global-undo-tree-mode))
 
-(use-package buffer-move
-  :bind (:map global-map
-              ("S-s-<down>" . buf-move-down)
-              ("S-s-<up>" . buf-move-up)
-              ("S-s-<left>" . buf-move-left)
-              ("S-s-<right>" . buf-move-right)
-              ("s-<down>" . windmove-down)
-              ("s-<up>" . windmove-up)
-              ("s-<left>" . windmove-left)
-              ("s-<right>" . windmove-right)))
+  (use-package buffer-move
+	:bind (:map global-map
+				("S-s-<down>" . buf-move-down)
+				("S-s-<up>" . buf-move-up)
+				("S-s-<left>" . buf-move-left)
+				("S-s-<right>" . buf-move-right)
+				("s-<down>" . windmove-down)
+				("s-<up>" . windmove-up)
+				("s-<left>" . windmove-left)
+				("s-<right>" . windmove-right)))
 
-(use-package zoom)
+  (use-package zoom)
 
-;; Better window movement.
-(use-package switch-window
-  :ensure t
-  :bind (:map global-map
-              ("C-x o" . switch-window)
-              ("C-x C-1" . switch-window-then-maximize)
-              ("C-x C-2" . switch-window-then-split-below)
-              ("C-x C-3" . switch-window-then-split-right)
-              ("C-x C-0" . switch-window-then-delete)))
+  (use-package switch-window
+	:ensure t
+	:bind (:map global-map
+				("C-x o" . switch-window)
+				("C-x C-1" . switch-window-then-maximize)
+				("C-x C-2" . switch-window-then-split-below)
+				("C-x C-3" . switch-window-then-split-right)
+				("C-x C-0" . switch-window-then-delete)))
 
-;; Jump to point.
-(use-package ace-jump-mode
-  :ensure t
-  :bind (:map global-map
-              ("C-c SPC" . ace-jump-mode)
-              ("C-x SPC" . ace-jump-mode-pop-mark))
-  :config
-  (ace-jump-mode-enable-mark-sync))
+  (use-package ace-jump-mode
+	:ensure t
+	:bind (:map global-map
+				("C-c SPC" . ace-jump-mode)
+				("C-x SPC" . ace-jump-mode-pop-mark))
+	:config
+	(ace-jump-mode-enable-mark-sync))
 
-;; Find things anywhere — fuzzy matching.
-(use-package helm
-  :straight t
-  :bind (("C-x C-f" . helm-find-files)
-         ("C-o"     . helm-find-files)
-         ("C-p"     . helm-browse-project)
-         ("C-S-p"   . helm-M-x)
-         ("C-e"     . helm-buffers-list)
-         ("C-t"     . helm-M-x))
-  :init
-  (require 'helm-config)
-  (helm-mode 1)
-  (helm-autoresize-mode 1)
-  (customize-set-variable 'sublimity-mode t)
-  (define-key helm-map (kbd "<left>") 'helm-previous-source)
-  (define-key helm-map (kbd "<right>") 'helm-next-source)
-  (customize-set-variable 'helm-ff-lynx-style-map t)
-  (customize-set-variable 'helm-imenu-lynx-style-map t)
-  (customize-set-variable 'helm-semantic-lynx-style-map t)
-  (customize-set-variable 'helm-occur-use-ioccur-style-keys t)
-  (customize-set-variable 'helm-grep-use-ioccur-style-keys t)
-  :config
-  (use-package helm-ls-git :ensure t))
+  (use-package consult)
 
-;; Search in-buffer and show results with Helm
-(use-package swiper-helm
-  :ensure t
-  :bind ("C-s" . swiper-helm))
+  (use-package marginalia
+	:init
+	(marginalia-mode))
 
-;; Search project with `ripgrep` and edit directly from results.
-(use-package wgrep
-  :ensure t
-  :init
-  (use-package rg
-    :ensure t
-    :bind (:map global-map
-                ("M-S" . rg-project))))
+  (use-package vertico
+	:init
+	(vertico-mode)
+	(setq vertico-resize t)
+	(setq vertico-cycle t)
+	:bind (("C-o" . find-file)
+		   ("C-t" . execute-extended-command)
+		   ("C-e" . consult-buffer)
+		   ("C-p" . project-find-file)
+		   ("C-s" . consult-line)
+		   ("C-S" . consult-ripgrep)))
 
-;; Sidebar.
-(use-package speedbar
-  :ensure t
-  :init (customize-set-variable 'speedbar-use-images nil))
+  (use-package orderless
+	:ensure t
+	:custom
+	(completion-styles '(orderless basic))
+	(completion-category-overrides '((file (styles basic partial-completion)))))
 
-(use-package sr-speedbar
-  :ensure t
-  :bind ("C-k" . sr-speedbar-toggle)
-  :init
-  (setq sr-speedbar-auto-refresh nil)
-  (setq speedbar-show-unknown-files t)
-  (setq speedbar-use-images nil))
+  (use-package emacs
+	:init
+	(setq tab-always-indent 'complete))
 
-;; Multiple cursors.
-(use-package multiple-cursors
-  :ensure t
-  :bind (("<M-down>" . mc/mark-next-like-this)
-         ("<M-up>"   . mc/mark-previous-like-this)))
+  (use-package wgrep
+	:ensure t
+	:init
+	(use-package rg
+      :ensure t
+      :bind (:map global-map
+                  ("M-S" . rg-project))))
 
-;; Display next key combination.
-(use-package which-key
-  :ensure t
-  :init
-  (which-key-mode)
-  :config
-  (setq which-key-idle-delay 0.001))
+  (use-package speedbar
+	:ensure t
+	:init (customize-set-variable 'speedbar-use-images nil))
+
+  (use-package sr-speedbar
+	:ensure t
+	:bind ("C-k" . sr-speedbar-toggle)
+	:init
+	(setq sr-speedbar-auto-refresh nil)
+	(setq speedbar-show-unknown-files t)
+	(setq speedbar-use-images nil))
+
+  (use-package multiple-cursors
+	:ensure t
+	:bind (("<M-down>" . mc/mark-next-like-this)
+           ("<M-up>"   . mc/mark-previous-like-this)))
+
+  (use-package which-key
+	:ensure t
+	:init
+	(which-key-mode)
+	:config
+	(setq which-key-idle-delay 0.001)))
+
+(kerscher/navigation)

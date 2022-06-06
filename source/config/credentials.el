@@ -1,9 +1,5 @@
 ;; password store and related tools
 
-(use-package helm-pass
-  :ensure t
-  :commands (helm-pass))
-
 (cond
  ((not (string-collate-equalp system-type "darwin"))
   (use-package keychain-environment
