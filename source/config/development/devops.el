@@ -4,9 +4,7 @@
   "Load various DevOps related languages, such as 'terraform-mode', 'hcl-mode', 'ansible' etc."
   (interactive)
 
-  (use-package systemd :ensure t)
   (use-package dockerfile-mode :ensure t)
-  (use-package jq-mode :ensure t)
 
   (use-package yaml-mode
     :ensure t

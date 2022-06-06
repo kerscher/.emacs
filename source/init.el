@@ -32,7 +32,6 @@
     "development/rust"
     "development/devops"
     "development/dhall"
-    "communication/email"
     "communication/irc"
     "communication/presentations"
     "communication/writing"
