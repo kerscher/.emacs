@@ -16,7 +16,6 @@
   (show-paren-mode 1)
   (tool-bar-mode 0))
 
-;; Fonts
 (defun kerscher/theme/set-default-font-face-height (&optional height)
   (put 'kerscher/theme/set-default-font-face-height
        'initial-height
