@@ -12,4 +12,5 @@
               ("C-c c" . org-capture)
               ("C-c a" . org-agenda))
   :config
-  (setq org-default-notes-file "/opt/src/notes.org.gpg"))
+  (setq org-default-notes-file "/opt/src/notes.org.gpg")
+  (setq org-agenda-files '("/opt/src/notes.org.gpg")))
