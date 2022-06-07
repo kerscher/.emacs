@@ -57,7 +57,7 @@
 		   ("C-e" . consult-buffer)
 		   ("C-p" . project-find-file)
 		   ("C-s" . consult-line)
-		   ("C-S" . consult-ripgrep)))
+		   ("C-S-s" . consult-ripgrep)))
 
   (use-package orderless
 	:ensure t
