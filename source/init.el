@@ -35,7 +35,6 @@
     "communication/irc"
     "communication/presentations"
     "communication/writing"
-    "accountancy"
     "agenda"
     "backups"
     "credentials"
