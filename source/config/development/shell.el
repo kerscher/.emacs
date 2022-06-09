@@ -26,5 +26,7 @@
   "Execute region using shell-command"
   (interactive "r")
   (async-shell-command
-   (buffer-substring-no-properties start end)
+   (if mark-active
+	   (buffer-substring-no-properties start end)
+	 (buffer-string))
    (generate-new-buffer-name "*shell-output*")))
