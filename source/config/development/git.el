@@ -7,7 +7,7 @@
     :config
     (use-package magit-lfs)
     :hook (magit-mode . turn-on-font-lock))
-  (use-package git-timemachine)
+  (use-package git-time-machine)
   (use-package git-link))
 
 (kerscher/git)
