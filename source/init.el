@@ -28,6 +28,7 @@
     "development/haskell"
     "development/jvm"
     "development/latex"
+	"development/lisp"
     "development/python"
     "development/rust"
     "development/devops"
