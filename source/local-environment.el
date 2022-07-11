@@ -3,6 +3,7 @@
 (cd "/opt/src")
 
 (progn
+  (kerscher/lang/lisp)
   (kerscher/lang/devops)
   (kerscher/lang/go)
   (kerscher/lang/shell)
