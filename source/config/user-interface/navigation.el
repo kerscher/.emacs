@@ -20,11 +20,7 @@
 				("s-<down>" . windmove-down)
 				("s-<up>" . windmove-up)
 				("s-<left>" . windmove-left)
-				("s-<right>" . windmove-right)
-				("M-S-<down>" . shrink-window)
-				("M-S-<up>" . enlarge-window)
-				("M-S-<left>" . shrink-window-horizontally)
-				("M-S-<right>" . enlarge-window-horizontally)))
+				("s-<right>" . windmove-right)))
 
   (use-package zoom)
 
