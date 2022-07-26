@@ -88,21 +88,30 @@
   (kerscher/theme/disable-bold-and-italic)
   (kerscher/theme/colour-delimiters))
 
-(defun kerscher/theme/load ()
-  ;; Load this first so parts that acme-theme doesn't handle are themed
+(defun kerscher/theme/load (variant)
   (use-package almost-mono-themes
     :straight (el-patch :type git :host github :repo "cryon/almost-mono-themes"
-                        :fork (:host github
-                                     :repo "kerscher-comcarde/almost-mono-themes"))
-    :ensure t
-    :config
-    (load-theme 'almost-mono-cream t))
+						:fork (:host github
+									 :repo "kerscher-comcarde/almost-mono-themes")))
 
-  ;; Testing this out temporarily
-  (use-package acme-theme
-    :ensure t
-    :config
-    (load-theme 'acme t)))
+  (pcase variant
+    ("cream" (progn
+			   (load-theme 'almost-mono-cream t)
+			   (use-package acme-theme
+				 :ensure t
+				 :config
+				 (load-theme 'acme t))))
+    ("dark" (progn
+			  ;; (use-package minimal-theme)
+			  ;; (load-theme 'minimal-black t)
+			  (add-to-list 'custom-theme-load-path
+						   (concat
+							(getenv "HOME")
+							"/.emacs.d/themes"))
+			  (load-theme 'eltbus t)
+			  (set-face-background 'fringe "black")
+			  ))
+    (_ (kerscher/theme/load "cream"))))
 
-(kerscher/theme/load)
+(kerscher/theme/load "cream")
 (kerscher/theme/reset)
