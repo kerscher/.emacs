@@ -13,7 +13,11 @@
 				("<left>" . sexp-move-backward)
 				("M-<left>" . backward-char)
 				("M-<right>" . forward-char)
-				("C-k" . sr-speedbar-toggle)))  
+				("C-k" . sr-speedbar-toggle))
+	:hook
+	(emacs-lisp-mode . enable-paredit-mode)
+	(lisp-mode . enable-paredit-mode)
+	(geiser-mode . enable-paredit-mode))  
   
   (mapc (lambda (p) (eval `(use-package ,p)))
 		(mapcar (lambda (i) (intern (concat "geiser-" i)))
