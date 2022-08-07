@@ -5,7 +5,7 @@
   (customize-set-variable 'inhibit-startup-screen t)
   (customize-set-variable 'initial-buffer-choice t)
   (electric-pair-mode 1)
-  (global-linum-mode t) ; numbers on each line
+  (global-linum-mode t)					; numbers on each line
   (line-number-mode t)
   (menu-bar-mode 0)
   (put 'upcase-region 'disabled nil)
