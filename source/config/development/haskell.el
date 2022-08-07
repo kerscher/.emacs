@@ -4,7 +4,6 @@
   "Load haskell-mode' and related packages."
   (interactive)
   (use-package haskell-mode
-    :ensure t
     :bind (:map haskell-mode-map
                 ("C-c C-c" . haskell-compile)
                 :map haskell-cabal-mode-map

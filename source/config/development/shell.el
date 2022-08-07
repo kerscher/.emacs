@@ -5,13 +5,13 @@
   (interactive)
 
   (use-package shfmt
-    :init
-    (add-hook 'sh-mode-hook 'shfmt-on-save-mode))
+	:hook
+    (sh-mode . shfmt-on-save-mode))
 
   (use-package flymake-shellcheck
     :commands flymake-shellcheck-load
-    :init
-    (add-hook 'sh-mode-hook 'flymake-shellcheck-load)))
+    :hook
+    (sh-mode . flymake-shellcheck-load)))
 
 (defun kerscher/ui/shell/enable ()
   "Enable vterm and sending commands to shell"

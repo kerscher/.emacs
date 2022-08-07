@@ -7,12 +7,13 @@
     (flymake-mode 1)))
 
 ;; TODO: possibly needs to be a macro with defmacro?
-(defun kerscher/eglotise (mode-name)
-  `(,mode-name . 'kerscher/eglot-ensure))
+;; (defmacro kerscher/eglotise (mode-name)
+;;   `(,mode-name . 'kerscher/eglot-ensure))
 
 (use-package eglot
   :ensure t
   :config
+  (use-package consult-eglot)
   (add-to-list 'eglot-server-programs '(terraform-mode . ("terraform-ls" "serve")))
   :bind (:map eglot-mode-map
               ("C-c r" . eglot-rename)

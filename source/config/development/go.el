@@ -4,10 +4,10 @@
   "Load 'go-mode' and related packages."
   (interactive)
   (use-package go-mode
-    :ensure t
+    :init
+	(use-package flymake-golangci)
     :config
-    (setq gofmt-command "goimports")
-    (use-package flymake-golangci
-      :config
-      (add-hook 'go-mode-hook 'flymake-golangci-load))
-    (add-hook 'before-save-hook #'gofmt-before-save)))
+	(setq gofmt-command "goimports")
+	:hook
+	(go-mode-hook . flymake-golangci-load)
+	(before-save-hook . gofmt-before-save)))

@@ -3,13 +3,13 @@
 (defun kerscher/lang/rust ()
   "Load various 'rust-mode' related packages."
   (interactive)
-  (use-package toml-mode :ensure t)
+  (use-package toml-mode)
   (use-package rust-mode
-    :ensure t
     :init
-    (use-package cargo :ensure t)
+    (use-package cargo)
     (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
-    (add-hook 'rust-mode-hook 'cargo-minor-mode)
-    (add-hook 'toml-mode-hook 'cargo-minor-mode)
+	:hook	
+    (rust-mode-hook . cargo-minor-mode)
+    (toml-mode-hook . cargo-minor-mode)
     :config
     (setq rust-format-on-save t)))

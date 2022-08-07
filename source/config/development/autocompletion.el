@@ -2,7 +2,6 @@
 
 (defun kerscher/autocompletion ()
   (interactive)
-
   (use-package corfu
 	:custom
 	(corfu-cycle t)

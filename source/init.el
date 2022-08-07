@@ -50,7 +50,6 @@
                       ".el")))
       config)
 
-;; Not meant to be kept on version control
 (load (concat (file-name-directory load-file-name) "local-environment.el"))
 
 ;; Built-in customisations path

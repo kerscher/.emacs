@@ -8,7 +8,8 @@
   (kerscher/lang/go)
   (kerscher/lang/shell)
   (kerscher/ui/shell/enable)
-  (kerscher/writing))
+  (kerscher/writing)
+  (kerscher/lang/python))
 
 (defun sort-words (reverse beg end)
   "Sort words in region alphabetically, in REVERSE if negative.
