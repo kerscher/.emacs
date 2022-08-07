@@ -124,5 +124,6 @@
 				 :config (load-theme 'tao-yang t))))
     (_ (kerscher/theme/load "cream"))))
 
-(kerscher/theme/load "cream")
+
+(kerscher/theme/load "dark")
 (kerscher/theme/reset)
