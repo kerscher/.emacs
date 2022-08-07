@@ -1,6 +1,6 @@
 ;; Customise for each environment
 
-(cd "/opt/src")
+(cd "/opt/src/github.com/kerscher")
 
 (progn
   (kerscher/lang/lisp)
