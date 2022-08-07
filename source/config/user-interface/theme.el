@@ -124,6 +124,9 @@
 				 :config (load-theme 'tao-yang t))))
     (_ (kerscher/theme/load "cream"))))
 
+;; (defadvice load-theme (before dont-propagate-theme (theme &rest args) activate)
+;;   (mapc #'disable-theme custom-enabled-themes))
+;; (ad-activate 'load-theme)
 
 (kerscher/theme/load "dark")
 (kerscher/theme/reset)
