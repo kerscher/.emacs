@@ -96,21 +96,32 @@
 
   (pcase variant
     ("cream" (progn
+			   (mapc #'disable-theme custom-enabled-themes)
 			   (load-theme 'almost-mono-cream t)
 			   (use-package acme-theme
 				 :ensure t
 				 :config
 				 (load-theme 'acme t))))
     ("dark" (progn
-			  ;; (use-package minimal-theme)
-			  ;; (load-theme 'minimal-black t)
-			  (add-to-list 'custom-theme-load-path
-						   (concat
-							(getenv "HOME")
-							"/.emacs.d/themes"))
-			  (load-theme 'eltbus t)
-			  (set-face-background 'fringe "black")
-			  ))
+			  (mapc #'disable-theme custom-enabled-themes)
+			  (mapc (lambda (f)
+					  (set-face-background f "black")
+					  (set-face-foreground f "gray"))
+					'(speedbar-directory-face
+					  speedbar-file-face
+					  speedbar-highlight-face
+					  speedbar-selected-face
+					  speedbar-separator-face
+					  speedbar-button-face
+					  speedbar-tag-face
+					  fringe))
+			  (use-package tao-theme
+				:config (load-theme 'tao-yin t))
+			  (set-face-background 'default "black")))
+	("white" (progn
+			   (mapc #'disable-theme custom-enabled-themes)
+			   (use-package tao-theme
+				 :config (load-theme 'tao-yang t))))
     (_ (kerscher/theme/load "cream"))))
 
 (kerscher/theme/load "cream")
