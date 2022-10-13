@@ -18,4 +18,4 @@
     :init
     (use-package terraform-doc)
 	:hook
-    (terraform-mode-hook . terraform-format-on-save-mode)))
+    (terraform-mode . terraform-format-on-save-mode)))

@@ -1,14 +1,16 @@
 ;; Customise for each environment
 
-(cd "/opt/src/github.com/kerscher")
+(cd "/opt/src")
 
 (progn
   (kerscher/lang/lisp)
+  (kerscher/lang/docker)
   (kerscher/lang/devops)
   (kerscher/lang/go)
   (kerscher/lang/shell)
-  (kerscher/ui/shell/enable)
+  ; (kerscher/ui/shell/enable)			; broken on macOS arm
   (kerscher/writing)
+  (kerscher/lang/javascript)
   (kerscher/lang/python))
 
 (defun sort-words (reverse beg end)

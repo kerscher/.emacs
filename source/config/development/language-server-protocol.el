@@ -6,9 +6,8 @@
     (eglot-ensure)
     (flymake-mode 1)))
 
-;; TODO: possibly needs to be a macro with defmacro?
 ;; (defmacro kerscher/eglotise (mode-name)
-;;   `(,mode-name . 'kerscher/eglot-ensure))
+;;   `(,mode-name . kerscher/eglot-ensure))
 
 (use-package eglot
   :ensure t

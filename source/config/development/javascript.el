@@ -4,6 +4,8 @@
   "Load 'jq-mode'"
   (interactive)
 
+  (use-package typescript-mode)
+  
   (use-package jq-mode
 	:hook
 	(before-save . (lambda ()

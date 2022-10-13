@@ -9,5 +9,6 @@
     :config
 	(setq gofmt-command "goimports")
 	:hook
-	(go-mode-hook . flymake-golangci-load)
-	(before-save-hook . gofmt-before-save)))
+	(go-mode . flymake-golangci-load)
+	(before-save . gofmt-before-save))
+  (use-package go-dlv))
