@@ -6,9 +6,6 @@
     (eglot-ensure)
     (flymake-mode 1)))
 
-;; (defmacro kerscher/eglotise (mode-name)
-;;   `(,mode-name . kerscher/eglot-ensure))
-
 (use-package eglot
   :ensure t
   :config
@@ -20,19 +17,10 @@
               ("C-c h" . eldoc)
               ("<f6>" . xref-find-definitions))
   :hook
-  ;; TODO: Fix kerscher/eglotise and use it here with mapc instead
   ((dockerfile-mode . kerscher/eglot-ensure)
    (go-mode . kerscher/eglot-ensure)
    (nix-mode . kerscher/eglot-ensure)
    (python-mode . kerscher/eglot-ensure)
    (rust-mode . kerscher/eglot-ensure)
    (shell-script-mode . kerscher/eglot-ensure)
-   (terraform-mode . kerscher/eglot-ensure))
-  ;; (mapc kerscher/eglotise (dockerfile-mode
-  ;;                                go-mode
-  ;;                                nix-mode
-  ;;                                python-mode
-  ;;                                rust-mode
-  ;;                                shell-script-mode
-  ;;                                terraform-mode))
-  )
+   (terraform-mode . kerscher/eglot-ensure)))
