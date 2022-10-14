@@ -2,3 +2,7 @@
 /source/eln-cache/
 /source/transient/
 *.el#
+.DS_Store
+/source/.mc-lists.el
+/source/auto-save-list/
+/source/projects
