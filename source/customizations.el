@@ -43,6 +43,7 @@
  '(speedbar-verbosity-level 0)
  '(sr-speedbar-auto-refresh nil)
  '(sublimity-mode t t)
+ '(vterm-shell "/usr/bin/env bash")
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
