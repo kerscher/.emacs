@@ -34,7 +34,11 @@
                         :weight 'normal
                         :height height
                         :width 'normal
-                        :family "PragmataPro Mono Liga")))
+                        :family "PragmataPro Mono Liga")
+	(set-face-attribute 'variable-pitch nil
+						:family "Helvetica"
+						:height height)
+	))
 
 (defun kerscher/theme/toggle-pair-programming ()
   (interactive)
