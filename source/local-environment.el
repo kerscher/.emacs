@@ -8,7 +8,7 @@
   (kerscher/lang/devops)
   (kerscher/lang/go)
   (kerscher/lang/shell)
-  ; (kerscher/ui/shell/enable)			; broken on macOS arm
+  (kerscher/ui/shell/enable)
   (kerscher/writing)
   (kerscher/lang/javascript)
   (kerscher/lang/python))
