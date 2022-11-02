@@ -7,6 +7,9 @@
   
   (use-package paredit
 	:config
+	;; (mapc (lambda (p) (eval `(use-package ,p)))
+	;; 		(mapcar (lambda (i) (intern (concat "geiser-" i)))
+	;; 				'("guile")))
 	:bind (:map paredit-mode-map
                 ("<RET>" . paredit-newline)
 				("<right>" . sexp-move-forward)
@@ -17,8 +20,5 @@
 	:hook
 	(emacs-lisp-mode . enable-paredit-mode)
 	(lisp-mode . enable-paredit-mode)
-	(geiser-mode . enable-paredit-mode))  
-  
-  (mapc (lambda (p) (eval `(use-package ,p)))
-		(mapcar (lambda (i) (intern (concat "geiser-" i)))
-				'("guile"))))
+	;; (geiser-mode . enable-paredit-mode)  
+    ))
