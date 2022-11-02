@@ -7,7 +7,6 @@
   (electric-pair-mode 1)
   (global-linum-mode 0)
   (line-number-mode t)
-  (menu-bar-mode 0)
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
   (scroll-bar-mode 0)
