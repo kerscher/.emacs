@@ -14,7 +14,8 @@
   (setq-default tab-width 4)
   (setq frame-title-format "emacs")
   (show-paren-mode 1)
-  (tool-bar-mode 0))
+  (tool-bar-mode 0)
+  (blink-cursor-mode 0))
 
 (defun kerscher/theme/set-default-font-face-height (&optional height)
   (put 'kerscher/theme/set-default-font-face-height
