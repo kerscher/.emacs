@@ -70,7 +70,8 @@
 
   (use-package emacs
 	:init
-	(setq tab-always-indent 'complete))
+	(setq tab-always-indent 'complete)
+	(setq create-lockfiles nil))
 
   (use-package wgrep
 	:init
