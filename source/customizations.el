@@ -26,6 +26,7 @@
  '(initial-buffer-choice t)
  '(js-indent-level 2)
  '(message-kill-buffer-on-exit t)
+ '(multi-vterm-program /Users/yghorkerscher/\.nix-profile/bin/bash)
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc org-velocity))
  '(org-support-shift-select t)
@@ -43,7 +44,7 @@
  '(speedbar-verbosity-level 0)
  '(sr-speedbar-auto-refresh nil)
  '(sublimity-mode t t)
- '(vterm-shell "/usr/bin/env bash")
+ '(vterm-shell "~/.nix-profile/bin/bash")
  '(warning-suppress-log-types '((comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
