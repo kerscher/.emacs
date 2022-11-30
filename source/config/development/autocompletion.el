@@ -12,13 +12,13 @@
 	:init
 	(global-corfu-mode))
 
-  (use-package corfu-doc
-	:hook
-	(corfu-mode . corfu-doc-mode)
-	:bind (:map corfu-map
-				("M-<up>" . corfu-doc-scroll-down)
-				("M-<down>" . corfu-doc-scroll-up)
-				("M-d" . corfu-doc-toggle)))
+  ;; (use-package corfu-doc
+  ;; 	:hook
+  ;; 	(corfu-mode . corfu-doc-mode)
+  ;; 	:bind (:map corfu-map
+  ;; 				("M-<up>" . corfu-doc-scroll-down)
+  ;; 				("M-<down>" . corfu-doc-scroll-up)
+  ;; 				("M-d" . corfu-doc-toggle)))
 
   (use-package cape
 	:init
