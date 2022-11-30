@@ -30,3 +30,10 @@
 	   (buffer-substring-no-properties start end)
 	 (buffer-string))
    (generate-new-buffer-name "*shell-output*")))
+
+(add-to-list 'display-buffer-alist
+			 '("\\*shell-output\\*"
+			   (display-buffer-in-side-window)
+			   (side . bottom)
+			   (slot . 1)
+			   (window-height . 0.33)))
