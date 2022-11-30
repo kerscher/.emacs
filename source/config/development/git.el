@@ -7,8 +7,10 @@
     :config
     (use-package magit-lfs)
     :hook (magit-mode . turn-on-font-lock))
-  ;; (use-package git-timemachine)
-  ;; (use-package git-link)
-  )
+
+  (straight-use-package
+   '(git-timemachine :type git :host nil :repo "https://gitlab.com/pidu/git-timemachine"
+					 :fork (:host github :repo "emacsmirror/git-timemachine")))
+  (use-package git-link))
 
 (kerscher/git)
