@@ -31,6 +31,9 @@
 				("C-x C-3" . switch-window-then-split-right)
 				("C-x C-0" . switch-window-then-delete)))
 
+
+  (winner-mode +1)
+
   (use-package ace-jump-mode
 	:bind (:map global-map
 				("C-c SPC" . ace-jump-mode)
@@ -40,13 +43,13 @@
 
   (use-package embark
 	:bind (("C-n" . embark-act)
-	       ("M-." . embark-dwim)
-	       ("C-h B" . embark-bindings)))
-  
+		   ("M-." . embark-dwim)
+		   ("C-h B" . embark-bindings)))
+
   (use-package consult)
 
   (use-package embark-consult)
-  
+
   (use-package marginalia
 	:init
 	(marginalia-mode))
@@ -79,8 +82,8 @@
   (use-package wgrep
 	:init
 	(use-package rg
-      :bind (:map global-map
-                  ("M-S" . rg-project))))
+	  :bind (:map global-map
+				  ("M-S" . rg-project))))
 
   (use-package speedbar
 	:init (customize-set-variable 'speedbar-use-images nil))
@@ -94,7 +97,7 @@
 
   (use-package multiple-cursors
 	:bind (("<M-down>" . mc/mark-next-like-this)
-           ("<M-up>"   . mc/mark-previous-like-this)))
+		   ("<M-up>"   . mc/mark-previous-like-this)))
 
   (use-package which-key
 	:init
