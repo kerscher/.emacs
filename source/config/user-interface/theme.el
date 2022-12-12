@@ -83,11 +83,29 @@
   (set-face-foreground 'show-paren-match "#def")
   (set-face-attribute 'show-paren-match nil :weight 'extra-bold))
 
+(defun kerscher/theme/enable-ligatures ()
+  (interactive)
+  (use-package ligature
+	:init
+	;; TODO: check actual ligatures in PragmataPro. List below comes from Fira Code.
+	(ligature-set-ligatures 'prog-mode '("www" "**" "***" "**/" "*>" "*/" "\\\\" "\\\\\\" "{-" "::"
+										 ":::" ":=" "!!" "!=" "!==" "-}" "----" "-->" "->" "->>"
+										 "-<" "-<<" "-~" "#{" "#[" "##" "###" "####" "#(" "#?" "#_"
+										 "#_(" ".-" ".=" ".." "..<" "..." "?=" "??" ";;" "/*" "/**"
+										 "/=" "/==" "/>" "//" "///" "&&" "||" "||=" "|=" "|>" "^=" "$>"
+										 "++" "+++" "+>" "=:=" "==" "===" "==>" "=>" "=>>" "<="
+										 "=<<" "=/=" ">-" ">=" ">=>" ">>" ">>-" ">>=" ">>>" "<*"
+										 "<*>" "<|" "<|>" "<$" "<$>" "<!--" "<-" "<--" "<->" "<+"
+										 "<+>" "<=" "<==" "<=>" "<=<" "<>" "<<" "<<-" "<<=" "<<<"
+										 "<~" "<~~" "</" "</>" "~@" "~-" "~>" "~~" "~~>" "%%"))
+	(global-ligature-mode 't)))
+
 (defun kerscher/theme/reset ()
   (interactive)
   
   (kerscher/theme/set-ui-defaults)
   (kerscher/theme/set-default-font-face-height)
+  (kerscher/theme/enable-ligatures)
   (global-font-lock-mode 0)
   (kerscher/theme/disable-bold-and-italic)
   (kerscher/theme/colour-delimiters))
