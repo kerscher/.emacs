@@ -23,6 +23,12 @@
 
   (use-package zoom)
 
+  (use-package golden-ratio
+	:config
+	(golden-ratio-mode 1)
+	:init
+	(setq golden-ratio-auto-scale t))
+  
   (use-package switch-window
 	:bind (:map global-map
 				("C-x o" . switch-window)
