@@ -3,14 +3,19 @@
 (defun kerscher/autocompletion ()
   (interactive)
   (use-package corfu
+	:straight (corfu :file (:defaults "extensions/*")
+					 :includes (corfu-info corfu-history))
 	:custom
 	(corfu-cycle t)
 	(corfu-auto t)
 	(corfu-quit-no-match 'separator)
 	(corfu-auto-delay 0)
 	(corfu-auto-prefix 1)
+	(setq corfu-popupinfo-delay 0)
 	:init
-	(global-corfu-mode))
+	(global-corfu-mode)
+	;; (corfu-popupinfo-mode)
+	)
 
   ;; (use-package corfu-doc
   ;; 	:hook
