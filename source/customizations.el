@@ -45,7 +45,8 @@
  '(sr-speedbar-auto-refresh nil)
  '(sublimity-mode t t)
  '(vterm-shell "~/.nix-profile/bin/bash")
- '(warning-suppress-log-types '((comp))))
+ '(warning-suppress-log-types '((comp)))
+ '(warning-suppress-types '((corfu-doc))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
