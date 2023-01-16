@@ -2,12 +2,14 @@
 
 (defun kerscher/eglot-ensure ()
   (interactive)
-  (progn
-    (eglot-ensure)
-    (flymake-mode 1)))
+  (eglot-ensure)
+  (flymake-mode 1))
+
+(defun kerscher/eglot-ensure-with-format ()
+  (kerscher/eglot-ensure)
+  (add-hook 'before-save-hook #'eglot-format-buffer 0 t))
 
 (use-package eglot
-  :ensure t
   :config
   (use-package consult-eglot)
   (add-to-list 'eglot-server-programs '(terraform-mode . ("terraform-ls" "serve")))
@@ -19,7 +21,7 @@
   :hook
   ((dockerfile-mode . kerscher/eglot-ensure)
    (go-mode . kerscher/eglot-ensure)
-   (nix-mode . kerscher/eglot-ensure)
+   (nix-mode . kerscher/eglot-ensure-with-format)
    (python-mode . kerscher/eglot-ensure)
    (rust-mode . kerscher/eglot-ensure)
    (shell-script-mode . kerscher/eglot-ensure)
