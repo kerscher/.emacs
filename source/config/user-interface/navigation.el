@@ -83,7 +83,10 @@
   (use-package emacs
 	:init
 	(setq tab-always-indent 'complete)
-	(setq create-lockfiles nil))
+	(setq create-lockfiles nil)
+	:bind
+	(("C-x p w" . flymake-show-buffer-diagnostics)
+	 ("C-x p C-w" . flymake-show-project-diagnostics)))
 
   (use-package wgrep
 	:init
