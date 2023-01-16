@@ -10,6 +10,10 @@
   (font-lock-mode kerscher/rainbow-blocks-toggle)
   (rainbow-blocks-mode kerscher/rainbow-blocks-toggle))
 
+(defun kerscher/lang/lisp/hook ()
+  (enable-paredit-mode)
+  (flymake-mode 1))
+
 (defun kerscher/lang/lisp ()
   (interactive)
 
@@ -31,6 +35,6 @@
 				("C-k" . sr-speedbar-toggle)
 				("C-c l" . kerscher/toggle-rainbow-blocks))
 	:hook
-	(emacs-lisp-mode . enable-paredit-mode)
-	(lisp-mode . enable-paredit-mode)
-	(geiser-mode . enable-paredit-mode)))
+	(emacs-lisp-mode . kerscher/lang/lisp/hook)
+	(lisp-mode . kerscher/lang/lisp/hook)
+	(geiser-mode . kerscher/lang/lisp/hook)))
