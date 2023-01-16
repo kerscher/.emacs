@@ -26,7 +26,7 @@
  '(initial-buffer-choice t)
  '(js-indent-level 2)
  '(message-kill-buffer-on-exit t)
- '(multi-vterm-program /Users/yghorkerscher/\.nix-profile/bin/bash)
+ '(multi-vterm-program /Users/yghorkerscher/.nix-profile/bin/bash)
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc org-velocity))
  '(org-support-shift-select t)
@@ -42,7 +42,7 @@
  '(speedbar-show-unknown-files t)
  '(speedbar-use-images nil)
  '(speedbar-verbosity-level 0)
- '(sr-speedbar-auto-refresh nil)
+ '(sr-speedbar-auto-refresh nil t)
  '(sublimity-mode t t)
  '(vterm-shell "~/.nix-profile/bin/bash")
  '(warning-suppress-log-types '((comp)))
