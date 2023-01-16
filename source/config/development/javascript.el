@@ -10,7 +10,11 @@
 	:hook (typescript-mode . flymake-eslint-enable))
   
   (use-package jq-mode
-	:hook
-	(before-save . (lambda ()
-					 (save-mark-and-excursion
-					   (json-pretty-print-buffer-ordered))))))
+	:config
+	:hook (javascript-mode
+		   . (lambda ()
+			   (add-hook
+				'before-save-hook
+				(lambda ()
+				  (save-mark-and-excursion
+					(json-pretty-print-buffer))) nil t)))))
