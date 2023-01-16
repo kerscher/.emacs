@@ -5,7 +5,6 @@
   (customize-set-variable 'inhibit-startup-screen t)
   (customize-set-variable 'initial-buffer-choice t)
   (electric-pair-mode 1)
-  (global-linum-mode 0)
   (line-number-mode t)
   (put 'upcase-region 'disabled nil)
   (put 'downcase-region 'disabled nil)
