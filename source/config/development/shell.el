@@ -20,7 +20,8 @@
   (use-package vterm
 	:config
 	(customize-set-variable 'vterm-shell "${HOME}/.nix-profile/bin/bash --login")
-	(use-package multi-vterm))
+	(use-package multi-vterm)
+	:bind (("C-x p s" . multi-vterm-project)))
 
   (use-package eat))
 
