@@ -14,13 +14,15 @@
     (sh-mode . flymake-shellcheck-load)))
 
 (defun kerscher/ui/shell/enable ()
-  "Enable vterm and sending commands to shell"
+  "Enable vterm and eat"
   (interactive)
 
   (use-package vterm
 	:config
 	(customize-set-variable 'vterm-shell "${HOME}/.nix-profile/bin/bash --login")
-	(use-package multi-vterm)))
+	(use-package multi-vterm))
+
+  (use-package eat))
 
 (defun send-region-to-shell (start end)
   "Execute region using shell-command"
