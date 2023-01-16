@@ -8,14 +8,18 @@
     :bind (:map yaml-mode-map
 				("<backspace>" . backward-delete-char-untabify)))
 
-  (use-package hcl-mode
-	:hook
-    (hcl-mode-hook . (lambda ()
-					   (save-mark-and-excursion
-						 (terraform-format-buffer)))))
-
   (use-package terraform-mode
     :init
     (use-package terraform-doc)
 	:hook
-    (terraform-mode . terraform-format-on-save-mode)))
+    (terraform-mode . terraform-format-on-save-mode))
+  
+  (use-package hcl-mode
+	:hook
+    (hcl-mode . (lambda ()
+				  (require 'terraform-mode)
+				  (add-hook
+				   'before-save-hook
+				   (lambda ()
+					 (save-mark-and-excursion
+					   (terraform-format-buffer))) 0 t)))))
