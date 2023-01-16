@@ -1,5 +1,9 @@
 ;; Golang
 
+(defun kerscher/go-mode-hook ()
+  (add-hook 'before-save-hook #'gofmt-before-save 0 t)
+  (flymake-golangci-load))
+
 (defun kerscher/lang/go ()
   "Load 'go-mode' and related packages."
   (interactive)
@@ -9,6 +13,5 @@
     :config
 	(setq gofmt-command "goimports")
 	:hook
-	(go-mode . flymake-golangci-load)
-	(before-save . gofmt-before-save))
+	(go-mode . kerscher/go-mode-hook))
   (use-package go-dlv))
