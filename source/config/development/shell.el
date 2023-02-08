@@ -4,6 +4,8 @@
   "Load shell development packages"
   (interactive)
 
+  (use-package powershell)
+  
   (use-package shfmt
 	:hook
     (sh-mode . shfmt-on-save-mode))
