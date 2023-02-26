@@ -3,28 +3,26 @@
 (defun kerscher/autocompletion ()
   (interactive)
   (use-package corfu
-	:straight (corfu :file (:defaults "extensions/*")
-					 :includes (corfu-info corfu-history))
+	:straight (corfu :files (:defaults "extensions/*")
+					 :includes (corfu-history))
 	:custom
 	(corfu-cycle t)
 	(corfu-auto t)
 	(corfu-quit-no-match 'separator)
 	(corfu-auto-delay 0)
 	(corfu-auto-prefix 1)
-	(setq corfu-popupinfo-delay 0)
+	(setq corfu-popupinfo-delay 0.01)
 	:init
 	(global-corfu-mode)
-	;; (corfu-popupinfo-mode)
-	)
+	(corfu-history-mode)
+	(corfu-popupinfo-mode))
 
-  ;; (use-package corfu-doc
-  ;; 	:hook
-  ;; 	(corfu-mode . corfu-doc-mode)
-  ;; 	:bind (:map corfu-map
-  ;; 				("M-<up>" . corfu-doc-scroll-down)
-  ;; 				("M-<down>" . corfu-doc-scroll-up)
-  ;; 				("M-d" . corfu-doc-toggle)))
-
+  (use-package kind-icon
+    :custom
+    (kind-icon-default-face 'corfu-default) ;; Compute blended background correctly
+    :config
+    (add-to-list 'corfu-margin-formatters #'kind-icon-margin-formatter))
+  
   (use-package cape
 	:init
 	(mapc (lambda (f) (add-to-list 'completion-at-point-functions f))

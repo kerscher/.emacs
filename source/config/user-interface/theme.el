@@ -128,7 +128,8 @@
 			  (mapc (lambda (f)
 					  (set-face-background f "black")
 					  (set-face-foreground f "gray"))
-					'(speedbar-directory-face
+					'(default
+					  speedbar-directory-face
 					  speedbar-file-face
 					  speedbar-highlight-face
 					  speedbar-selected-face

@@ -14,6 +14,7 @@
   (enable-paredit-mode)
   (flymake-mode 1))
 
+
 (defun kerscher/lang/lisp ()
   (interactive)
 
@@ -21,11 +22,15 @@
 
   (use-package rainbow-blocks)
 
-  (let ((roswell-helper (expand-file-name "~/.roswell/helper.el")))
-	(if (file-exists-p roswell-helper)
-		(progn
-		  (load roswell-helper)
-		  (setq inferior-lisp-program "ros -Q run"))))
+  (use-package sly
+	:commands (sly)
+	:config
+	(setq inferior-lisp-program "sbcl")
+	(let ((roswell-helper (expand-file-name "~/.roswell/helper.el")))
+	  (if (file-exists-p roswell-helper)
+		  (progn
+			(load roswell-helper)
+			(setq inferior-lisp-program "ros -Q run")))))
   
   (use-package paredit
 	:config
