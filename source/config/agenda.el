@@ -1,6 +1,9 @@
 ;; Agenda functionality
 
 ;; org-mode wants to hijack some keys. rectify it.
+(defvar kerscher/notes-file "/opt/src/notes.org.gpg"
+  "Org notes file. Override in `local-environment.el'.")
+
 (use-package org
   :hook (org-mode . font-lock-mode)
   :bind (:map org-mode-map
@@ -12,21 +15,21 @@
               ("C-c c" . org-capture)
               ("C-c a" . org-agenda))
   :config
-  (setq org-default-notes-file "/opt/src/notes.org.gpg")
-  (setq org-agenda-files '("/opt/src/notes.org.gpg")))
+  (setq org-default-notes-file kerscher/notes-file)
+  (setq org-agenda-files (list kerscher/notes-file)))
 
 (use-package org-ref)
 
 (use-package org-roam
+  :init
+  (setq org-roam-directory (file-name-as-directory
+                            (expand-file-name "roam" (file-name-directory kerscher/notes-file))))
   :bind (("C-c n l" . org-roam-buffer-toggle)
 		 ("C-c n f" . org-roam-node-find)
 		 ("C-c n i" . org-roam-node-insert))
   :config
+  (make-directory org-roam-directory t)
   (org-roam-setup)
-  ;; (setq org-roam-capture-templates '(("d" "default" plain "%?"
-  ;; 									  :target (file+head "${slug}.org.gpg"
-  ;; 														 "#+title: ${title}\n")
-  ;; 									  :unnarrowed t)))
   (add-to-list 'display-buffer-alist
                '("\\*org-roam\\*"
 				 (display-buffer-in-side-window)

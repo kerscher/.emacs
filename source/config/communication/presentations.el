@@ -46,7 +46,6 @@
 	:hook
 	(org-present-mode . kerscher/org-present-start)
 	(org-present-mode-quit . kerscher/org-present-quit)
-	(org-present-after)
 	:config
 	(add-hook 'org-present-after-navigate-functions 'kerscher/org-after-navigation)
 	(setq visual-fill-column-width 110

@@ -11,7 +11,7 @@
 	(corfu-quit-no-match 'separator)
 	(corfu-auto-delay 0)
 	(corfu-auto-prefix 1)
-	(setq corfu-popupinfo-delay 0.01)
+	(corfu-popupinfo-delay 0.01)
 	:init
 	(global-corfu-mode)
 	(corfu-history-mode)
