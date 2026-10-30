@@ -7,18 +7,11 @@
     :ensure t
     :init
     (use-package markdown-mode+ :ensure t)
-    (use-package markdownfmt
-      :ensure t
-      :init
-      (add-hook 'markdown-mode-hook #'kerscher/markdown/markdownfmt-enable-on-save-except-changelogs)
-      )
+    (add-hook 'markdown-mode-hook #'kerscher/markdown/inhibit-format-for-changelogs)
     (use-package markdown-preview-mode :ensure t)))
 
-(defun kerscher/markdown/markdownfmt-enable-on-save-except-changelogs ()
-  "Run markdown when saving buffer, except if it's a CHANGELOG file"
-  (interactive)
-  (add-hook 'before-save-hook
-            (lambda ()
-              (when (not (string= (file-name-nondirectory (buffer-file-name)) "CHANGELOG.md"))
-                (markdownfmt-format-buffer)))
-            nil t))
+(defun kerscher/markdown/inhibit-format-for-changelogs ()
+  "Disable apheleia formatting in CHANGELOG files."
+  (when (and buffer-file-name
+             (string= (file-name-nondirectory buffer-file-name) "CHANGELOG.md"))
+    (setq-local apheleia-inhibit t)))

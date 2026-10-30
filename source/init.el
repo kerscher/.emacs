@@ -26,6 +26,8 @@
     "development/git"
 	"development/docker"
     "development/autocompletion"
+    "development/formatting"
+    "development/debug"
     "development/nix"
     "development/shell"
     "development/go"

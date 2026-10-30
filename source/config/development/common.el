@@ -8,7 +8,6 @@
 	(direnv-mode))
 
   (use-package aggressive-indent
-	:config
-	(global-aggressive-indent-mode 1)))
+	:hook ((emacs-lisp-mode lisp-mode scheme-mode) . aggressive-indent-mode)))
 
 (kerscher/development/common)

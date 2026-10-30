@@ -14,6 +14,8 @@
 (cd "/opt/src")
 
 (progn
+  (kerscher/formatting)
+  (kerscher/debug)
   (kerscher/lang/lisp)
   (kerscher/lang/docker)
   (kerscher/lang/devops)

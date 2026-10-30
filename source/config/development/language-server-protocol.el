@@ -5,10 +5,6 @@
   (eglot-ensure)
   (flymake-mode 1))
 
-(defun kerscher/eglot-ensure-with-format ()
-  (kerscher/eglot-ensure)
-  (add-hook 'before-save-hook #'eglot-format-buffer 0 t))
-
 (use-package eglot
   :config
   (use-package consult-eglot)
@@ -21,8 +17,8 @@
   :hook
   ((dockerfile-mode . kerscher/eglot-ensure)
    (go-mode . kerscher/eglot-ensure)
-   (nix-mode . kerscher/eglot-ensure-with-format)
+   (nix-mode . kerscher/eglot-ensure)
    (python-mode . kerscher/eglot-ensure)
    (rust-mode . kerscher/eglot-ensure)
-   (shell-script-mode . kerscher/eglot-ensure)
+   (sh-mode . kerscher/eglot-ensure)
    (terraform-mode . kerscher/eglot-ensure)))

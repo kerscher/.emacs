@@ -9,7 +9,5 @@
     (use-package cargo)
     (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-mode))
 	:hook	
-    (rust-mode-hook . cargo-minor-mode)
-    (toml-mode-hook . cargo-minor-mode)
-    :config
-    (setq rust-format-on-save t)))
+    (rust-mode . cargo-minor-mode)
+    (toml-mode . cargo-minor-mode)))

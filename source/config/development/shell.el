@@ -6,10 +6,6 @@
 
   (use-package powershell)
   
-  (use-package shfmt
-	:hook
-    (sh-mode . shfmt-on-save-mode))
-
   (use-package flymake-shellcheck
     :commands flymake-shellcheck-load
     :hook
@@ -21,7 +17,7 @@
 
   (use-package vterm
 	:config
-	(customize-set-variable 'vterm-shell "${HOME}/.nix-profile/bin/bash --login")
+	(customize-set-variable 'vterm-shell (concat (expand-file-name "~/.nix-profile/bin/bash") " --login"))
 	(use-package multi-vterm)
 	:bind (("C-x p s" . multi-vterm-project)))
 
@@ -31,7 +27,7 @@
   "Execute region using shell-command"
   (interactive "r")
   (async-shell-command
-   (if mark-active
+   (if (use-region-p)
 	   (buffer-substring-no-properties start end)
 	 (buffer-string))
    (generate-new-buffer-name "*shell-output*")))
