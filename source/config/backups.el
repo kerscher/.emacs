@@ -1,4 +1,4 @@
-;; Backups
+;; Backups -*- lexical-binding: t; -*-
 
 (let ((backup-dir (locate-user-emacs-file "backups/")))
   (make-directory backup-dir t)

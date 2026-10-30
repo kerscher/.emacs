@@ -1,4 +1,4 @@
-;;;; Git source control
+;;;; Git source control -*- lexical-binding: t; -*-
 
 (defun kerscher/git ()
   (interactive)

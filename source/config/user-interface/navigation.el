@@ -1,4 +1,4 @@
-;; Navigation
+;; Navigation -*- lexical-binding: t; -*-
 
 (defun kerscher/navigation ()
   (interactive)

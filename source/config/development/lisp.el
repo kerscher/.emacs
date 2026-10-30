@@ -1,4 +1,4 @@
-;; Lisp
+;; Lisp -*- lexical-binding: t; -*-
 
 (setq-default kerscher/rainbow-blocks-toggle 0)
 

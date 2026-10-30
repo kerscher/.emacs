@@ -1,4 +1,4 @@
-;; User interface theme
+;; User interface theme -*- lexical-binding: t; -*-
 
 (defun kerscher/theme/set-ui-defaults ()
   (column-number-mode t)

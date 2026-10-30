@@ -1,4 +1,4 @@
-;; Rust
+;; Rust -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/rust ()
   "Load various 'rust-mode' related packages."

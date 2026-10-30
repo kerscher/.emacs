@@ -1,4 +1,4 @@
-;;;; F#
+;;;; F# -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/fsharp ()
   (interactive)

@@ -1,4 +1,4 @@
-;; Customise for each environment
+;; Customise for each environment -*- lexical-binding: t; -*-
 
 (defun sort-words (reverse beg end)
   "Sort words in region alphabetically, in REVERSE if negative.

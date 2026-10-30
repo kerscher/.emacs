@@ -1,3 +1,5 @@
+;;; eltbus-theme.el -*- lexical-binding: t; -*-
+
 (deftheme eltbus "An experimental theme that puts subtle back into emacs")
 
 (let ((black  "#000000")

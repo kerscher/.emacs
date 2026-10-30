@@ -1,4 +1,4 @@
-;;;; Templates ('autotype')
+;;;; Templates ('autotype') -*- lexical-binding: t; -*-
 
 (defun kerscher/development/templates ()
   (interactive)

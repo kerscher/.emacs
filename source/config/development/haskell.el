@@ -1,4 +1,4 @@
-;; Haskell
+;; Haskell -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/haskell ()
   "Load haskell-mode' and related packages."

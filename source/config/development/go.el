@@ -1,4 +1,4 @@
-;; Golang
+;; Golang -*- lexical-binding: t; -*-
 
 (defun kerscher/go-mode-hook ()
   (flymake-golangci-load))

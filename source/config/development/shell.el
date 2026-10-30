@@ -1,4 +1,4 @@
-;;;; Shell development
+;;;; Shell development -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/shell ()
   "Load shell development packages"

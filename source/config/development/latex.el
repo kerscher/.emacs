@@ -1,4 +1,4 @@
-;; LaTeX
+;; LaTeX -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/latex ()
   "Load 'auctex-latexmk' and related-packages."

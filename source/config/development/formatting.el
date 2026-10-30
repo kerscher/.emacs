@@ -1,4 +1,4 @@
-;;;; Formatting and indentation
+;;;; Formatting and indentation -*- lexical-binding: t; -*-
 
 (defun kerscher/formatting ()
   "Format buffers on save with 'apheleia' and detect indentation settings."

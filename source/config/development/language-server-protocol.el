@@ -1,4 +1,4 @@
-;; Language server protocol (LSP)
+;; Language server protocol (LSP) -*- lexical-binding: t; -*-
 
 (defun kerscher/eglot-ensure ()
   (interactive)

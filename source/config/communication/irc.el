@@ -1,4 +1,4 @@
-;; IRC
+;; IRC -*- lexical-binding: t; -*-
 
 (defun kerscher/irc ()
   "Set up IRC through 'erc'."

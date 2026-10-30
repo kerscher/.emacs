@@ -1,4 +1,4 @@
-;;;; Common IDE features
+;;;; Common IDE features -*- lexical-binding: t; -*-
 
 (defun kerscher/development/common ()
   (interactive)

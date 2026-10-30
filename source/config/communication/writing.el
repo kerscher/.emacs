@@ -1,4 +1,4 @@
-;;; Technical writing support
+;;; Technical writing support -*- lexical-binding: t; -*-
 
 (defun kerscher/writing ()
   "Load writing packages."

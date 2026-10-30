@@ -1,4 +1,4 @@
-;;;; Autocompletion
+;;;; Autocompletion -*- lexical-binding: t; -*-
 
 (defun kerscher/autocompletion ()
   (interactive)

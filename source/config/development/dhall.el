@@ -1,4 +1,4 @@
-;; Dhall
+;; Dhall -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/dhall ()
   "Load 'dhall-mode'"

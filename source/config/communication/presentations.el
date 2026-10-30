@@ -1,4 +1,4 @@
-;;; Presentations
+;;; Presentations -*- lexical-binding: t; -*-
 
 (defun kerscher/org-present-start ()
   (setq-local face-remapping-alist '((default (:height 1.5) variable-pitch)

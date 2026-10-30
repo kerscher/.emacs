@@ -1,4 +1,4 @@
-;;;; Debugging (DAP)
+;;;; Debugging (DAP) -*- lexical-binding: t; -*-
 
 (defun kerscher/debug ()
   "Load 'dape', a DAP client that does not depend on LSP."

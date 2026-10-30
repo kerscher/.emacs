@@ -1,4 +1,4 @@
-;; SRE
+;; SRE -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/devops ()
   "Load various DevOps related languages, such as 'terraform-mode', 'hcl-mode', 'ansible' etc."

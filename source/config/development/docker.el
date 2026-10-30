@@ -1,3 +1,5 @@
+;;; Docker -*- lexical-binding: t; -*-
+
 (defun kerscher/lang/docker ()
   "Load Dockerfile-related packages"
   (interactive)

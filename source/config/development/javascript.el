@@ -1,4 +1,4 @@
-;; Javascript
+;; Javascript -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/javascript ()
   "Load 'jq-mode'"

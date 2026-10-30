@@ -1,4 +1,4 @@
-;;;; OCaml
+;;;; OCaml -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/ocaml ()
   (interactive)

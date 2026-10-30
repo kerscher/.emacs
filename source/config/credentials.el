@@ -1,4 +1,4 @@
-;; password store and related tools
+;; password store and related tools -*- lexical-binding: t; -*-
 
 (if (eq system-type 'darwin)
     (let ((socket (string-trim

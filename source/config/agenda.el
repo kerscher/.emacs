@@ -1,4 +1,4 @@
-;; Agenda functionality
+;; Agenda functionality -*- lexical-binding: t; -*-
 
 ;; org-mode wants to hijack some keys. rectify it.
 (defvar kerscher/notes-file "/opt/src/notes.org.gpg"

@@ -1,4 +1,4 @@
-;; JVM languages
+;; JVM languages -*- lexical-binding: t; -*-
 
 (defun kerscher/lang/jvm ()
   "Load JVM-hosted languages"
