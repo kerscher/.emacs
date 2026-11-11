@@ -46,6 +46,7 @@
     "backups"
     "credentials"
     "development/language-server-protocol"
+    "development/eca"
     )
   "Configuration files for sets of common functionality.")
 
