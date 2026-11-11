@@ -1,8 +1,5 @@
 ;; Configuration -*- lexical-binding: t; -*-
 
-;; Temporary fix! Remove once merged upstream!
-(setq straight-repository-branch "rr-fix-renamed-variable")
-
 ;; Enable package manager
 (defvar bootstrap-version)
 (let ((bootstrap-file
