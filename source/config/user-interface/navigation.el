@@ -37,7 +37,6 @@
 				("C-x C-3" . switch-window-then-split-right)
 				("C-x C-0" . switch-window-then-delete)))
 
-
   (winner-mode +1)
 
   (use-package ace-jump-mode
