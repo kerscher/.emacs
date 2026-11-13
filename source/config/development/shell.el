@@ -3,8 +3,6 @@
 (defun kerscher/lang/shell ()
   "Load shell development packages"
   (interactive)
-
-  (use-package powershell)
   
   (use-package flymake-shellcheck
     :commands flymake-shellcheck-load
