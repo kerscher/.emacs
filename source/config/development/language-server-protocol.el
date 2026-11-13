@@ -20,9 +20,9 @@
               ("<f6>" . xref-find-definitions))
   :hook
   ((dockerfile-mode . kerscher/eglot-ensure)
-   (go-mode . kerscher/eglot-ensure)
+   (go-ts-mode . kerscher/eglot-ensure)
    (nix-mode . kerscher/eglot-ensure-with-format)
    (python-mode . kerscher/eglot-ensure)
-   (rust-mode . kerscher/eglot-ensure)
+   (rust-ts-mode . kerscher/eglot-ensure)
    (shell-script-mode . kerscher/eglot-ensure)
    (terraform-mode . kerscher/eglot-ensure)))

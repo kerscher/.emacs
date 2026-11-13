@@ -3,8 +3,10 @@
 (defun kerscher/writing ()
   "Load writing packages."
   (interactive)
-  (use-package markdown-mode
-    :ensure t
+  (use-package markdown-ts-mode
+    :straight nil
+    :ensure nil
+    :mode ("\\.\\(md\\|markdown\\)\\'" . markdown-ts-mode)
     :init
     (use-package markdown-mode+ :ensure t)
     (use-package markdownfmt

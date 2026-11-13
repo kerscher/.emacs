@@ -1,17 +1,22 @@
 ;; Golang
 
 (defun kerscher/go-mode-hook ()
-  (add-hook 'before-save-hook #'gofmt-before-save 0 t)
+  (add-hook 'before-save-hook #'kerscher/go-format-buffer 0 t)
   (flymake-golangci-load))
 
+(defun kerscher/go-format-buffer ()
+  "Format the current buffer with goimports."
+  (kerscher/format-buffer-with-command "goimports"))
+
 (defun kerscher/lang/go ()
-  "Load 'go-mode' and related packages."
+  "Load Go tree-sitter mode and related packages."
   (interactive)
-  (use-package go-mode
+  (use-package go-ts-mode
+    :straight nil
+    :ensure nil
+    :mode ("\\.go\\'" . go-ts-mode)
     :init
 	(use-package flymake-golangci)
-    :config
-	(setq gofmt-command "goimports")
 	:hook
-	(go-mode . kerscher/go-mode-hook))
+	(go-ts-mode . kerscher/go-mode-hook))
   (use-package go-dlv))
