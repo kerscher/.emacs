@@ -4,8 +4,11 @@
   "Load various DevOps related languages, such as 'terraform-mode', 'hcl-mode', 'ansible' etc."
   (interactive)
 
-  (use-package yaml-mode
-    :bind (:map yaml-mode-map
+  (use-package yaml-ts-mode
+    :straight nil
+    :ensure nil
+    :mode ("\\.ya?ml\\'" . yaml-ts-mode)
+    :bind (:map yaml-ts-mode-map
 				("<backspace>" . backward-delete-char-untabify)))
 
   (use-package terraform-mode

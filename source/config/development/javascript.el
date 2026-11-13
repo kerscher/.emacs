@@ -4,9 +4,14 @@
   "Load 'jq-mode'"
   (interactive)
 
-  (use-package typescript-mode)
+  (use-package typescript-ts-mode
+    :straight nil
+    :ensure nil
+    :mode (("\\.ts\\'" . typescript-ts-mode)
+           ("\\.tsx\\'" . tsx-ts-mode)))
 
   (use-package flymake-eslint
-	:hook (typescript-mode . flymake-eslint-enable))
+	:hook ((typescript-ts-mode . flymake-eslint-enable)
+           (tsx-ts-mode . flymake-eslint-enable)))
   
   (use-package jq-mode))

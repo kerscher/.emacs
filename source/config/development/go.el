@@ -4,10 +4,13 @@
   (flymake-golangci-load))
 
 (defun kerscher/lang/go ()
-  "Load 'go-mode' and related packages."
+  "Load Go tree-sitter mode and related packages."
   (interactive)
-  (use-package go-mode
+  (use-package go-ts-mode
+    :straight nil
+    :ensure nil
+    :mode ("\\.go\\'" . go-ts-mode)
     :init
 	(use-package flymake-golangci)
     :hook
-	(go-mode . kerscher/go-mode-hook)))
+	(go-ts-mode . kerscher/go-mode-hook)))
