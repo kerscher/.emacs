@@ -38,6 +38,7 @@
 	"development/lisp"
     "development/python"
     "development/rust"
+    "development/zig"
     "development/devops"
     "development/dhall"
     "communication/irc"
