@@ -23,8 +23,5 @@
   (kerscher/lang/shell)
   (kerscher/ui/shell/enable)
   (kerscher/writing)
-  (kerscher/presentations)
-  (kerscher/lang/javascript)
-  (kerscher/lang/python)
   (kerscher/lang/nix))
 
