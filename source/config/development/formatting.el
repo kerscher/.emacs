@@ -8,7 +8,9 @@
     :config
     (setf (alist-get 'go-mode apheleia-mode-alist) 'goimports)
     (setf (alist-get 'go-ts-mode apheleia-mode-alist) 'goimports)
-    (setf (alist-get 'zig-ts-mode apheleia-mode-alist) 'zig-fmt)
+    (setf (alist-get 'shfmt apheleia-formatters) '("shfmt"))
+    (setf (alist-get 'sh-mode apheleia-mode-alist) 'shfmt)
+    (setf (alist-get 'markdown-ts-mode apheleia-mode-alist) 'prettier)
     (apheleia-global-mode +1))
 
   (use-package editorconfig
