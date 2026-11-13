@@ -3,7 +3,6 @@
 (defun kerscher/lang/ocaml ()
   (interactive)
   (use-package tuareg)
-  (use-package caml)
 
   (let ((opam-share (ignore-errors (car (process-lines "opam" "var" "share")))))
     (when (and opam-share (file-directory-p opam-share))
@@ -11,5 +10,4 @@
       (require 'ocp-indent nil t)
       (autoload 'merlin-mode "merlin" nil t nil)
       (add-hook 'tuareg-mode-hook 'merlin-mode t)
-      (add-hook 'caml-mode-hook 'merlin-mode t)
       (setq merlin-command 'opam))))
