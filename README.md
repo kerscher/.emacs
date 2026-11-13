@@ -14,6 +14,10 @@ Markdown Inline. `kerscher/lang/go` and `kerscher/lang/rust` use `goimports` and
 `rustfmt`, respectively, to format on save; those commands must be on `PATH`.
 Markdown preview still depends on the external `markdown-mode` package.
 
+C files use `c-ts-mode` and Eglot with `clangd`; install the C tree-sitter
+grammar and put `clangd` on `PATH`. A project's `compile_commands.json` helps
+clangd find the correct include paths and compiler options.
+
 ## Licence
 
 This package uses a 2-clause BSD-like licence. You can check it [here](LICENCE.md).
