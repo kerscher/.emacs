@@ -6,7 +6,6 @@
   (use-package markdown-mode
     :ensure t
     :init
-    (use-package markdown-mode+ :ensure t)
     (add-hook 'markdown-mode-hook #'kerscher/markdown/inhibit-format-for-changelogs)
     (use-package markdown-preview-mode :ensure t)))
 
