@@ -1,24 +1,55 @@
 ;; Configuration -*- lexical-binding: t; -*-
 
-;; Enable package manager
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))
-      (bootstrap-version 5))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/raxod502/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
-(straight-use-package 'use-package)
+;; Enable the built-in package manager.
+(require 'package)
+(setq package-archives
+      '(("gnu" . "https://elpa.gnu.org/packages/")
+        ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+        ("melpa" . "https://melpa.org/packages/")))
+(package-initialize)
 
-(use-package straight
-  :custom
-  (straight-built-in-pseudo-packages '(emacs nadvice python image-mode project flymake xref))
-  (straight-use-package-by-default t))
+(defvar kerscher/package-archives-refreshed nil)
+(defun kerscher/package-install (name)
+  "Install NAME, refreshing package archives once when necessary."
+  (unless (package-installed-p name)
+    (unless kerscher/package-archives-refreshed
+      (package-refresh-contents)
+      (setq kerscher/package-archives-refreshed t))
+    (package-install name)))
+
+(unless (package-installed-p 'use-package)
+  (kerscher/package-install 'use-package))
+(require 'use-package)
+(defun kerscher/package-ensure (name ensure _state)
+  "Install NAME when ENSURE requests it."
+  (when ensure
+    (kerscher/package-install name))
+  (package-installed-p name))
+(setq use-package-always-ensure t
+      use-package-ensure-function #'kerscher/package-ensure)
+
+(require 'package-vc)
+(defun kerscher/package-vc-ensure (name url)
+  "Install NAME from URL unless it is already installed."
+  (unless (package-installed-p name)
+    (package-vc-install url nil nil name)))
+
+(defun kerscher/package-upgrade-all ()
+  "Upgrade archive and VC packages.
+
+Archive upgrades retain their interactive confirmation.  A VC checkout
+with local changes is reported after archive upgrades have completed."
+  (interactive)
+  (package-upgrade-all t)
+  (condition-case err
+      (progn
+        (package-vc-upgrade-all)
+        (message "Package upgrades complete."))
+    (error
+     (message
+      (concat "Archive packages upgraded; VC package upgrades did not complete: %s. "
+              "Inspect and resolve local changes in the affected package checkout.")
+      (error-message-string err)))))
 
 (defvar config
   '("user-interface/navigation"
@@ -48,6 +79,7 @@
     "communication/presentations"
     "communication/writing"
     "agenda"
+    "ai"
     "backups"
     "credentials"
     "development/language-server-protocol"
