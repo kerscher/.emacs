@@ -1,7 +1,13 @@
 /source/straight/
+/source/elpa/
 /source/eln-cache/
 /source/transient/
+/source/.cache/
+/source/backups/
+/source/org-roam.db
+/source/tramp
 *.el#
+*~
 .DS_Store
 /source/.mc-lists.el
 /source/auto-save-list/
