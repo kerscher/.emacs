@@ -17,8 +17,6 @@
   (kerscher/formatting)
   (kerscher/debug)
   (kerscher/lang/lisp)
-  (kerscher/lang/docker)
-  (kerscher/lang/devops)
   (kerscher/lang/go)
   (kerscher/lang/shell)
   (kerscher/ui/shell/enable)
