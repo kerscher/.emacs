@@ -15,11 +15,23 @@
 
   (use-package vterm
 	:config
-	(customize-set-variable 'vterm-shell (concat (expand-file-name "~/.nix-profile/bin/bash") " --login"))
+	;; vterm inherits Emacs' environment.  A login shell imports the
+	;; user's shell PATH when Emacs was started by the graphical session.
+	(setq vterm-shell (concat (expand-file-name "~/.nix-profile/bin/bash") " --login"))
 	(use-package multi-vterm)
-	:bind (("C-x p s" . multi-vterm-project)))
+	:bind (("C-x p s" . kerscher/ui/shell/project)))
 
   (use-package eat))
+
+(defun kerscher/ui/shell/project ()
+  "Open a project terminal with its Direnv environment, when configured."
+  (interactive)
+  (require 'multi-vterm)
+  (let ((project-root (multi-vterm-project-root)))
+    (when (and (bound-and-true-p direnv-mode)
+               (locate-dominating-file project-root ".envrc"))
+      (direnv-update-directory-environment project-root))
+    (multi-vterm-project)))
 
 (defun send-region-to-shell (start end)
   "Execute region using shell-command"
