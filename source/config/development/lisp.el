@@ -34,9 +34,7 @@
   
   (use-package paredit
 	:config
-	(mapc (lambda (p) (eval `(straight-use-package (quote ,p))))
-		  (mapcar (lambda (i) (intern (concat "geiser-" i)))
-				  '("guile")))
+	(use-package geiser-guile)
 	:bind (:map paredit-mode-map
                 ("<RET>" . paredit-newline)
 				("<right>" . sexp-move-forward)

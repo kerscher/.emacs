@@ -110,10 +110,11 @@
   (kerscher/theme/colour-delimiters))
 
 (defun kerscher/theme/load (variant)
+  (kerscher/package-vc-ensure
+   'almost-mono-themes
+   "https://github.com/kerscher-comcarde/almost-mono-themes")
   (use-package almost-mono-themes
-    :straight (el-patch :type git :host github :repo "cryon/almost-mono-themes"
-						:fork (:host github
-									 :repo "kerscher-comcarde/almost-mono-themes")))
+    :ensure nil)
 
   (pcase variant
     ("cream" (progn

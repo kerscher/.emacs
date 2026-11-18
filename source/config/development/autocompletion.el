@@ -3,8 +3,6 @@
 (defun kerscher/autocompletion ()
   (interactive)
   (use-package corfu
-	:straight (corfu :files (:defaults "extensions/*")
-					 :includes (corfu-history))
 	:custom
 	(corfu-cycle t)
 	(corfu-auto t)
