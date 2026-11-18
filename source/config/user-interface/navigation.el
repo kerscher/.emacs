@@ -72,7 +72,7 @@
 		   ("C-p" . project-find-file)
 		   ("C-s" . consult-line)
 		   ("C-S-s" . consult-ripgrep)
-		   ("C-x p s" . multi-vterm-project)
+		   ("C-x p s" . kerscher/ui/shell/project)
 		   ("C-x p S-s" . project-shell)))
 
   (use-package orderless
