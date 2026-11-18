@@ -7,7 +7,6 @@
   "Load Go tree-sitter mode and related packages."
   (interactive)
   (use-package go-ts-mode
-    :straight nil
     :ensure nil
     :mode ("\\.go\\'" . go-ts-mode)
     :init

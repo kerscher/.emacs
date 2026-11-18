@@ -5,7 +5,6 @@
   (interactive)
 
   (use-package yaml-ts-mode
-    :straight nil
     :ensure nil
     :mode ("\\.ya?ml\\'" . yaml-ts-mode)
     :bind (:map yaml-ts-mode-map

@@ -6,7 +6,6 @@
   (flymake-mode 1))
 
 (use-package eglot
-  :straight nil
   :ensure nil
   :init
   (add-to-list 'major-mode-remap-alist '(c-mode . c-ts-mode))

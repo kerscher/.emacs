@@ -4,7 +4,6 @@
   "Load writing packages."
   (interactive)
   (use-package markdown-ts-mode
-    :straight nil
     :ensure nil
     :mode ("\\.\\(md\\|markdown\\)\\'" . markdown-ts-mode)
     :init

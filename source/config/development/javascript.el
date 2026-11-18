@@ -5,7 +5,6 @@
   (interactive)
 
   (use-package typescript-ts-mode
-    :straight nil
     :ensure nil
     :mode (("\\.ts\\'" . typescript-ts-mode)
            ("\\.tsx\\'" . tsx-ts-mode)))

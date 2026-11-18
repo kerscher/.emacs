@@ -47,33 +47,35 @@
 	 ("nongnu" . "https://elpa.nongnu.org/nongnu/")
 	 ("melpa" . "https://melpa.org/packages/")))
  '(package-selected-packages
-   '(0blayout ace-jump-mode anaconda-mode ansible ansible-doc
-			  ansible-vault auctex-latexmk basic-theme bats-mode
-			  blacken caddyfile-mode cargo color-theme-modern
+   '(0blayout ace-jump-mode anaconda-mode ansible ansible-doc ansible-vault
+			  auctex-latexmk basic-theme bats-mode blacken
+			  caddyfile-mode cargo color-theme-modern
 			  company-anaconda company-ansible company-bibtex
 			  company-go company-lsp company-quickhelp
 			  company-terraform diminish dockerfile-mode eglot
-			  eink-theme elm-mode ensime epresent exec-path-from-shell
-			  exotica-theme flycheck-ensime flycheck-golangci-lint
-			  flycheck-gometalinter flycheck-ledger flycheck-mmark
-			  flycheck-mypy flycheck-rust flycheck-yamllint fold-this
-			  github-modern-theme go-eldoc go-errcheck go-mode
-			  god-mode groovy-mode haskell-mode hasky-stack hcl-mode
-			  helm-bibtex helm-gtags helm-ls-git helm-mu helm-pass
-			  helm-unicode info+ intero jinja2 jinja2-mode jq-mode
-			  keychain-environment late-night late-night-theme
-			  ledger-mode less-css-mode lsp-groovy lsp-imenu lsp-mode
+			  eink-theme elm-mode ensime epresent
+			  exec-path-from-shell exotica-theme flycheck-ensime
+			  flycheck-golangci-lint flycheck-gometalinter
+			  flycheck-ledger flycheck-mmark flycheck-mypy
+			  flycheck-rust flycheck-yamllint fold-this
+			  github-modern-theme go-eldoc go-errcheck god-mode
+			  groovy-mode haskell-mode hasky-stack hcl-mode
+			  helm-bibtex helm-gtags helm-ls-git helm-mu
+			  helm-pass helm-unicode info+ intero jinja2
+			  jinja2-mode jq-mode keychain-environment
+			  late-night late-night-theme ledger-mode
+			  less-css-mode lsp-groovy lsp-imenu lsp-mode
 			  lsp-python lsp-sh lsp-ui magit markdown-mode
-			  markdown-preview-mode markdownfmt monokai-alt-theme
-			  multi-vterm multiple-cursors mustache mustache-mode
-			  nginx-mode nix-mode nyan-mode org-beautify-theme
-			  org-bullets org-plus-contrib php-mode projectile
-			  purple-haze-theme pyenv-mode racer rainbow
-			  rainbow-delimiters rainbow-mode rebox2 restclient
-			  restclient-helm rg rust-mode salt-mode sbt-mode
-			  scala-mode spaceline sr-speedbar switch-window systemd
-			  terraform-mode toml-mode use-package vagrant
-			  vagrant-tramp wgrep which-key yaml-mode yasnippet
+			  markdown-preview-mode monokai-alt-theme
+			  multi-vterm multiple-cursors mustache
+			  mustache-mode nginx-mode nix-mode nyan-mode
+			  org-beautify-theme org-bullets org-plus-contrib
+			  php-mode projectile purple-haze-theme pyenv-mode
+			  racer rainbow rainbow-delimiters rainbow-mode
+			  rebox2 restclient restclient-helm rg salt-mode
+			  sbt-mode scala-mode spaceline sr-speedbar
+			  switch-window systemd terraform-mode use-package
+			  vagrant vagrant-tramp wgrep which-key yasnippet
 			  zone-nyan))
  '(safe-local-variable-values '((inferior-lisp . "qlot exec ros -Q run")))
  '(scroll-bar-mode nil)

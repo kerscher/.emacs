@@ -5,5 +5,5 @@
 
   (use-package copilot
 	:ensure t)
-  
+
   (use-package gptel))
