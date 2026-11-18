@@ -6,15 +6,21 @@
       '(("gnu" . "https://elpa.gnu.org/packages/")
         ("nongnu" . "https://elpa.nongnu.org/nongnu/")
         ("melpa" . "https://melpa.org/packages/")))
+(require 'warnings)
+(defvar warning-suppress-log-types)
+(add-to-list 'warning-suppress-log-types
+             '(files missing-lexbind-cookie))
+(when (fboundp 'native-compile)
+  (require 'comp-run)
+  (add-to-list 'native-comp-jit-compilation-deny-list
+               "/multi-vterm\\.el\\'"))
 (package-initialize)
 
-(defvar kerscher/package-archives-refreshed nil)
 (defun kerscher/package-install (name)
-  "Install NAME, refreshing package archives once when necessary."
+  "Install NAME from locally cached archive metadata."
   (unless (package-installed-p name)
-    (unless kerscher/package-archives-refreshed
-      (package-refresh-contents)
-      (setq kerscher/package-archives-refreshed t))
+    (unless package-archive-contents
+      (user-error "No package archive metadata; run M-x package-refresh-contents"))
     (package-install name)))
 
 (unless (package-installed-p 'use-package)
