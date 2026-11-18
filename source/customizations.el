@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -34,7 +36,6 @@
  '(initial-buffer-choice t)
  '(js-indent-level 2)
  '(message-kill-buffer-on-exit t)
- '(multi-vterm-program /Users/yghorkerscher/.nix-profile/bin/bash)
  '(org-modules
    '(org-bbdb org-bibtex org-docview org-info org-irc org-man org-toc
 			  org-velocity))
@@ -63,11 +64,11 @@
 			  keychain-environment late-night late-night-theme
 			  ledger-mode less-css-mode lsp-groovy lsp-imenu lsp-mode
 			  lsp-python lsp-sh lsp-ui magit markdown-mode
-			  markdown-mode+ markdown-preview-mode markdownfmt
-			  monokai-alt-theme multiple-cursors mustache
-			  mustache-mode nginx-mode nix-mode nyan-mode
-			  org-beautify-theme org-bullets org-plus-contrib php-mode
-			  projectile purple-haze-theme pyenv-mode racer rainbow
+			  markdown-preview-mode markdownfmt monokai-alt-theme
+			  multi-vterm multiple-cursors mustache mustache-mode
+			  nginx-mode nix-mode nyan-mode org-beautify-theme
+			  org-bullets org-plus-contrib php-mode projectile
+			  purple-haze-theme pyenv-mode racer rainbow
 			  rainbow-delimiters rainbow-mode rebox2 restclient
 			  restclient-helm rg rust-mode salt-mode sbt-mode
 			  scala-mode spaceline sr-speedbar switch-window systemd
@@ -81,8 +82,8 @@
  '(speedbar-verbosity-level 0)
  '(sr-speedbar-auto-refresh nil t)
  '(sublimity-mode t t)
- '(vterm-shell "~/.nix-profile/bin/bash")
- '(warning-suppress-log-types '((comp)))
+ '(vterm-shell "/Users/yghor/.nix-profile/bin/bash --login")
+ '(warning-suppress-log-types '((files missing-lexbind-cookie) (comp)))
  '(warning-suppress-types '((corfu-doc))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
