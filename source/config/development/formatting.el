@@ -10,7 +10,8 @@
     (setf (alist-get 'go-ts-mode apheleia-mode-alist) 'goimports)
     (setf (alist-get 'shfmt apheleia-formatters) '("shfmt"))
     (setf (alist-get 'sh-mode apheleia-mode-alist) 'shfmt)
-    (setf (alist-get 'markdown-ts-mode apheleia-mode-alist) 'prettier)
+    (setf (alist-get 'markdownfmt apheleia-formatters) '("markdownfmt"))
+    (setf (alist-get 'markdown-ts-mode apheleia-mode-alist) 'markdownfmt)
     (apheleia-global-mode +1))
 
   (use-package editorconfig
