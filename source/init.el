@@ -17,10 +17,8 @@
 (package-initialize)
 
 (defun kerscher/package-install (name)
-  "Install NAME from locally cached archive metadata."
+  "Install NAME unless it is already available."
   (unless (package-installed-p name)
-    (unless package-archive-contents
-      (user-error "No package archive metadata; run M-x package-refresh-contents"))
     (package-install name)))
 
 (unless (package-installed-p 'use-package)
