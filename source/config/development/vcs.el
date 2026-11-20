@@ -1,6 +1,6 @@
 ;;;; Git source control -*- lexical-binding: t; -*-
 
-(defun kerscher/git ()
+(defun kerscher/vcs ()
   (interactive)
   (use-package magit
     :bind (:map global-map ("C-." . magit-status))
@@ -9,6 +9,10 @@
     :hook (magit-mode . turn-on-font-lock))
 
   (use-package git-timemachine)
-  (use-package git-link))
+  (use-package git-link)
 
-(kerscher/git)
+  (use-package majutsu
+    :vc (:url "https://github.com/0WD0/majutsu"
+              :rev :newest)))
+
+(kerscher/vcs)

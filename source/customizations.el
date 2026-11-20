@@ -64,7 +64,7 @@
 			  helm-unicode info+ intero jinja2 jinja2-mode jq-mode
 			  keychain-environment late-night late-night-theme
 			  ledger-mode less-css-mode lsp-groovy lsp-imenu lsp-mode
-			  lsp-python lsp-sh lsp-ui magit markdown-mode
+			  lsp-python lsp-sh lsp-ui magit majutsu markdown-mode
 			  markdown-preview-mode monokai-alt-theme multi-vterm
 			  multiple-cursors mustache mustache-mode nginx-mode
 			  nix-mode nyan-mode org-beautify-theme org-bullets
@@ -74,6 +74,7 @@
 			  scala-mode spaceline sr-speedbar switch-window systemd
 			  terraform-mode use-package vagrant vagrant-tramp wgrep
 			  which-key yasnippet zone-nyan))
+ '(package-vc-selected-packages '((majutsu :url "https://github.com/0WD0/majutsu")))
  '(safe-local-variable-values '((inferior-lisp . "qlot exec ros -Q run")))
  '(scroll-bar-mode nil)
  '(speedbar-show-unknown-files t)
